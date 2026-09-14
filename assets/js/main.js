@@ -26,6 +26,24 @@ document.addEventListener('DOMContentLoaded', function(){
     });
   }
 
+  // ---- botón WhatsApp: ocultar mientras haya una barra de coordenadas a la vista (móvil) ----
+  var waFloat = document.querySelector('.whatsapp-float');
+  var coordSections = Array.prototype.map.call(
+    document.querySelectorAll('.coords-bar'),
+    function(el){ return el.closest('.reel') || el.parentElement; }
+  );
+  if(waFloat && coordSections.length){
+    var waIntersecting = new Set();
+    var waObs = new IntersectionObserver(function(entries){
+      entries.forEach(function(e){
+        if(e.isIntersecting) waIntersecting.add(e.target);
+        else waIntersecting.delete(e.target);
+      });
+      waFloat.classList.toggle('wa-visible', waIntersecting.size === 0);
+    }, {threshold: 0});
+    coordSections.forEach(function(el){ waObs.observe(el); });
+  }
+
   var io = new IntersectionObserver(function(entries){
     entries.forEach(function(e){
       if(e.isIntersecting){ e.target.classList.add('is-visible'); }

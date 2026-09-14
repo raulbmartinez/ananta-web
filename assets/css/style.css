@@ -449,7 +449,10 @@ section.contact{background:var(--white);padding:100px 0 130px;}
   .footer-grid{grid-template-columns:1fr;}
   .coords-bar .wrap{flex-direction:column;}
   .coord-item{border-right:none;border-bottom:1px solid var(--line);}
+  .coord-item:last-child{padding-bottom:64px;}
   .form-row{grid-template-columns:1fr;}
+  .scroll-cue{display:none;}
+  .hero .reel-content{padding-bottom:210px;}
 }
 
 /* ---------- BOTÓN FLOTANTE WHATSAPP ---------- */
@@ -471,5 +474,8 @@ section.contact{background:var(--white);padding:100px 0 130px;}
 .whatsapp-float:hover .whatsapp-label, .whatsapp-float:focus .whatsapp-label{max-width:220px;}
 @media (max-width:640px){
   .whatsapp-float{left:16px; bottom:16px; padding:13px;}
+  /* en la portada, no mostrar el botón hasta pasar el hero (evita tapar sus botones) */
+  body:has(.coords-bar) .whatsapp-float{opacity:0; pointer-events:none; transition:opacity .3s ease;}
+  body:has(.coords-bar) .whatsapp-float.wa-visible{opacity:1; pointer-events:auto;}
   .whatsapp-float .whatsapp-label{display:none;}
 }
