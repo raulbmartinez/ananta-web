@@ -26,12 +26,12 @@ document.addEventListener('DOMContentLoaded', function(){
     });
   }
 
-  // ---- botón WhatsApp: ocultar mientras haya una barra de coordenadas a la vista (móvil) ----
+  // ---- botón WhatsApp: ocultar mientras haya una zona sensible a la vista (móvil) ----
   var waFloat = document.querySelector('.whatsapp-float');
   var coordSections = Array.prototype.map.call(
     document.querySelectorAll('.coords-bar'),
     function(el){ return el.closest('.reel') || el.parentElement; }
-  );
+  ).concat(Array.prototype.slice.call(document.querySelectorAll('.wa-avoid')));
   if(waFloat && coordSections.length){
     var waIntersecting = new Set();
     var waObs = new IntersectionObserver(function(entries){

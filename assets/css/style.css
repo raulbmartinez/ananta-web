@@ -532,7 +532,7 @@ section.contact{background:var(--white);padding:100px 0 130px;}
 @media (max-width:640px){
   .whatsapp-float{left:16px; bottom:16px; padding:13px;}
   /* en la portada, no mostrar el botón hasta pasar el hero (evita tapar sus botones) */
-  body:has(.coords-bar) .whatsapp-float{opacity:0; pointer-events:none; transition:opacity .3s ease;}
-  body:has(.coords-bar) .whatsapp-float.wa-visible{opacity:1; pointer-events:auto;}
+  body:has(.coords-bar, .wa-avoid) .whatsapp-float{opacity:0; pointer-events:none; transition:opacity .3s ease;}
+  body:has(.coords-bar, .wa-avoid) .whatsapp-float.wa-visible{opacity:1; pointer-events:auto;}
   .whatsapp-float .whatsapp-label{display:none;}
 }
