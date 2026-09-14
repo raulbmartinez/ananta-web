@@ -451,3 +451,25 @@ section.contact{background:var(--white);padding:100px 0 130px;}
   .coord-item{border-right:none;border-bottom:1px solid var(--line);}
   .form-row{grid-template-columns:1fr;}
 }
+
+/* ---------- BOTÓN FLOTANTE WHATSAPP ---------- */
+.whatsapp-float{
+  position:fixed; right:24px; bottom:24px; z-index:300;
+  display:flex; align-items:center; gap:10px;
+  background:#25d366; color:#fff;
+  padding:14px; border-radius:50px;
+  box-shadow:0 8px 22px rgba(10,30,50,.22);
+  transition:box-shadow .2s ease, transform .2s ease;
+}
+.whatsapp-float:hover{box-shadow:0 12px 28px rgba(10,30,50,.3); transform:translateY(-2px);}
+.whatsapp-float svg{width:24px; height:24px; flex-shrink:0; display:block;}
+.whatsapp-float .whatsapp-label{
+  max-width:0; overflow:hidden; white-space:nowrap;
+  font-family:var(--label); font-size:12.5px; font-weight:600; letter-spacing:.03em;
+  transition:max-width .3s ease;
+}
+.whatsapp-float:hover .whatsapp-label, .whatsapp-float:focus .whatsapp-label{max-width:220px;}
+@media (max-width:640px){
+  .whatsapp-float{right:16px; bottom:16px; padding:13px;}
+  .whatsapp-float .whatsapp-label{display:none;}
+}
