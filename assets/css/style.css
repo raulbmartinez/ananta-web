@@ -342,6 +342,18 @@ section.content-block.alt .card-grid > *{background:var(--grey-light);}
 .block-head p.support + p.support{margin-top:16px;}
 .block-head .block-statement{font-family:var(--serif);font-size:19px;font-weight:500;color:var(--ink);margin:28px 0 0;max-width:680px;}
 .sub-panel{margin-top:44px;padding-top:36px;border-top:1px solid var(--grey-line);}
+
+/* ---------- LISTADO DE PRODUCTOS (marcas) ---------- */
+.brand-link{display:inline-block;margin:16px 0 32px;font-family:var(--label);font-size:11.5px;letter-spacing:.06em;text-transform:uppercase;color:var(--navy);border-bottom:1px solid rgba(10,47,87,.35);padding-bottom:2px;}
+.brand-link:hover{color:var(--navy-deep);border-color:var(--navy-deep);}
+.product-list{list-style:none;margin:0;padding:0;columns:2;column-gap:48px;}
+.product-list li{padding:11px 0;border-bottom:1px solid var(--grey-line);font-size:14.5px;color:var(--slate);break-inside:avoid;}
+.product-list li.product-subcat{
+  font-family:var(--label); font-weight:700; letter-spacing:.04em; text-transform:uppercase; font-size:11.5px;
+  color:var(--navy); border-bottom:none; padding:22px 0 6px;
+}
+.product-list li.product-subcat:first-child{padding-top:0;}
+.product-list li.product-child{padding-left:18px; font-style:italic; color:var(--grey);}
 .sub-panel h3{font-family:var(--serif);font-size:19px;font-weight:500;color:var(--ink);margin:0 0 12px;}
 .sub-panel p{font-size:15px;line-height:1.75;color:var(--slate);max-width:680px;margin:0;}
 
