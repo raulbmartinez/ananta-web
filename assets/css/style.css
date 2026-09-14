@@ -454,7 +454,7 @@ section.contact{background:var(--white);padding:100px 0 130px;}
 
 /* ---------- BOTÓN FLOTANTE WHATSAPP ---------- */
 .whatsapp-float{
-  position:fixed; right:24px; bottom:24px; z-index:300;
+  position:fixed; left:24px; bottom:24px; z-index:300;
   display:flex; align-items:center; gap:10px;
   background:#25d366; color:#fff;
   padding:14px; border-radius:50px;
@@ -470,6 +470,6 @@ section.contact{background:var(--white);padding:100px 0 130px;}
 }
 .whatsapp-float:hover .whatsapp-label, .whatsapp-float:focus .whatsapp-label{max-width:220px;}
 @media (max-width:640px){
-  .whatsapp-float{right:16px; bottom:16px; padding:13px;}
+  .whatsapp-float{left:16px; bottom:16px; padding:13px;}
   .whatsapp-float .whatsapp-label{display:none;}
 }
