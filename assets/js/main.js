@@ -112,9 +112,8 @@ document.addEventListener('DOMContentLoaded', function(){
     });
   }
 
-  // ---- hero precision-network canvas ----
-  var networkCanvas = document.getElementById('heroNetwork');
-  if(networkCanvas){
+  // ---- red de puntos tipo "precisión" (hero, blog...) ----
+  document.querySelectorAll('.network-canvas').forEach(function(networkCanvas){
     var ctx = networkCanvas.getContext('2d');
     var W, H, nodes = [];
     var dpr = window.devicePixelRatio || 1;
@@ -164,5 +163,5 @@ document.addEventListener('DOMContentLoaded', function(){
     }
     resizeCanvas(); initNodes(); tickCanvas();
     window.addEventListener('resize', function(){ resizeCanvas(); initNodes(); });
-  }
+  });
 });
