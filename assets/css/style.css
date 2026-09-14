@@ -448,6 +448,7 @@ section.contact{background:var(--white);padding:100px 0 130px;}
   .footer-grid{grid-template-columns:1fr;}
   .coords-bar .wrap{flex-direction:column;}
   .coord-item{border-right:none;border-bottom:1px solid var(--line);}
+  .coord-item:first-child{padding-left:20px;}
   .coord-item:last-child{padding-bottom:64px;}
   .form-row{grid-template-columns:1fr;}
   .scroll-cue{display:none;}
