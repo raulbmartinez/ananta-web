@@ -15,9 +15,34 @@
   <div class="wrap header-inner">
     <a href="index.html" class="logo"><img src="assets/img/logo-navy.png" alt="ANANTA"></a>
     <nav class="main-nav" id="mainNav">
-      <a href="compania.html">Compañía</a>
-      <a href="negocio.html" class="active">Negocio</a>
-      <a href="productos.html">Productos</a>
+      <div class="nav-item">
+        <a href="compania.html">Compañía<span class="nav-caret">▾</span></a>
+        <div class="nav-dropdown">
+          <a href="compania.html#quienes-somos" class="dropdown-link">Quiénes somos</a>
+          <a href="compania.html#enfoque" class="dropdown-link">El mantenimiento como eje estratégico</a>
+          <a href="compania.html#especialistas" class="dropdown-link">Especialistas en maquinaria</a>
+          <a href="compania.html#sectores" class="dropdown-link">Sectores de aplicación</a>
+          <a href="compania.html#valor-diferencial" class="dropdown-link">Nuestro valor diferencial</a>
+          <a href="compania.html#presencia" class="dropdown-link">Presencia internacional</a>
+          <a href="compania.html#calidad" class="dropdown-link">Compromiso y calidad</a>
+        </div>
+      </div>
+      <div class="nav-item">
+        <a href="negocio.html" class="active">Negocio<span class="nav-caret">▾</span></a>
+        <div class="nav-dropdown">
+          <a href="negocio.html#mantenimiento-industrial" class="dropdown-link">Mantenimiento Industrial</a>
+          <a href="negocio.html#montajes-paradas" class="dropdown-link">Montajes y Paradas</a>
+          <a href="negocio.html#automatizacion" class="dropdown-link">Automatización y Control</a>
+        </div>
+      </div>
+      <div class="nav-item">
+        <a href="productos.html">Productos<span class="nav-caret">▾</span></a>
+        <div class="nav-dropdown">
+          <a href="productos.html#bertoli" class="dropdown-link">Bertoli</a>
+          <a href="productos.html#nakakin" class="dropdown-link">Nakakin</a>
+          <a href="productos.html#on-fitting" class="dropdown-link">On Fitting</a>
+        </div>
+      </div>
       <a href="blog.html">Blog</a>
       <a href="contacto.html" class="nav-cta">Contacto</a>
     </nav>
@@ -36,7 +61,7 @@
 </section>
 
 <!-- BLOQUE A — MANTENIMIENTO INDUSTRIAL -->
-<section class="service-block">
+<section class="service-block" id="mantenimiento-industrial">
   <div class="block-band">
     <div class="wrap">
       <h2 class="reveal">Mantenimiento Industrial</h2>
@@ -92,7 +117,7 @@
 </section>
 
 <!-- BLOQUE B — MONTAJES Y PARADAS -->
-<section class="service-block alt">
+<section class="service-block alt" id="montajes-paradas">
   <div class="block-band">
     <div class="wrap">
       <h2 class="reveal">Montajes y Paradas</h2>
@@ -135,7 +160,7 @@
 </section>
 
 <!-- AUTOMATIZACIÓN Y CONTROL — bloque final aparte, tratamiento reel -->
-<section class="reel chapter automation">
+<section class="reel chapter automation" id="automatizacion">
   <div class="reel-bg" style="background-image:url('assets/img/sectores-tanks.jpg');"></div>
   <canvas class="hero-canvas network-canvas"></canvas>
   <div class="reel-fade"></div>
