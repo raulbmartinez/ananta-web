@@ -183,7 +183,8 @@ nav.main-nav a.nav-cta::after{display:none;}
   position:absolute; inset:0;
   background-size:cover; background-position:center 12%;
   opacity:0;
-  animation: kenburnsSlide 52s ease-in-out infinite, heroFade 32s ease-in-out infinite;
+  clip-path: inset(0 100% 0 0);
+  animation: kenburnsSlide 52s ease-in-out infinite, heroWipe 32s cubic-bezier(.65,0,.35,1) infinite;
 }
 .hero-slideshow .slide:nth-child(1){animation-delay:0s, 0s;}
 .hero-slideshow .slide:nth-child(2){animation-delay:0s, 4s;}
@@ -193,17 +194,17 @@ nav.main-nav a.nav-cta::after{display:none;}
 .hero-slideshow .slide:nth-child(6){animation-delay:0s, 20s;}
 .hero-slideshow .slide:nth-child(7){animation-delay:0s, 24s;}
 .hero-slideshow .slide:nth-child(8){animation-delay:0s, 28s;}
-@keyframes heroFade{
-  0%{opacity:0;}
-  5%{opacity:1;}
-  9%{opacity:1;}
-  12.5%{opacity:0;}
-  100%{opacity:0;}
+@keyframes heroWipe{
+  0%{opacity:0; clip-path: inset(0 100% 0 0);}
+  5%{opacity:1; clip-path: inset(0 0% 0 0);}
+  9%{opacity:1; clip-path: inset(0 0% 0 0);}
+  13%{opacity:0; clip-path: inset(0 0 0 100%);}
+  100%{opacity:0; clip-path: inset(0 0 0 100%);}
 }
 @keyframes kenburnsSlide{from{transform:scale(1);}to{transform:scale(1.1);}}
 @media (prefers-reduced-motion: reduce){
-  .hero-slideshow .slide{animation:none; opacity:0;}
-  .hero-slideshow .slide:first-child{opacity:1;}
+  .hero-slideshow .slide{animation:none; opacity:0; clip-path: inset(0 100% 0 0);}
+  .hero-slideshow .slide:first-child{opacity:1; clip-path: inset(0 0 0 0);}
 }
 .hero .reel-content{padding-bottom:88px;}
 .hero-content{max-width:640px;padding:120px 0 40px;}
