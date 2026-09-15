@@ -74,8 +74,10 @@ nav.main-nav a.nav-cta::after{display:none;}
 
 /* desplegable de subapartados (solo al pasar el ratón, escritorio) */
 .nav-item{position:relative;}
+/* puente invisible que cubre el hueco entre el enlace y el desplegable, para que el hover no se pierda al bajar el ratón */
+.nav-item::after{content:"";position:absolute;top:100%;left:50%;transform:translateX(-50%);width:560px;height:14px;}
 .nav-caret{display:inline-block;margin-left:5px;font-size:9px;color:#9aa8b4;transition:transform .2s ease;}
-.nav-item:hover .nav-caret{transform:translateY(1px) rotate(180deg);color:var(--navy);}
+.nav-item.is-open .nav-caret{transform:translateY(1px) rotate(180deg);color:var(--navy);}
 .nav-dropdown{
   position:absolute; top:100%; left:50%; transform:translateX(-50%) translateY(4px);
   margin-top:14px; width:560px; padding:0;
@@ -86,7 +88,8 @@ nav.main-nav a.nav-cta::after{display:none;}
   transition:opacity .18s ease, transform .18s ease, visibility .18s;
   z-index:50;
 }
-.nav-item:hover .nav-dropdown, .nav-item:focus-within .nav-dropdown{
+/* el estado abierto lo controla JS (con margen de gracia) para que el hover no se pierda al bajar el ratón hacia el panel */
+.nav-item.is-open .nav-dropdown, .nav-item:focus-within .nav-dropdown{
   opacity:1; visibility:visible; pointer-events:auto; transform:translateX(-50%) translateY(0);
 }
 .dropdown-links{flex:1; padding:16px 0; min-width:0;}
@@ -125,6 +128,7 @@ nav.main-nav a.nav-cta::after{display:none;}
 @media (max-width:980px){
   .nav-dropdown{display:none;}
   .nav-caret{display:none;}
+  .nav-item::after{display:none;}
 }
 
 /* botón hamburguesa (solo móvil) */

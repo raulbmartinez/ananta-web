@@ -26,6 +26,18 @@ document.addEventListener('DOMContentLoaded', function(){
     });
   }
 
+  // ---- desplegables de navegación: margen de gracia para que no se cierren al bajar el ratón ----
+  document.querySelectorAll('.nav-item').forEach(function(item){
+    var closeTimer = null;
+    item.addEventListener('mouseenter', function(){
+      if(closeTimer){ clearTimeout(closeTimer); closeTimer = null; }
+      item.classList.add('is-open');
+    });
+    item.addEventListener('mouseleave', function(){
+      closeTimer = setTimeout(function(){ item.classList.remove('is-open'); }, 300);
+    });
+  });
+
   // ---- botón WhatsApp: ocultar mientras haya una zona sensible a la vista (móvil) ----
   var waFloat = document.querySelector('.whatsapp-float');
   var coordSections = Array.prototype.map.call(
