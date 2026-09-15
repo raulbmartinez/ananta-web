@@ -256,6 +256,9 @@ h1, .display{
 .chapter{align-items:center;}
 .chapter .reel-fade{background:linear-gradient(90deg, rgba(5,8,12,.92) 0%, rgba(5,8,12,.55) 46%, rgba(5,8,12,.35) 100%);}
 .chapter-content{max-width:620px;padding:120px 0;}
+.chapter-content.closing-content{max-width:720px;margin:0 auto;text-align:center;}
+.closing .reel-fade{background:linear-gradient(180deg, rgba(5,8,12,.35) 0%, rgba(5,8,12,.55) 55%, rgba(5,8,12,.88) 100%);}
+.closing .chapter-content .btn{margin-top:10px;}
 .chapter blockquote{
   font-family:var(--serif); font-style:normal; font-weight:500; letter-spacing:-.01em;
   font-size:clamp(32px, 4.6vw, 54px); line-height:1.08; color:var(--paper); margin:0 0 24px;
@@ -321,10 +324,17 @@ section.stats{background:var(--grey-light); padding:110px 0; border-top:1px soli
 section.brands{background:var(--white);padding:90px 0;text-align:center;}
 .brands .eyebrow{justify-content:center;}
 .brands .eyebrow::before{display:none;}
-.brand-row{display:flex;justify-content:center;align-items:baseline;gap:64px;flex-wrap:wrap;margin-top:40px;}
-.brand-row span{font-family:var(--serif);font-size:24px;color:var(--ink);letter-spacing:.01em;}
-.brand-row a.flink-more{display:block;margin-top:32px;font-family:var(--label);font-size:12px;letter-spacing:.08em;text-transform:uppercase;color:var(--navy);}
-.brand-row a.flink-more:hover{color:var(--navy-deep);}
+.brand-row{display:flex;justify-content:center;align-items:baseline;gap:56px;flex-wrap:wrap;margin-top:40px;}
+.brand-row a{
+  position:relative;
+  font-family:var(--serif);font-size:24px;color:var(--ink);letter-spacing:.01em;
+  padding-bottom:4px;border-bottom:1px solid transparent;
+  transition:color .2s ease, border-color .2s ease;
+}
+.brand-row a:hover{color:var(--navy);border-color:var(--navy);}
+.brand-row a:not(:first-child)::before{content:"";position:absolute;left:-30px;top:50%;width:4px;height:4px;border-radius:50%;background:var(--grey-line);transform:translateY(-50%);}
+.brands a.flink-more{display:block;margin-top:32px;font-family:var(--label);font-size:12px;letter-spacing:.08em;text-transform:uppercase;color:var(--navy);border-bottom:none;}
+.brands a.flink-more:hover{color:var(--navy-deep);}
 
 /* CTA CIERRE — franja navy (acento oscuro deliberado) */
 section.close-cta{background:var(--navy-deep);padding:120px 0;text-align:center;}
@@ -605,6 +615,8 @@ section.contact{background:var(--white);padding:100px 0 130px;}
   .form-row{grid-template-columns:1fr;}
   .scroll-cue{display:none;}
   .hero .reel-content{padding-bottom:210px;}
+  .brand-row{gap:14px 40px;}
+  .brand-row a:not(:first-child)::before{display:none;}
 }
 
 /* ---------- BOTÓN FLOTANTE WHATSAPP ---------- */
