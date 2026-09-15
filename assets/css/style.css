@@ -184,21 +184,19 @@ nav.main-nav a.nav-cta::after{display:none;}
   background-size:cover; background-position:center 12%;
   opacity:0;
   clip-path: inset(0 100% 0 0);
-  animation: kenburnsSlide 52s ease-in-out infinite, heroWipe 32s cubic-bezier(.65,0,.35,1) infinite;
+  animation: kenburnsSlide 52s ease-in-out infinite, heroWipe 30s cubic-bezier(.65,0,.35,1) infinite;
 }
 .hero-slideshow .slide:nth-child(1){animation-delay:0s, 0s;}
-.hero-slideshow .slide:nth-child(2){animation-delay:0s, 4s;}
-.hero-slideshow .slide:nth-child(3){animation-delay:0s, 8s;}
-.hero-slideshow .slide:nth-child(4){animation-delay:0s, 12s;}
-.hero-slideshow .slide:nth-child(5){animation-delay:0s, 16s;}
-.hero-slideshow .slide:nth-child(6){animation-delay:0s, 20s;}
-.hero-slideshow .slide:nth-child(7){animation-delay:0s, 24s;}
-.hero-slideshow .slide:nth-child(8){animation-delay:0s, 28s;}
+.hero-slideshow .slide:nth-child(2){animation-delay:0s, 5s;}
+.hero-slideshow .slide:nth-child(3){animation-delay:0s, 10s;}
+.hero-slideshow .slide:nth-child(4){animation-delay:0s, 15s;}
+.hero-slideshow .slide:nth-child(5){animation-delay:0s, 20s;}
+.hero-slideshow .slide:nth-child(6){animation-delay:0s, 25s;}
 @keyframes heroWipe{
   0%{opacity:0; clip-path: inset(0 100% 0 0);}
   5%{opacity:1; clip-path: inset(0 0% 0 0);}
-  9%{opacity:1; clip-path: inset(0 0% 0 0);}
-  13%{opacity:0; clip-path: inset(0 0 0 100%);}
+  14%{opacity:1; clip-path: inset(0 0% 0 0);}
+  20%{opacity:0; clip-path: inset(0 0 0 100%);}
   100%{opacity:0; clip-path: inset(0 0 0 100%);}
 }
 @keyframes kenburnsSlide{from{transform:scale(1);}to{transform:scale(1.1);}}
