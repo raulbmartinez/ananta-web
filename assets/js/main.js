@@ -161,6 +161,26 @@ document.addEventListener('DOMContentLoaded', function(){
     });
   }
 
+  // ---- parallax suave del fondo del hero al hacer scroll ----
+  var heroSlideshow = document.querySelector('.hero-slideshow');
+  if(heroSlideshow){
+    var tickingParallax = false;
+    function updateParallax(){
+      var y = window.scrollY;
+      var limit = heroSection ? heroSection.offsetHeight : window.innerHeight;
+      if(y < limit){
+        heroSlideshow.style.transform = 'translateY(' + Math.min(y * 0.12, 70) + 'px)';
+      }
+      tickingParallax = false;
+    }
+    window.addEventListener('scroll', function(){
+      if(!tickingParallax){
+        requestAnimationFrame(updateParallax);
+        tickingParallax = true;
+      }
+    }, {passive:true});
+  }
+
   // ---- red de puntos tipo "precisión" (hero, blog...) ----
   document.querySelectorAll('.network-canvas').forEach(function(networkCanvas){
     var ctx = networkCanvas.getContext('2d');
