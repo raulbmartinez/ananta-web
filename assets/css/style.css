@@ -74,8 +74,6 @@ nav.main-nav a.nav-cta::after{display:none;}
 
 /* desplegable de subapartados (solo al pasar el ratón, escritorio) */
 .nav-item{position:relative;}
-/* puente invisible que cubre el hueco entre el enlace y el desplegable, para que el hover no se pierda al bajar el ratón */
-.nav-item::after{content:"";position:absolute;top:100%;left:50%;transform:translateX(-50%);width:560px;height:14px;}
 .nav-caret-btn{
   display:inline-flex; align-items:center; justify-content:center;
   background:none; border:none; padding:0; margin:0 0 0 5px;
@@ -576,7 +574,6 @@ section.contact{background:var(--white);padding:100px 0 130px;}
 
   /* nav-item con subapartados: acordeón en vez de mega-menú flotante */
   .nav-item{display:flex; flex-wrap:wrap; position:relative;}
-  .nav-item::after{display:none;}
   .nav-item > a{flex:1; border-bottom:none;}
   .nav-caret-btn{
     pointer-events:auto; cursor:pointer;
