@@ -310,10 +310,15 @@ section.content-block.alt{background:var(--grey-light);border-top:1px solid var(
 
 /* ---------- CARD GRID (servicios / marcas) ---------- */
 .card-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:1px;background:var(--grey-line);border:1px solid var(--grey-line);}
-.card-grid > *{background:var(--white);padding:34px 34px;transition:transform .25s ease, box-shadow .25s ease;position:relative;}
+.card-grid > *{background:var(--white);padding:34px 34px;overflow:hidden;transition:transform .3s cubic-bezier(.2,.7,.2,1), box-shadow .3s ease;position:relative;}
 section.content-block.alt .card-grid > *{background:var(--grey-light);}
-.card-grid > *:hover{transform:translateY(-4px);box-shadow:0 18px 36px rgba(10,30,50,.08);z-index:1;}
-.card-num{font-family:var(--label);font-size:11.5px;letter-spacing:.08em;color:var(--navy);display:block;margin-bottom:18px;}
+.card-grid > *:hover{transform:translateY(-6px);box-shadow:0 26px 48px rgba(10,30,50,.14);z-index:1;}
+.card-num{
+  position:absolute; top:16px; left:16px; z-index:2;
+  background:rgba(7,34,63,.88); color:var(--paper);
+  font-family:var(--label); font-size:11px; font-weight:600; letter-spacing:.06em;
+  padding:6px 12px; margin:0;
+}
 .card-grid h3{font-family:var(--serif);font-size:22px;font-weight:500;color:var(--ink);margin:0 0 14px;letter-spacing:-.005em;}
 .card-grid p{font-size:14.5px;line-height:1.75;color:var(--slate);margin:0;}
 .card-grid a.card-link{display:inline-block;margin-top:18px;font-family:var(--label);font-size:11.5px;letter-spacing:.06em;text-transform:uppercase;color:var(--navy);border-bottom:1px solid rgba(10,47,87,.35);padding-bottom:2px;}
@@ -323,10 +328,11 @@ section.content-block.alt .card-grid > *{background:var(--grey-light);}
 .card-grid .card-tag{display:block;font-family:var(--sans);font-style:italic;font-size:13.5px;color:var(--slate);margin:0 0 12px;line-height:1.5;}
 .card-grid .card-cta{margin-top:20px;padding:11px 22px;font-size:11px;}
 
-/* tarjetas de servicio: foto de cabecera */
-.card-grid .card-media{width:128px;height:128px;margin:0 0 22px;overflow:hidden;background:var(--grey-light);border-radius:4px;aspect-ratio:1/1;}
-.card-grid .card-media img{width:100%;height:100%;object-fit:cover;display:block;transition:transform .5s cubic-bezier(.2,.7,.2,1);}
-.card-grid > *:hover .card-media img{transform:scale(1.08);}
+/* tarjetas de servicio: foto de cabecera a sangre */
+.card-grid .card-media{width:auto;height:210px;margin:-34px -34px 24px;overflow:hidden;background:var(--navy-deep);position:relative;}
+.card-grid .card-media img{width:100%;height:100%;object-fit:cover;display:block;transition:transform .6s cubic-bezier(.2,.7,.2,1);}
+.card-grid .card-media::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg, rgba(5,8,12,0) 60%, rgba(5,8,12,.3) 100%);}
+.card-grid > *:hover .card-media img{transform:scale(1.07);}
 
 /* ---------- BLOQUE (banda navy de sección, estilo del brief de marca) ---------- */
 .service-block{background:var(--white);padding-bottom:100px;}
@@ -334,6 +340,15 @@ section.content-block.alt .card-grid > *{background:var(--grey-light);}
 .block-band{background:var(--navy-deep);padding:26px 0;}
 .block-band h2{color:var(--paper);font-family:var(--label);font-size:19px;letter-spacing:.02em;text-transform:uppercase;font-weight:700;margin:0;}
 .block-intro{font-size:17px;line-height:1.6;color:var(--ink);font-weight:500;max-width:760px;margin:40px 0 36px;}
+
+/* bloque final con imagen (p.ej. Automatización y Control) */
+.block-grid{display:grid;grid-template-columns:1.05fr .95fr;gap:64px;align-items:center;}
+.block-photo{position:relative;overflow:hidden;aspect-ratio:5/4;background:var(--navy-deep);}
+.block-photo img{width:100%;height:100%;object-fit:cover;display:block;transition:transform .9s cubic-bezier(.2,.7,.2,1);}
+.block-photo:hover img{transform:scale(1.06);}
+.block-photo .network-canvas{position:absolute;inset:0;z-index:1;opacity:.5;mix-blend-mode:screen;pointer-events:none;}
+.block-photo::after{content:"";position:absolute;inset:0;z-index:1;pointer-events:none;background:linear-gradient(155deg, rgba(10,47,87,.4) 0%, transparent 48%);}
+@media (max-width:900px){.block-grid{grid-template-columns:1fr;gap:0;}}
 
 /* ---------- listas de contenido (metodología, valor diferencial) ---------- */
 .check-list{list-style:none;margin:24px 0 0;padding:0;display:grid;gap:14px;max-width:640px;}
