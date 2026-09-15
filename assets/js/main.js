@@ -10,24 +10,51 @@ document.addEventListener('DOMContentLoaded', function(){
     });
   }
 
+  var navItems = document.querySelectorAll('.nav-item');
+
   // ---- menú móvil ----
   var navToggle = document.getElementById('navToggle');
   var mainNav = document.getElementById('mainNav');
+  function closeMobileAccordions(){
+    navItems.forEach(function(item){
+      item.classList.remove('mobile-open');
+      var btn = item.querySelector('.nav-caret-btn');
+      if(btn) btn.setAttribute('aria-expanded', 'false');
+    });
+  }
   if(navToggle && mainNav){
     navToggle.addEventListener('click', function(){
       var open = mainNav.classList.toggle('is-open');
       navToggle.setAttribute('aria-expanded', open ? 'true' : 'false');
+      if(!open) closeMobileAccordions();
     });
     mainNav.querySelectorAll('a').forEach(function(a){
       a.addEventListener('click', function(){
         mainNav.classList.remove('is-open');
         navToggle.setAttribute('aria-expanded', 'false');
+        closeMobileAccordions();
       });
     });
   }
 
+  // ---- acordeón de subapartados en el menú móvil ----
+  navItems.forEach(function(item){
+    var caretBtn = item.querySelector('.nav-caret-btn');
+    if(!caretBtn) return;
+    caretBtn.addEventListener('click', function(){
+      var willOpen = !item.classList.contains('mobile-open');
+      navItems.forEach(function(other){
+        if(other === item) return;
+        other.classList.remove('mobile-open');
+        var otherBtn = other.querySelector('.nav-caret-btn');
+        if(otherBtn) otherBtn.setAttribute('aria-expanded', 'false');
+      });
+      item.classList.toggle('mobile-open', willOpen);
+      caretBtn.setAttribute('aria-expanded', willOpen ? 'true' : 'false');
+    });
+  });
+
   // ---- desplegables de navegación: margen de gracia para que no se cierren al bajar el ratón ----
-  var navItems = document.querySelectorAll('.nav-item');
   var navCloseTimers = new Map();
   navItems.forEach(function(item){
     item.addEventListener('mouseenter', function(){
