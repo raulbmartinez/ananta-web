@@ -148,18 +148,7 @@ document.addEventListener('DOMContentLoaded', function(){
     });
   }
 
-  // ---- hero spotlight follow ----
   var heroSection = document.querySelector('.hero');
-  var spotlight = document.querySelector('.hero-spotlight');
-  if(heroSection && spotlight){
-    heroSection.addEventListener('mousemove', function(ev){
-      var r = heroSection.getBoundingClientRect();
-      var mx = ((ev.clientX - r.left) / r.width * 100).toFixed(1) + '%';
-      var my = ((ev.clientY - r.top) / r.height * 100).toFixed(1) + '%';
-      spotlight.style.setProperty('--mx', mx);
-      spotlight.style.setProperty('--my', my);
-    });
-  }
 
   // ---- parallax suave del fondo del hero al hacer scroll ----
   var heroSlideshow = document.querySelector('.hero-slideshow');

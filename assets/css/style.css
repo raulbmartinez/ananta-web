@@ -351,7 +351,6 @@ footer.site-footer{background:var(--navy-deep);padding:80px 0 0;border-top:1px s
 
 /* ---------- hero precision-network canvas + spotlight ---------- */
 .hero-canvas{position:absolute; inset:0; z-index:1; pointer-events:none; mix-blend-mode:screen; opacity:.55;}
-.hero-spotlight{position:absolute; inset:0; z-index:1; pointer-events:none; background:radial-gradient(420px circle at var(--mx,60%) var(--my,35%), rgba(111,163,201,.18), transparent 62%);}
 
 /* ---------- split reveal on chapter image ---------- */
 .chapter .reel-bg{clip-path:circle(6% at 30% 50%); transition:clip-path 1.7s cubic-bezier(.16,.8,.2,1);}
