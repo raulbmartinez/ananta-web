@@ -27,14 +27,24 @@ document.addEventListener('DOMContentLoaded', function(){
   }
 
   // ---- desplegables de navegación: margen de gracia para que no se cierren al bajar el ratón ----
-  document.querySelectorAll('.nav-item').forEach(function(item){
-    var closeTimer = null;
+  var navItems = document.querySelectorAll('.nav-item');
+  var navCloseTimers = new Map();
+  navItems.forEach(function(item){
     item.addEventListener('mouseenter', function(){
-      if(closeTimer){ clearTimeout(closeTimer); closeTimer = null; }
+      var ownTimer = navCloseTimers.get(item);
+      if(ownTimer){ clearTimeout(ownTimer); navCloseTimers.delete(item); }
+      // al entrar en uno nuevo, cerrar cualquier otro al instante (evita que se muestren varios a la vez con un ratón rápido)
+      navItems.forEach(function(other){
+        if(other === item) return;
+        var otherTimer = navCloseTimers.get(other);
+        if(otherTimer){ clearTimeout(otherTimer); navCloseTimers.delete(other); }
+        other.classList.remove('is-open');
+      });
       item.classList.add('is-open');
     });
     item.addEventListener('mouseleave', function(){
-      closeTimer = setTimeout(function(){ item.classList.remove('is-open'); }, 300);
+      var timer = setTimeout(function(){ item.classList.remove('is-open'); }, 300);
+      navCloseTimers.set(item, timer);
     });
   });
 
