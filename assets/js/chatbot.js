@@ -21,26 +21,40 @@ document.addEventListener('DOMContentLoaded', function(){
   // cada tema lleva sus palabras clave (sin acentos) para poder responder también en texto libre
   var MENU = [
     {
+      id: 'servicios',
       label: 'Servicios de mantenimiento', icon: ICONS.servicios,
-      keywords: ['servicio','servicios','mantenimiento','mantener','reparar','reparacion','reparaciones','averia','averias','fallo','fallos','montaje','montajes','parada','paradas','correctivo','preventivo','predictivo','automatizacion','automatizar','control de procesos','valvula','valvulas','soldadura'],
-      answer: 'Ofrecemos mantenimiento industrial (correctivo, preventivo y predictivo), montajes y paradas de planta, y automatización y control de procesos.',
+      keywords: [
+        'servicio','servicios','mantenimiento','mantener','reparar','reparacion','reparaciones','arreglar','revisar','revision',
+        'averia','averias','fallo','fallos','fallando','montaje','montajes','parada','paradas','correctivo','preventivo','predictivo',
+        'automatizacion','automatizar','control de procesos','valvula','valvulas','soldadura','vibracion','termografia','ultrasonido',
+        // equipos/maquinaria habituales que puede mencionar un cliente
+        'centrifuga','bomba','bombas','motor','motores','compresor','compresores','turbina','turbinas','reductor','reductores',
+        'agitador','agitadores','transmision','maquina','maquinas','maquinaria','equipo','equipos','instalacion','instalaciones',
+        'pieza','piezas','componente','componentes','rodamiento','rodamientos','engranaje','engranajes','cinta transportadora',
+        'caldera','intercambiador','planta',
+        // señales de "algo va mal" (sin necesidad de nombrar la máquina exacta)
+        'rota','roto','estropeada','estropeado','averiada','averiado','no funciona','no funcionan','parado','parada la maquina',
+        'se ha roto','se ha parado','se para','dañada','dañado','rompio','se rompio','ruido raro','hace ruido','gotea','fuga',
+        'vibra','oxidada','desgastada','funciona mal','deja de funcionar'
+      ],
+      answer: 'Ofrecemos mantenimiento industrial (correctivo, preventivo y predictivo), montajes y paradas de planta, y automatización y control de procesos. Si tiene un equipo averiado, nuestro equipo de mantenimiento correctivo puede ayudarle.',
       link: {href:'negocio.html', label:'Ver todos los servicios →'}
     },
     {
       label: 'Productos y marcas', icon: ICONS.productos,
-      keywords: ['producto','productos','marca','marcas','bertoli','nakakin','nanakin','on fitting','onfitting','homogeneizador','homogeneizadores','bomba','bombas','racor','racores','catalogo','distribuidor','distribuidor oficial'],
+      keywords: ['producto','productos','marca','marcas','bertoli','nakakin','nanakin','on fitting','onfitting','homogeneizador','homogeneizadores','racor','racores','catalogo','distribuidor','distribuidor oficial','fabricante','que vendeis','vendeis'],
       answer: 'Somos distribuidor oficial de Bertoli, Nakakin y On Fitting.',
       link: {href:'productos.html', label:'Ver catálogo →'}
     },
     {
       label: 'Sedes y contacto', icon: ICONS.sedes,
-      keywords: ['sede','sedes','oficina','oficinas','direccion','ubicacion','localizacion','donde estan','donde estais','donde estamos','casarrubios','talavera','fresno','toledo','badajoz','california','estados unidos','mapa','planta'],
+      keywords: ['sede','sedes','oficina','oficinas','direccion','ubicacion','localizacion','donde estan','donde estais','donde estamos','situados','casarrubios','talavera','fresno','toledo','badajoz','california','estados unidos','mapa'],
       answer: 'Sede central en Casarrubios del Monte (Toledo), delegación en Talavera la Real (Badajoz) y oficina en Fresno, California.',
       link: {href:'contacto.html', label:'Ver mapas y datos de contacto →'}
     },
     {
       label: 'Solicitar información', icon: ICONS.info,
-      keywords: ['informacion','presupuesto','precio','precios','cotizacion','coste','costes','consulta','contacto','contactar','email','correo','telefono','llamar','formulario','proyecto'],
+      keywords: ['informacion','presupuesto','precio','precios','cuanto cuesta','cuanto vale','cotizacion','coste','costes','consulta','contacto','contactar','email','correo','telefono','llamar','formulario','proyecto','escribir'],
       answer: 'Puede escribirnos a comercial@ananta.es, llamar al +34 918 18 34 74 o rellenar nuestro formulario de contacto.',
       link: {href:'contacto.html#formulario', label:'Ir al formulario →'}
     },
@@ -59,6 +73,9 @@ document.addEventListener('DOMContentLoaded', function(){
 
   var GREETINGS = ['hola','buenas','buenos dias','buenas tardes','buenas noches','hey','saludos','ola'];
   var THANKS = ['gracias','genial','perfecto','vale','ok','entendido','muchas gracias'];
+  // si el mensaje menciona una avería aunque no reconozcamos la máquina exacta, lo tratamos
+  // igualmente como una consulta de mantenimiento correctivo (es el caso de uso más habitual)
+  var BREAKDOWN_SIGNALS = ['roto','rota','averia','averiado','averiada','estropeado','estropeada','no funciona','se ha roto','se ha parado','fallo','dañado','dañada','se rompio'];
 
   function normalize(s){
     return (s || '').toLowerCase().normalize('NFD').replace(/[̀-ͯ]/g, '').trim();
@@ -162,6 +179,11 @@ document.addEventListener('DOMContentLoaded', function(){
       item.keywords.forEach(function(kw){
         if(text.indexOf(kw) !== -1) score += kw.split(' ').length; // las frases de varias palabras pesan más
       });
+      // "algo está roto/averiado" es casi siempre mantenimiento correctivo, aunque no
+      // reconozcamos el nombre exacto de la máquina que menciona el cliente
+      if(item.id === 'servicios' && BREAKDOWN_SIGNALS.some(function(s){ return text.indexOf(s) !== -1; })){
+        score += 3;
+      }
       if(score > bestScore){ bestScore = score; best = item; }
     });
     return best;
