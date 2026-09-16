@@ -71,6 +71,12 @@ nav.main-nav a.nav-cta{
 }
 nav.main-nav a.nav-cta:hover{border-color:var(--navy); background:var(--navy); color:var(--white);}
 nav.main-nav a.nav-cta::after{display:none;}
+nav.main-nav a.lang-switch{
+  border:1px solid var(--grey-line); border-radius:20px; padding:6px 14px;
+  font-size:10.5px; color:var(--slate); margin-left:4px;
+}
+nav.main-nav a.lang-switch:hover{border-color:var(--navy); color:var(--navy); background:var(--grey-light);}
+nav.main-nav a.lang-switch::after{display:none;}
 
 /* desplegable de subapartados (solo al pasar el ratón, escritorio) */
 .nav-item{position:relative;}
@@ -569,6 +575,7 @@ section.contact{background:var(--white);padding:100px 0 130px;}
   nav.main-nav a{padding:16px 24px; border-bottom:1px solid var(--grey-line); font-size:13px;}
   nav.main-nav a::after{display:none;}
   nav.main-nav a.nav-cta{border:1px solid var(--navy); margin:14px 24px; padding:13px; text-align:center;}
+  nav.main-nav a.lang-switch{border:none; border-radius:0; margin:0; padding:16px 24px; font-size:13px;}
 
   /* nav-item con subapartados: acordeón en vez de mega-menú flotante */
   .nav-item{display:flex; flex-wrap:wrap; position:relative;}
@@ -659,7 +666,7 @@ body:has(.coords-bar, .wa-avoid) .whatsapp-float.wa-visible{opacity:1; pointer-e
 
 .chatbot-panel{
   position:absolute; right:0; bottom:76px; width:370px; max-width:calc(100vw - 48px);
-  height:min(540px, 70vh);
+  height:min(540px, 70vh); height:min(540px, 70dvh);
   background:var(--white); border-radius:18px; overflow:hidden;
   box-shadow:0 30px 70px rgba(10,30,50,.32); border:1px solid var(--grey-line);
   display:flex; flex-direction:column;
@@ -778,5 +785,5 @@ body:has(.coords-bar, .wa-avoid) .whatsapp-float.wa-visible{opacity:1; pointer-e
 
 @media (max-width:640px){
   .chatbot{right:16px; bottom:16px;}
-  .chatbot-panel{right:-8px; bottom:74px; width:calc(100vw - 24px); height:min(70vh, 560px);}
+  .chatbot-panel{right:-8px; bottom:74px; width:calc(100vw - 24px); height:min(70vh, 560px); height:min(70dvh, 560px);}
 }

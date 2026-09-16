@@ -7,7 +7,7 @@ document.addEventListener('DOMContentLoaded', function(){
   var input = document.getElementById('chatbotInput');
   if(!wrapper || !toggle || !closeBtn || !body) return;
 
-  var WA_URL = "https://wa.me/34628116355?text=Hola%2C%20me%20gustar%C3%ADa%20hablar%20con%20un%20especialista%20de%20ANANTA.";
+  var WA_URL = "https://wa.me/34628116355?text=Hello%2C%20I%27d%20like%20to%20speak%20with%20a%20specialist%20at%20ANANTA.";
 
   var ICONS = {
     servicios: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M14.7 6.3a4 4 0 0 0-5.4 5.4L3 18l3 3 6.3-6.3a4 4 0 0 0 5.4-5.4l-2.8 2.8-2-2 2.8-2.8Z"/></svg>',
@@ -18,67 +18,66 @@ document.addEventListener('DOMContentLoaded', function(){
     whatsapp: '<svg viewBox="0 0 24 24" fill="currentColor"><path d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91c0 1.75.46 3.46 1.32 4.96L2.05 22l5.25-1.38a9.9 9.9 0 0 0 4.74 1.21h.01c5.46 0 9.9-4.45 9.9-9.91C21.96 6.45 17.5 2 12.04 2Zm0 18.06h-.01a8.2 8.2 0 0 1-4.18-1.14l-.3-.18-3.11.82.83-3.03-.2-.31a8.2 8.2 0 0 1-1.26-4.31c0-4.53 3.69-8.22 8.23-8.22 2.2 0 4.26.86 5.82 2.41a8.17 8.17 0 0 1 2.41 5.82c0 4.53-3.69 8.14-8.23 8.14Zm4.51-6.16c-.25-.12-1.46-.72-1.68-.8-.23-.08-.39-.12-.56.12-.16.25-.64.8-.79.96-.14.16-.29.18-.54.06-.25-.12-1.04-.38-1.99-1.22-.73-.65-1.23-1.46-1.37-1.71-.14-.25-.02-.38.11-.51.11-.11.25-.29.37-.43.12-.14.16-.25.25-.41.08-.16.04-.31-.02-.43-.06-.12-.56-1.34-.76-1.84-.2-.48-.41-.42-.56-.42-.14 0-.31-.02-.47-.02-.16 0-.43.06-.65.31-.23.25-.85.83-.85 2.03s.87 2.36.99 2.52c.12.16 1.71 2.6 4.14 3.65.58.25 1.03.4 1.38.51.58.18 1.11.16 1.53.1.47-.07 1.46-.6 1.66-1.17.21-.58.21-1.08.14-1.18-.06-.11-.22-.17-.47-.29Z"/></svg>'
   };
 
-  // cada tema lleva sus palabras clave (sin acentos) para poder responder también en texto libre
+  // each topic carries its own keywords so free text can be matched too
   var MENU = [
     {
       id: 'servicios',
-      label: 'Servicios de mantenimiento', icon: ICONS.servicios,
+      label: 'Maintenance services', icon: ICONS.servicios,
       keywords: [
-        'servicio','servicios','mantenimiento','mantener','reparar','reparacion','reparaciones','arreglar','revisar','revision',
-        'averia','averias','fallo','fallos','fallando','montaje','montajes','parada','paradas','correctivo','preventivo','predictivo',
-        'automatizacion','automatizar','control de procesos','valvula','valvulas','soldadura','vibracion','termografia','ultrasonido',
-        // equipos/maquinaria habituales que puede mencionar un cliente
-        'centrifuga','bomba','bombas','motor','motores','compresor','compresores','turbina','turbinas','reductor','reductores',
-        'agitador','agitadores','transmision','maquina','maquinas','maquinaria','equipo','equipos','instalacion','instalaciones',
-        'pieza','piezas','componente','componentes','rodamiento','rodamientos','engranaje','engranajes','cinta transportadora',
-        'caldera','intercambiador','planta',
-        // señales de "algo va mal" (sin necesidad de nombrar la máquina exacta)
-        'rota','roto','estropeada','estropeado','averiada','averiado','no funciona','no funcionan','parado','parada la maquina',
-        'se ha roto','se ha parado','se para','dañada','dañado','rompio','se rompio','ruido raro','hace ruido','gotea','fuga',
-        'vibra','oxidada','desgastada','funciona mal','deja de funcionar'
+        'service','services','maintenance','maintain','repair','repairs','fix','fixing','check','inspection','inspect',
+        'breakdown','breakdowns','fault','faults','failing','assembly','shutdown','shutdowns','corrective','preventive','predictive',
+        'automation','automate','process control','valve','valves','welding','vibration','thermography','ultrasound',
+        // common equipment/machinery a customer might mention
+        'centrifuge','pump','pumps','motor','motors','compressor','compressors','turbine','turbines','gearbox','gearboxes',
+        'agitator','agitators','transmission','machine','machines','machinery','equipment','installation','installations',
+        'part','parts','component','components','bearing','bearings','gear','gears','conveyor belt',
+        'boiler','heat exchanger','plant',
+        // "something is wrong" signals (no need to name the exact machine)
+        'broken','not working','doesnt work','stopped','stopped working','failed','damaged','faulty','out of order',
+        'strange noise','weird noise','noisy','leaking','leak','vibrating','rusty','worn out','malfunction','malfunctioning'
       ],
-      answer: 'Ofrecemos mantenimiento industrial (correctivo, preventivo y predictivo), montajes y paradas de planta, y automatización y control de procesos. Si tiene un equipo averiado, nuestro equipo de mantenimiento correctivo puede ayudarle.',
-      link: {href:'negocio.html', label:'Ver todos los servicios →'}
+      answer: 'We offer industrial maintenance (corrective, preventive and predictive), plant assembly and shutdowns, and process automation and control. If you have a broken piece of equipment, our corrective maintenance team can help.',
+      link: {href:'negocio.html', label:'View all services →'}
     },
     {
-      label: 'Productos y marcas', icon: ICONS.productos,
-      keywords: ['producto','productos','marca','marcas','bertoli','nakakin','nanakin','on fitting','onfitting','homogeneizador','homogeneizadores','racor','racores','catalogo','distribuidor','distribuidor oficial','fabricante','que vendeis','vendeis'],
-      answer: 'Somos distribuidor oficial de Bertoli, Nakakin y On Fitting.',
-      link: {href:'productos.html', label:'Ver catálogo →'}
+      label: 'Products & brands', icon: ICONS.productos,
+      keywords: ['product','products','brand','brands','bertoli','nakakin','nanakin','on fitting','onfitting','homogenizer','homogenizers','fitting','fittings','catalog','catalogue','distributor','official distributor','manufacturer','what do you sell'],
+      answer: 'We are the official distributor of Bertoli, Nakakin and On Fitting.',
+      link: {href:'productos.html', label:'View catalog →'}
     },
     {
-      label: 'Sedes y contacto', icon: ICONS.sedes,
-      keywords: ['sede','sedes','oficina','oficinas','direccion','ubicacion','localizacion','donde estan','donde estais','donde estamos','situados','casarrubios','talavera','fresno','toledo','badajoz','california','estados unidos','mapa'],
-      answer: 'Sede central en Casarrubios del Monte (Toledo), delegación en Talavera la Real (Badajoz) y oficina en Fresno, California.',
-      link: {href:'contacto.html', label:'Ver mapas y datos de contacto →'}
+      label: 'Locations & contact', icon: ICONS.sedes,
+      keywords: ['location','locations','office','offices','address','where are you','where are you based','based','situated','casarrubios','talavera','fresno','toledo','badajoz','california','united states','usa','map'],
+      answer: 'Head office in Casarrubios del Monte (Toledo, Spain), a branch in Talavera la Real (Badajoz, Spain), and an office in Fresno, California.',
+      link: {href:'contacto.html', label:'View maps & contact details →'}
     },
     {
-      label: 'Solicitar información', icon: ICONS.info,
-      keywords: ['informacion','presupuesto','precio','precios','cuanto cuesta','cuanto vale','cotizacion','coste','costes','consulta','contacto','contactar','email','correo','telefono','llamar','formulario','proyecto','escribir'],
-      answer: 'Puede escribirnos a comercial@ananta.es, llamar al +34 918 18 34 74 o rellenar nuestro formulario de contacto.',
-      link: {href:'contacto.html#formulario', label:'Ir al formulario →'}
+      label: 'Request information', icon: ICONS.info,
+      keywords: ['information','info','quote','quotation','price','prices','how much','cost','costs','inquiry','enquiry','contact','email','phone','call','form','project','write to you'],
+      answer: 'You can email us at comercial@ananta.es, call +34 918 18 34 74, or fill in our contact form.',
+      link: {href:'contacto.html#formulario', label:'Go to the form →'}
     },
     {
-      label: 'Trabajar con nosotros', icon: ICONS.empleo,
-      keywords: ['trabajo','trabajar','empleo','empleos','candidatura','curriculum','cv','vacante','vacantes','seleccion de personal','oferta de empleo','contratar','contratacion'],
-      answer: 'Envíenos su candidatura a través del formulario de contacto, indicando "selección de personal" en el asunto.',
-      link: {href:'contacto.html#formulario', label:'Ir al formulario →'}
+      label: 'Careers', icon: ICONS.empleo,
+      keywords: ['job','jobs','work with us','career','careers','application','resume','cv','vacancy','vacancies','hiring','hire','recruitment','open positions'],
+      answer: 'You can send us your application through the contact form — please mention "recruitment" in the subject line.',
+      link: {href:'contacto.html#formulario', label:'Go to the form →'}
     },
     {
-      label: 'Hablar con un especialista', icon: ICONS.whatsapp, accent: true,
-      keywords: ['whatsapp','especialista','hablar con alguien','hablar con una persona','persona','humano','agente','llamada','urgente','urgencia'],
+      label: 'Talk to a specialist', icon: ICONS.whatsapp, accent: true,
+      keywords: ['whatsapp','specialist','talk to someone','talk to a person','person','human','agent','call me','urgent','emergency'],
       whatsapp: true
     }
   ];
 
-  var GREETINGS = ['hola','buenas','buenos dias','buenas tardes','buenas noches','hey','saludos','ola'];
-  var THANKS = ['gracias','genial','perfecto','vale','ok','entendido','muchas gracias'];
-  // si el mensaje menciona una avería aunque no reconozcamos la máquina exacta, lo tratamos
-  // igualmente como una consulta de mantenimiento correctivo (es el caso de uso más habitual)
-  var BREAKDOWN_SIGNALS = ['roto','rota','averia','averiado','averiada','estropeado','estropeada','no funciona','se ha roto','se ha parado','fallo','dañado','dañada','se rompio'];
+  var GREETINGS = ['hi','hello','hey','good morning','good afternoon','good evening','greetings'];
+  var THANKS = ['thanks','thank you','great','perfect','awesome','ok','got it','cheers'];
+  // if the message mentions a breakdown even without naming the exact machine, we still treat
+  // it as a corrective-maintenance enquiry (by far the most common use case)
+  var BREAKDOWN_SIGNALS = ['broken','not working','doesnt work','stopped working','failed','damaged','faulty','out of order','malfunction'];
 
   function normalize(s){
-    return (s || '').toLowerCase().normalize('NFD').replace(/[̀-ͯ]/g, '').trim();
+    return (s || '').toLowerCase().normalize('NFD').replace(/[̀-ͯ]/g, '').replace(/['’]/g, '').trim();
   }
 
   function el(tag, cls, html){
@@ -145,14 +144,14 @@ document.addEventListener('DOMContentLoaded', function(){
 
   function followUp(){
     setTimeout(function(){
-      addBotMessage('¿Puedo ayudarle con algo más?', renderMenu);
+      addBotMessage('Can I help you with anything else?', renderMenu);
     }, 600);
   }
 
   function answerItem(item){
     if(item.whatsapp){
-      addBotMessage('Le paso con un especialista por WhatsApp:', function(){
-        addLink(WA_URL, 'Abrir WhatsApp →', {blank:true});
+      addBotMessage('Connecting you with a specialist on WhatsApp:', function(){
+        addLink(WA_URL, 'Open WhatsApp →', {blank:true});
         followUp();
       });
     } else {
@@ -168,7 +167,7 @@ document.addEventListener('DOMContentLoaded', function(){
     setTimeout(function(){ answerItem(item); }, 300);
   }
 
-  // ---- búsqueda por palabras clave para el texto libre ----
+  // ---- keyword search for free text ----
   function findBestMatch(rawText){
     var text = normalize(rawText);
     if(!text) return null;
@@ -177,10 +176,10 @@ document.addEventListener('DOMContentLoaded', function(){
     MENU.forEach(function(item){
       var score = 0;
       item.keywords.forEach(function(kw){
-        if(text.indexOf(kw) !== -1) score += kw.split(' ').length; // las frases de varias palabras pesan más
+        if(text.indexOf(kw) !== -1) score += kw.split(' ').length; // multi-word phrases weigh more
       });
-      // "algo está roto/averiado" es casi siempre mantenimiento correctivo, aunque no
-      // reconozcamos el nombre exacto de la máquina que menciona el cliente
+      // "something is broken" is almost always corrective maintenance, even if we don't
+      // recognise the exact machine the customer mentions
       if(item.id === 'servicios' && BREAKDOWN_SIGNALS.some(function(s){ return text.indexOf(s) !== -1; })){
         score += 3;
       }
@@ -201,18 +200,18 @@ document.addEventListener('DOMContentLoaded', function(){
     var normalized = normalize(text);
     setTimeout(function(){
       if(isThanks(normalized) && normalized.length < 30){
-        addBotMessage('¡De nada! Estoy aquí si necesita algo más.', renderMenu);
+        addBotMessage('You\'re welcome! I\'m here if you need anything else.', renderMenu);
         return;
       }
       if(isGreeting(normalized) && normalized.length < 20){
-        addBotMessage('¡Hola! ¿En qué puedo ayudarle?', renderMenu);
+        addBotMessage('Hello! How can I help you?', renderMenu);
         return;
       }
       var match = findBestMatch(text);
       if(match){
         answerItem(match);
       } else {
-        addBotMessage('No estoy seguro de haber entendido su consulta. Puede elegir una opción o escribir con otras palabras; si lo prefiere, hable directamente con un especialista:', renderMenu);
+        addBotMessage('I\'m not sure I understood your question. You can pick an option below or try different words — or speak directly with a specialist:', renderMenu);
       }
     }, 300);
   }
@@ -220,11 +219,11 @@ document.addEventListener('DOMContentLoaded', function(){
   var started = false;
   function initConversation(){
     body.innerHTML = '';
-    addBotMessage('Hola 👋 Soy el asistente virtual de ANANTA. Puede escribir su consulta o elegir una opción:', renderMenu);
+    addBotMessage('Hi 👋 I\'m the ANANTA virtual assistant. You can type your question or choose an option:', renderMenu);
   }
 
-  // en móvil, enfocar el campo abre el teclado justo al abrir el panel y lo descoloca
-  // (tapando la conversación); solo lo hacemos en dispositivos con ratón/teclado físico
+  // on mobile, focusing the field opens the keyboard right as the panel opens and shifts it
+  // (hiding the conversation); only do this on devices with a mouse/physical keyboard
   var canAutoFocus = window.matchMedia && window.matchMedia('(hover:hover) and (pointer:fine)').matches;
 
   function openChat(){
@@ -254,9 +253,9 @@ document.addEventListener('DOMContentLoaded', function(){
       ev.preventDefault();
       submitInput();
     });
-    // algunos navegadores (p.ej. en pruebas automatizadas o teclados virtuales) no disparan
-    // siempre el envío implícito del formulario al pulsar Enter, así que lo forzamos aquí
-    // y cancelamos el comportamiento nativo para no enviar el mensaje dos veces
+    // some browsers (e.g. automated testing or virtual keyboards) don't always fire the
+    // form's implicit submit on Enter, so we force it here and cancel the native behaviour
+    // to avoid sending the message twice
     input.addEventListener('keydown', function(ev){
       if(ev.key === 'Enter'){
         ev.preventDefault();
@@ -270,8 +269,8 @@ document.addEventListener('DOMContentLoaded', function(){
   });
   document.addEventListener('click', function(ev){
     if(!wrapper.classList.contains('is-open')) return;
-    // usamos composedPath (la ruta capturada en el momento del clic) porque los botones de
-    // opciones se eliminan del DOM al seleccionarlos, y ev.target ya no estaría "dentro" de wrapper
+    // we use composedPath (the path captured at click time) because the option buttons get
+    // removed from the DOM when selected, so ev.target would no longer be "inside" wrapper
     var path = ev.composedPath ? ev.composedPath() : [];
     if(path.indexOf(wrapper) === -1) closeChat();
   });
