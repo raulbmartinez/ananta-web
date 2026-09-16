@@ -633,10 +633,10 @@ section.contact{background:var(--white);padding:100px 0 130px;}
   transition:max-width .3s ease;
 }
 .whatsapp-float:hover .whatsapp-label, .whatsapp-float:focus .whatsapp-label{max-width:220px;}
+/* ocultar mientras haya una zona sensible a la vista (coords-bar o .wa-avoid), en cualquier tamaño de pantalla */
+body:has(.coords-bar, .wa-avoid) .whatsapp-float{opacity:0; pointer-events:none; transition:opacity .3s ease;}
+body:has(.coords-bar, .wa-avoid) .whatsapp-float.wa-visible{opacity:1; pointer-events:auto;}
 @media (max-width:640px){
   .whatsapp-float{left:16px; bottom:16px; padding:13px;}
-  /* en la portada, no mostrar el botón hasta pasar el hero (evita tapar sus botones) */
-  body:has(.coords-bar, .wa-avoid) .whatsapp-float{opacity:0; pointer-events:none; transition:opacity .3s ease;}
-  body:has(.coords-bar, .wa-avoid) .whatsapp-float.wa-visible{opacity:1; pointer-events:auto;}
   .whatsapp-float .whatsapp-label{display:none;}
 }
