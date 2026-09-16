@@ -227,6 +227,20 @@ document.addEventListener('DOMContentLoaded', function(){
   // (tapando la conversación); solo lo hacemos en dispositivos con ratón/teclado físico
   var canAutoFocus = window.matchMedia && window.matchMedia('(hover:hover) and (pointer:fine)').matches;
 
+  // el widget es position:fixed anclado al viewport "de layout"; cuando el teclado móvil
+  // aparece, el viewport "visual" se encoge pero el fixed no se entera y queda tapado por
+  // el teclado. Con visualViewport lo subimos justo lo que ocupa el teclado.
+  if(window.visualViewport){
+    var syncKeyboardOffset = function(){
+      var vv = window.visualViewport;
+      var offset = Math.max(0, window.innerHeight - vv.height - vv.offsetTop);
+      wrapper.style.setProperty('--kb-offset', offset + 'px');
+      if(offset > 0) scrollToBottom();
+    };
+    window.visualViewport.addEventListener('resize', syncKeyboardOffset);
+    window.visualViewport.addEventListener('scroll', syncKeyboardOffset);
+  }
+
   function openChat(){
     wrapper.classList.add('is-open');
     toggle.setAttribute('aria-expanded', 'true');

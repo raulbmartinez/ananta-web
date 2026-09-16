@@ -226,6 +226,20 @@ document.addEventListener('DOMContentLoaded', function(){
   // (hiding the conversation); only do this on devices with a mouse/physical keyboard
   var canAutoFocus = window.matchMedia && window.matchMedia('(hover:hover) and (pointer:fine)').matches;
 
+  // the widget is position:fixed anchored to the "layout" viewport; when the mobile keyboard
+  // appears, the "visual" viewport shrinks but fixed elements don't know, so they end up
+  // hidden behind the keyboard. With visualViewport we shift it up by exactly that much.
+  if(window.visualViewport){
+    var syncKeyboardOffset = function(){
+      var vv = window.visualViewport;
+      var offset = Math.max(0, window.innerHeight - vv.height - vv.offsetTop);
+      wrapper.style.setProperty('--kb-offset', offset + 'px');
+      if(offset > 0) scrollToBottom();
+    };
+    window.visualViewport.addEventListener('resize', syncKeyboardOffset);
+    window.visualViewport.addEventListener('scroll', syncKeyboardOffset);
+  }
+
   function openChat(){
     wrapper.classList.add('is-open');
     toggle.setAttribute('aria-expanded', 'true');

@@ -649,7 +649,7 @@ body:has(.coords-bar, .wa-avoid) .whatsapp-float.wa-visible{opacity:1; pointer-e
 }
 
 /* ---------- ASISTENTE VIRTUAL (chatbot FAQ) ---------- */
-.chatbot{position:fixed; right:24px; bottom:24px; z-index:300; font-family:var(--sans);}
+.chatbot{position:fixed; right:24px; bottom:calc(24px + var(--kb-offset, 0px)); z-index:300; font-family:var(--sans); transition:bottom .15s ease;}
 
 .chatbot-toggle{
   position:relative; width:56px; height:56px; border-radius:50%;
@@ -784,6 +784,6 @@ body:has(.coords-bar, .wa-avoid) .whatsapp-float.wa-visible{opacity:1; pointer-e
 .chatbot-send:hover{background:var(--navy-deep); transform:scale(1.06);}
 
 @media (max-width:640px){
-  .chatbot{right:16px; bottom:16px;}
+  .chatbot{right:16px; bottom:calc(16px + var(--kb-offset, 0px));}
   .chatbot-panel{right:-8px; bottom:74px; width:calc(100vw - 24px); height:min(70vh, 560px); height:min(70dvh, 560px);}
 }
