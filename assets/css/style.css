@@ -648,24 +648,13 @@ body:has(.coords-bar, .wa-avoid) .chatbot:not(.is-open){opacity:0; pointer-event
 body:has(.coords-bar, .wa-avoid) .chatbot:not(.is-open).wa-visible{opacity:1; pointer-events:auto;}
 
 .chatbot-toggle{
-  position:relative; width:58px; height:58px; border-radius:50%;
-  background:linear-gradient(145deg, var(--steel-dim), var(--navy) 60%); color:var(--paper); border:none; cursor:pointer;
-  display:flex; align-items:center; justify-content:center;
-  box-shadow:0 10px 26px rgba(10,30,50,.34);
-  transition:box-shadow .2s ease, transform .2s ease;
+  position:relative; width:56px; height:56px; border-radius:50%;
+  background:var(--navy); color:var(--paper); border:none; cursor:pointer;
+  display:flex; align-items:center; justify-content:center; flex-shrink:0;
+  box-shadow:0 8px 22px rgba(10,30,50,.28);
+  transition:box-shadow .2s ease, transform .2s ease, background .2s ease;
 }
-.chatbot-toggle::before{
-  content:""; position:absolute; inset:-6px; border-radius:50%;
-  border:1.5px solid var(--steel); opacity:0;
-  animation:chatbotPulse 2.6s ease-out infinite;
-}
-.chatbot.is-open .chatbot-toggle::before{display:none;}
-@keyframes chatbotPulse{
-  0%{transform:scale(.82); opacity:.7;}
-  75%{transform:scale(1.18); opacity:0;}
-  100%{transform:scale(1.18); opacity:0;}
-}
-.chatbot-toggle:hover{box-shadow:0 14px 32px rgba(10,30,50,.42); transform:translateY(-2px);}
+.chatbot-toggle:hover{box-shadow:0 12px 28px rgba(10,30,50,.36); transform:translateY(-2px); background:var(--navy-deep);}
 .chatbot-toggle svg{width:23px; height:23px; position:absolute; transition:opacity .2s ease, transform .2s ease;}
 .chatbot-toggle .icon-close{opacity:0; transform:scale(.6) rotate(-45deg);}
 .chatbot.is-open .chatbot-toggle .icon-chat{opacity:0; transform:scale(.6) rotate(45deg);}
