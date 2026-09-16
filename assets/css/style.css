@@ -663,11 +663,11 @@ body:has(.coords-bar, .wa-avoid) .whatsapp-float.wa-visible{opacity:1; pointer-e
   background:var(--white); border-radius:18px; overflow:hidden;
   box-shadow:0 30px 70px rgba(10,30,50,.32); border:1px solid var(--grey-line);
   display:flex; flex-direction:column;
-  opacity:0; visibility:hidden; transform:translateY(20px) scale(.96); transform-origin:bottom right;
+  opacity:0; visibility:hidden; transform:translateY(28px) scale(.85) rotate(2deg); transform-origin:bottom right;
   pointer-events:none;
-  transition:opacity .25s ease, transform .25s cubic-bezier(.2,.7,.2,1), visibility .25s;
+  transition:opacity .3s ease, transform .5s cubic-bezier(.34,1.56,.64,1), visibility .5s;
 }
-.chatbot.is-open .chatbot-panel{opacity:1; visibility:visible; transform:none; pointer-events:auto;}
+.chatbot.is-open .chatbot-panel{opacity:1; visibility:visible; transform:none; pointer-events:auto; transition:opacity .3s ease, transform .5s cubic-bezier(.34,1.56,.64,1), visibility 0s;}
 
 .chatbot-header{
   position:relative; overflow:hidden;
@@ -678,12 +678,13 @@ body:has(.coords-bar, .wa-avoid) .whatsapp-float.wa-visible{opacity:1; pointer-e
 .chatbot-header .network-canvas{position:absolute; inset:0; z-index:0; opacity:.4; mix-blend-mode:screen; pointer-events:none;}
 .chatbot-header-info{position:relative; z-index:1; display:flex; align-items:center; gap:12px;}
 .chatbot-avatar{
-  width:38px; height:38px; border-radius:50%;
-  background:linear-gradient(145deg, var(--steel), var(--steel-dim));
+  width:40px; height:40px; border-radius:50%;
+  background:rgba(255,255,255,.1);
   box-shadow:0 0 0 3px rgba(255,255,255,.14);
   display:flex; align-items:center; justify-content:center; flex-shrink:0;
+  padding:8px;
 }
-.chatbot-avatar svg{width:19px; height:19px; color:var(--navy-deep);}
+.chatbot-avatar img{width:100%; height:100%; object-fit:contain; display:block;}
 .chatbot-header-info strong{display:block; font-family:var(--serif); font-size:15px; font-weight:500; letter-spacing:.01em;}
 .chatbot-status{display:flex; align-items:center; gap:6px; font-size:11.5px; color:var(--steel); margin-top:4px;}
 .chatbot-status::before{content:""; width:6px; height:6px; border-radius:50%; background:#4ade80; flex-shrink:0; box-shadow:0 0 0 3px rgba(74,222,128,.25);}
