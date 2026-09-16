@@ -91,14 +91,25 @@ document.addEventListener('DOMContentLoaded', function(){
     body.scrollTop = body.scrollHeight;
   }
 
-  function addBotMessage(html, cb){
+  // instead of always jumping to the bottom (which ends up hiding the answer behind
+  // the options that arrive right after it), anchor the view to the top of the
+  // message that actually matters so it stays readable
+  function anchorTo(target){
+    if(target && target.scrollIntoView){
+      target.scrollIntoView({block: 'start', behavior: 'smooth'});
+    }
+  }
+
+  function addBotMessage(html, cb, opts){
+    var anchor = opts && opts.anchor;
     var typing = el('div', 'chat-msg chat-msg-bot chat-typing', '<span></span><span></span><span></span>');
     body.appendChild(typing);
     scrollToBottom();
     setTimeout(function(){
       typing.remove();
-      body.appendChild(el('div', 'chat-msg chat-msg-bot', html));
-      scrollToBottom();
+      var msg = el('div', 'chat-msg chat-msg-bot', html);
+      body.appendChild(msg);
+      if(anchor) anchorTo(msg); else scrollToBottom();
       if(cb) cb();
     }, 550);
   }
@@ -119,7 +130,6 @@ document.addEventListener('DOMContentLoaded', function(){
     if(opts && opts.blank){ a.target = '_blank'; a.rel = 'noopener'; }
     wrap.appendChild(a);
     body.appendChild(wrap);
-    scrollToBottom();
   }
 
   function clearOptions(){
@@ -139,7 +149,6 @@ document.addEventListener('DOMContentLoaded', function(){
       wrap.appendChild(btn);
     });
     body.appendChild(wrap);
-    scrollToBottom();
   }
 
   function followUp(){
@@ -153,12 +162,12 @@ document.addEventListener('DOMContentLoaded', function(){
       addBotMessage('Connecting you with a specialist on WhatsApp:', function(){
         addLink(WA_URL, 'Open WhatsApp →', {blank:true});
         followUp();
-      });
+      }, {anchor: true});
     } else {
       addBotMessage(item.answer, function(){
         if(item.link){ addLink(item.link.href, item.link.label); }
         followUp();
-      });
+      }, {anchor: true});
     }
   }
 
@@ -188,8 +197,11 @@ document.addEventListener('DOMContentLoaded', function(){
     return best;
   }
 
-  function isGreeting(text){ return GREETINGS.some(function(g){ return text === g || text.indexOf(g) !== -1; }); }
-  function isThanks(text){ return THANKS.some(function(g){ return text === g || text.indexOf(g) !== -1; }); }
+  // pad with spaces on both sides so a short word like "ok" can't false-match
+  // inside a longer word (e.g. "broke")
+  function hasWord(text, phrase){ return (' ' + text + ' ').indexOf(' ' + phrase + ' ') !== -1; }
+  function isGreeting(text){ return GREETINGS.some(function(g){ return hasWord(text, g); }); }
+  function isThanks(text){ return THANKS.some(function(g){ return hasWord(text, g); }); }
 
   function handleFreeText(rawText){
     var text = rawText.trim();
@@ -200,18 +212,18 @@ document.addEventListener('DOMContentLoaded', function(){
     var normalized = normalize(text);
     setTimeout(function(){
       if(isThanks(normalized) && normalized.length < 30){
-        addBotMessage('You\'re welcome! I\'m here if you need anything else.', renderMenu);
+        addBotMessage('You\'re welcome! I\'m here if you need anything else.', renderMenu, {anchor: true});
         return;
       }
       if(isGreeting(normalized) && normalized.length < 20){
-        addBotMessage('Hello! How can I help you?', renderMenu);
+        addBotMessage('Hello! How can I help you?', renderMenu, {anchor: true});
         return;
       }
       var match = findBestMatch(text);
       if(match){
         answerItem(match);
       } else {
-        addBotMessage('I\'m not sure I understood your question. You can pick an option below or try different words — or speak directly with a specialist:', renderMenu);
+        addBotMessage('I\'m not sure I understood your question. You can pick an option below or try different words — or speak directly with a specialist:', renderMenu, {anchor: true});
       }
     }, 300);
   }

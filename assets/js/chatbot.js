@@ -92,14 +92,25 @@ document.addEventListener('DOMContentLoaded', function(){
     body.scrollTop = body.scrollHeight;
   }
 
-  function addBotMessage(html, cb){
+  // en vez de saltar siempre al fondo (lo que acaba tapando la respuesta con las
+  // opciones que llegan justo detrás), anclamos la vista al principio del mensaje
+  // que realmente importa para que quede legible
+  function anchorTo(target){
+    if(target && target.scrollIntoView){
+      target.scrollIntoView({block: 'start', behavior: 'smooth'});
+    }
+  }
+
+  function addBotMessage(html, cb, opts){
+    var anchor = opts && opts.anchor;
     var typing = el('div', 'chat-msg chat-msg-bot chat-typing', '<span></span><span></span><span></span>');
     body.appendChild(typing);
     scrollToBottom();
     setTimeout(function(){
       typing.remove();
-      body.appendChild(el('div', 'chat-msg chat-msg-bot', html));
-      scrollToBottom();
+      var msg = el('div', 'chat-msg chat-msg-bot', html);
+      body.appendChild(msg);
+      if(anchor) anchorTo(msg); else scrollToBottom();
       if(cb) cb();
     }, 550);
   }
@@ -120,7 +131,6 @@ document.addEventListener('DOMContentLoaded', function(){
     if(opts && opts.blank){ a.target = '_blank'; a.rel = 'noopener'; }
     wrap.appendChild(a);
     body.appendChild(wrap);
-    scrollToBottom();
   }
 
   function clearOptions(){
@@ -140,7 +150,6 @@ document.addEventListener('DOMContentLoaded', function(){
       wrap.appendChild(btn);
     });
     body.appendChild(wrap);
-    scrollToBottom();
   }
 
   function followUp(){
@@ -154,12 +163,12 @@ document.addEventListener('DOMContentLoaded', function(){
       addBotMessage('Le paso con un especialista por WhatsApp:', function(){
         addLink(WA_URL, 'Abrir WhatsApp →', {blank:true});
         followUp();
-      });
+      }, {anchor: true});
     } else {
       addBotMessage(item.answer, function(){
         if(item.link){ addLink(item.link.href, item.link.label); }
         followUp();
-      });
+      }, {anchor: true});
     }
   }
 
@@ -189,8 +198,11 @@ document.addEventListener('DOMContentLoaded', function(){
     return best;
   }
 
-  function isGreeting(text){ return GREETINGS.some(function(g){ return text === g || text.indexOf(g) !== -1; }); }
-  function isThanks(text){ return THANKS.some(function(g){ return text === g || text.indexOf(g) !== -1; }); }
+  // con espacios de sobra a los lados para que palabras cortas como "ok" no
+  // hagan falso positivo dentro de otra palabra (p.ej. "roto" u otra que la contenga)
+  function hasWord(text, phrase){ return (' ' + text + ' ').indexOf(' ' + phrase + ' ') !== -1; }
+  function isGreeting(text){ return GREETINGS.some(function(g){ return hasWord(text, g); }); }
+  function isThanks(text){ return THANKS.some(function(g){ return hasWord(text, g); }); }
 
   function handleFreeText(rawText){
     var text = rawText.trim();
@@ -201,18 +213,18 @@ document.addEventListener('DOMContentLoaded', function(){
     var normalized = normalize(text);
     setTimeout(function(){
       if(isThanks(normalized) && normalized.length < 30){
-        addBotMessage('¡De nada! Estoy aquí si necesita algo más.', renderMenu);
+        addBotMessage('¡De nada! Estoy aquí si necesita algo más.', renderMenu, {anchor: true});
         return;
       }
       if(isGreeting(normalized) && normalized.length < 20){
-        addBotMessage('¡Hola! ¿En qué puedo ayudarle?', renderMenu);
+        addBotMessage('¡Hola! ¿En qué puedo ayudarle?', renderMenu, {anchor: true});
         return;
       }
       var match = findBestMatch(text);
       if(match){
         answerItem(match);
       } else {
-        addBotMessage('No estoy seguro de haber entendido su consulta. Puede elegir una opción o escribir con otras palabras; si lo prefiere, hable directamente con un especialista:', renderMenu);
+        addBotMessage('No estoy seguro de haber entendido su consulta. Puede elegir una opción o escribir con otras palabras; si lo prefiere, hable directamente con un especialista:', renderMenu, {anchor: true});
       }
     }, 300);
   }
