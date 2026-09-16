@@ -755,6 +755,26 @@ body:has(.coords-bar, .wa-avoid) .whatsapp-float.wa-visible{opacity:1; pointer-e
 }
 .chat-link-btn:hover{box-shadow:0 8px 20px rgba(10,30,50,.26); transform:translateY(-1px);}
 
+.chatbot-input-row{
+  flex-shrink:0; display:flex; align-items:center; gap:8px;
+  padding:12px; background:var(--white); border-top:1px solid var(--grey-line);
+}
+.chatbot-input{
+  flex:1; min-width:0; border:1px solid var(--grey-line); background:var(--grey-light);
+  border-radius:20px; padding:10px 16px; font-family:var(--sans); font-size:13px; color:var(--ink);
+  transition:border-color .15s ease, background .15s ease;
+}
+.chatbot-input::placeholder{color:#8a97a3;}
+.chatbot-input:focus{outline:none; border-color:var(--navy); background:var(--white);}
+.chatbot-send{
+  flex-shrink:0; width:36px; height:36px; border-radius:50%; border:none; cursor:pointer;
+  background:var(--navy); color:var(--white);
+  display:flex; align-items:center; justify-content:center;
+  transition:background .15s ease, transform .15s ease;
+}
+.chatbot-send svg{width:15px; height:15px;}
+.chatbot-send:hover{background:var(--navy-deep); transform:scale(1.06);}
+
 @media (max-width:640px){
   .chatbot{right:16px; bottom:16px;}
   .chatbot-panel{right:-8px; bottom:74px; width:calc(100vw - 24px); height:min(70vh, 560px);}
