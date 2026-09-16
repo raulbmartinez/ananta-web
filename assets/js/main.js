@@ -75,20 +75,20 @@ document.addEventListener('DOMContentLoaded', function(){
     });
   });
 
-  // ---- botón WhatsApp: ocultar mientras haya una zona sensible a la vista (móvil) ----
-  var waFloat = document.querySelector('.whatsapp-float');
+  // ---- botones flotantes (WhatsApp, chatbot): ocultar mientras haya una zona sensible a la vista ----
+  var floatButtons = document.querySelectorAll('.whatsapp-float, .chatbot');
   var coordSections = Array.prototype.map.call(
     document.querySelectorAll('.coords-bar'),
     function(el){ return el.closest('.reel') || el.parentElement; }
   ).concat(Array.prototype.slice.call(document.querySelectorAll('.wa-avoid')));
-  if(waFloat && coordSections.length){
+  if(floatButtons.length && coordSections.length){
     var waIntersecting = new Set();
     var waObs = new IntersectionObserver(function(entries){
       entries.forEach(function(e){
         if(e.isIntersecting) waIntersecting.add(e.target);
         else waIntersecting.delete(e.target);
       });
-      waFloat.classList.toggle('wa-visible', waIntersecting.size === 0);
+      floatButtons.forEach(function(btn){ btn.classList.toggle('wa-visible', waIntersecting.size === 0); });
     }, {threshold: 0});
     coordSections.forEach(function(el){ waObs.observe(el); });
   }
