@@ -607,7 +607,7 @@ section.contact{background:var(--white);padding:100px 0 130px;}
   .coords-bar .wrap{flex-direction:column;}
   .coord-item{border-right:none;border-bottom:1px solid var(--line);}
   .coord-item:first-child{padding-left:20px;}
-  .coord-item:last-child{padding-bottom:64px;}
+  .coord-item:last-child{padding-bottom:64px; padding-right:74px;}
   .form-row{grid-template-columns:1fr;}
   .scroll-cue{display:none;}
   .hero .reel-content{padding-bottom:210px;}
@@ -643,9 +643,6 @@ body:has(.coords-bar, .wa-avoid) .whatsapp-float.wa-visible{opacity:1; pointer-e
 
 /* ---------- ASISTENTE VIRTUAL (chatbot FAQ) ---------- */
 .chatbot{position:fixed; right:24px; bottom:24px; z-index:300; font-family:var(--sans);}
-/* mismo criterio que el botón de WhatsApp, pero solo mientras el chat está cerrado */
-body:has(.coords-bar, .wa-avoid) .chatbot:not(.is-open){opacity:0; pointer-events:none; transition:opacity .3s ease;}
-body:has(.coords-bar, .wa-avoid) .chatbot:not(.is-open).wa-visible{opacity:1; pointer-events:auto;}
 
 .chatbot-toggle{
   position:relative; width:56px; height:56px; border-radius:50%;

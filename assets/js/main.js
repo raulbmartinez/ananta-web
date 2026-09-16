@@ -76,7 +76,7 @@ document.addEventListener('DOMContentLoaded', function(){
   });
 
   // ---- botones flotantes (WhatsApp, chatbot): ocultar mientras haya una zona sensible a la vista ----
-  var floatButtons = document.querySelectorAll('.whatsapp-float, .chatbot');
+  var floatButtons = document.querySelectorAll('.whatsapp-float');
   var coordSections = Array.prototype.map.call(
     document.querySelectorAll('.coords-bar'),
     function(el){ return el.closest('.reel') || el.parentElement; }
