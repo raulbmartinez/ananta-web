@@ -153,7 +153,7 @@ nav.main-nav a.lang-switch::after{display:none;}
 /* HERO específico */
 .hero{align-items:center;}
 .hero .reel-fade{background:
-  linear-gradient(100deg, rgba(5,8,12,.88) 0%, rgba(5,8,12,.6) 32%, rgba(5,8,12,.18) 62%, rgba(5,8,12,.05) 100%),
+  linear-gradient(100deg, rgba(5,8,12,.88) 0%, rgba(5,8,12,.66) 32%, rgba(5,8,12,.42) 62%, rgba(5,8,12,.38) 100%),
   linear-gradient(180deg, rgba(5,8,12,.4) 0%, rgba(5,8,12,.15) 30%, rgba(5,8,12,.95) 100%);}
 .hero h1, .hero p.lede, .hero .eyebrow{text-shadow:0 2px 30px rgba(0,0,0,.5);}
 
@@ -196,7 +196,7 @@ nav.main-nav a.lang-switch::after{display:none;}
   .hero-slideshow .slide:first-child{opacity:1; clip-path: inset(0 0 0 0);}
 }
 .hero .reel-content{padding-bottom:88px;}
-.hero-content{max-width:640px;padding:120px 0 40px;}
+.hero-content{max-width:100%;padding:120px 0 40px;}
 
 /* h1 / .display: tinta oscura sobre fondos claros; papel claro sobre fotografía y franja navy */
 h1, .display{
