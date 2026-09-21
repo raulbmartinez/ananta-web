@@ -262,6 +262,7 @@ h1, .display{
 .chapter{align-items:center;}
 .chapter .reel-fade{background:linear-gradient(90deg, rgba(5,8,12,.92) 0%, rgba(5,8,12,.55) 46%, rgba(5,8,12,.35) 100%);}
 .chapter-content{max-width:620px;padding:120px 0;}
+.chapter-content-wide{max-width:900px;}
 .chapter-content.closing-content{max-width:720px;margin:0 auto;text-align:center;}
 .closing .reel-fade{background:linear-gradient(180deg, rgba(5,8,12,.35) 0%, rgba(5,8,12,.55) 55%, rgba(5,8,12,.88) 100%);}
 .closing .chapter-content .btn{margin-top:10px;}
