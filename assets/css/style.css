@@ -91,7 +91,7 @@ nav.main-nav a.lang-switch::after{display:none;}
 .nav-item.is-open .nav-caret{transform:translateY(1px) rotate(180deg);color:var(--navy);}
 .nav-dropdown{
   position:absolute; top:100%; left:50%; transform:translateX(-50%) translateY(4px);
-  margin-top:14px; width:560px; padding:0;
+  margin-top:14px; width:320px; padding:0;
   display:flex; align-items:stretch;
   background:var(--white); border:1px solid var(--grey-line);
   box-shadow:0 28px 56px rgba(10,30,50,.16);
@@ -119,23 +119,6 @@ nav.main-nav a.lang-switch::after{display:none;}
 .nav-dropdown .dropdown-link:hover{color:var(--navy); background:var(--grey-light); border-left-color:var(--navy);}
 .nav-dropdown .dropdown-link:hover .dropdown-num{color:var(--navy);}
 .nav-dropdown .dropdown-link::after{display:none;}
-
-/* panel destacado con foto */
-.dropdown-feature{
-  position:relative; width:210px; flex-shrink:0; overflow:hidden;
-  background-size:cover; background-position:center;
-  display:flex; flex-direction:column; justify-content:flex-end;
-  padding:22px; color:var(--paper);
-}
-.dropdown-feature::before{
-  content:""; position:absolute; inset:0;
-  background:linear-gradient(190deg, rgba(7,34,63,.1) 0%, rgba(7,34,63,.94) 100%);
-}
-.dropdown-feature > *{position:relative; z-index:2;}
-.dropdown-feature-tag{font-family:var(--label);font-size:10px;letter-spacing:.1em;text-transform:uppercase;color:var(--steel);margin-bottom:10px;display:block;}
-.dropdown-feature-title{font-family:var(--serif);font-size:17px;line-height:1.28;font-weight:500;text-transform:none;letter-spacing:normal;display:block;margin-bottom:16px;}
-.dropdown-feature-cta{font-family:var(--label);font-size:10px;letter-spacing:.08em;text-transform:uppercase;color:var(--paper);border-bottom:1px solid rgba(255,255,255,.45);padding-bottom:3px;display:inline-block;transition:border-color .2s ease, opacity .2s ease;}
-.dropdown-feature:hover .dropdown-feature-cta{border-color:var(--paper);}
 
 /* botón hamburguesa (solo móvil) */
 .nav-toggle{
@@ -599,7 +582,6 @@ section.contact{background:var(--white);padding:100px 0 130px;}
     transition:max-height .3s ease;
   }
   .nav-item.mobile-open .nav-dropdown{max-height:600px; border-bottom:1px solid var(--grey-line);}
-  .dropdown-feature{display:none;}
   .dropdown-links{flex:none; padding:4px 0;}
   .nav-dropdown .dropdown-link{padding:13px 24px 13px 46px; border-left:none; white-space:normal;}
   .nav-dropdown .dropdown-link:hover{border-left-color:transparent;}
