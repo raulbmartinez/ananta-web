@@ -337,9 +337,8 @@ section.clients{background:var(--white);padding:0 0 100px;}
 }
 .clients-track{display:flex; align-items:center; width:max-content; will-change:transform; animation:clientsScroll 34s linear infinite;}
 .clients-group{display:flex; align-items:center; gap:80px; padding-right:80px; flex-shrink:0;}
-.clients-track img{height:40px; width:auto; max-width:none; object-fit:contain; flex-shrink:0; filter:grayscale(1); opacity:.5; transition:filter .25s ease, opacity .25s ease;}
-.clients-track img.logo-detailed{height:58px;}
-.clients-track img:hover{filter:grayscale(0); opacity:1;}
+.clients-track img{height:52px; width:auto; max-width:none; object-fit:contain; flex-shrink:0; filter:grayscale(1); opacity:.5;}
+.clients-track img.logo-detailed{height:72px;}
 @keyframes clientsScroll{from{transform:translateX(0);}to{transform:translateX(-50%);}}
 @media (prefers-reduced-motion: reduce){.clients-track{animation:none;}}
 
@@ -623,8 +622,8 @@ section.contact{background:var(--white);padding:100px 0 130px;}
   .presence-content{padding-bottom:200px;}
   .clients-track{animation-duration:22s;}
   .clients-group{gap:48px; padding-right:48px;}
-  .clients-track img{height:30px;}
-  .clients-track img.logo-detailed{height:44px;}
+  .clients-track img{height:38px;}
+  .clients-track img.logo-detailed{height:54px;}
   .brand-row{gap:14px 40px;}
   .brand-row a:not(:first-child)::before{display:none;}
 }
