@@ -72,9 +72,11 @@ nav.main-nav a.nav-cta{
 nav.main-nav a.nav-cta:hover{border-color:var(--navy); background:var(--navy); color:var(--white);}
 nav.main-nav a.nav-cta::after{display:none;}
 nav.main-nav a.lang-switch{
+  display:inline-flex; align-items:center; gap:6px;
   border:1px solid var(--grey-line); border-radius:20px; padding:6px 14px;
   font-size:10.5px; color:var(--slate); margin-left:4px;
 }
+nav.main-nav a.lang-switch .flag{font-size:13px; line-height:1;}
 nav.main-nav a.lang-switch:hover{border-color:var(--navy); color:var(--navy); background:var(--grey-light);}
 nav.main-nav a.lang-switch::after{display:none;}
 
