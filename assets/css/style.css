@@ -195,7 +195,6 @@ nav.main-nav a.lang-switch::after{display:none;}
   .hero-slideshow .slide{animation:none; opacity:0; clip-path: inset(0 100% 0 0);}
   .hero-slideshow .slide:first-child{opacity:1; clip-path: inset(0 0 0 0);}
 }
-.hero .reel-content{padding-bottom:88px;}
 .hero-content{max-width:100%;padding:120px 0 40px;}
 
 /* h1 / .display: tinta oscura sobre fondos claros; papel claro sobre fotografía y franja navy */
@@ -218,19 +217,6 @@ h1, .display{
 .btn-primary:hover{background:var(--steel); color:var(--black); box-shadow:0 14px 28px rgba(10,30,50,.28);}
 .btn-outline{border-color:rgba(255,255,255,.4); color:var(--paper);}
 .btn-outline:hover{border-color:var(--paper); background:rgba(255,255,255,.08); box-shadow:0 14px 28px rgba(5,8,12,.35);}
-
-/* barra de coordenadas — firma visual documental (sobre fotografía) */
-.coords-bar{position:absolute;left:0;right:0;bottom:0;z-index:2;border-top:1px solid var(--line);}
-.coords-bar .wrap{display:flex;padding:0;}
-.coord-item{
-  flex:1; padding:18px 20px; font-family:var(--label); font-size:10.5px; letter-spacing:.04em;
-  color:#8ea3b6; border-right:1px solid var(--line); display:flex; align-items:center; gap:8px;
-  white-space:nowrap; overflow:hidden; text-overflow:ellipsis;
-}
-.coord-item:first-child{padding-left:0;}
-.coord-item:last-child{border-right:none; padding-right:0;}
-.coord-item .dot{width:5px;height:5px;border-radius:50%;background:var(--steel);flex-shrink:0;}
-.coord-item b{color:var(--paper);font-weight:500;}
 
 /* scroll cue */
 .scroll-cue{
@@ -306,7 +292,7 @@ section.stats{background:var(--grey-light); padding:110px 0; border-top:1px soli
 
 /* PRESENCIA — imagen sede */
 .presence .reel-fade{background:linear-gradient(180deg, rgba(5,8,12,.25) 0%, rgba(5,8,12,.55) 55%, rgba(5,8,12,.96) 100%);}
-.presence-content{max-width:680px;padding:120px 0 72px;}
+.presence-content{max-width:680px;padding:120px 0;}
 .presence h2{font-size:clamp(28px,3.6vw,44px);line-height:1.12;margin-bottom:22px;}
 .presence p.support{color:var(--ink-soft);font-size:16.5px;max-width:520px;margin-bottom:0;}
 
@@ -612,14 +598,8 @@ section.contact{background:var(--white);padding:100px 0 130px;}
 @media (max-width:640px){
   .wrap{padding:0 22px;}
   .footer-grid{grid-template-columns:1fr;}
-  .coords-bar .wrap{flex-direction:column;}
-  .coord-item{border-right:none;border-bottom:1px solid var(--line);}
-  .coord-item:first-child{padding-left:20px;}
-  .coord-item:last-child{padding-bottom:64px; padding-right:74px;}
   .form-row{grid-template-columns:1fr;}
   .scroll-cue{display:none;}
-  .hero .reel-content{padding-bottom:210px;}
-  .presence-content{padding-bottom:200px;}
   .clients-track{animation-duration:16s;}
   .clients-group{gap:48px; padding-right:48px;}
   .clients-track img{height:38px;}
@@ -645,9 +625,9 @@ section.contact{background:var(--white);padding:100px 0 130px;}
   transition:max-width .3s ease;
 }
 .whatsapp-float:hover .whatsapp-label, .whatsapp-float:focus .whatsapp-label{max-width:220px;}
-/* ocultar mientras haya una zona sensible a la vista (coords-bar o .wa-avoid), en cualquier tamaño de pantalla */
-body:has(.coords-bar, .wa-avoid) .whatsapp-float{opacity:0; pointer-events:none; transition:opacity .3s ease;}
-body:has(.coords-bar, .wa-avoid) .whatsapp-float.wa-visible{opacity:1; pointer-events:auto;}
+/* ocultar mientras haya una zona sensible a la vista (.wa-avoid), en cualquier tamaño de pantalla */
+body:has(.wa-avoid) .whatsapp-float{opacity:0; pointer-events:none; transition:opacity .3s ease;}
+body:has(.wa-avoid) .whatsapp-float.wa-visible{opacity:1; pointer-events:auto;}
 @media (max-width:640px){
   .whatsapp-float{left:16px; bottom:16px; padding:13px;}
   .whatsapp-float .whatsapp-label{display:none;}

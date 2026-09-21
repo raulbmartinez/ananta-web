@@ -77,11 +77,8 @@ document.addEventListener('DOMContentLoaded', function(){
 
   // ---- botones flotantes (WhatsApp, chatbot): ocultar mientras haya una zona sensible a la vista ----
   var floatButtons = document.querySelectorAll('.whatsapp-float');
-  var coordSections = Array.prototype.map.call(
-    document.querySelectorAll('.coords-bar'),
-    function(el){ return el.closest('.reel') || el.parentElement; }
-  ).concat(Array.prototype.slice.call(document.querySelectorAll('.wa-avoid')));
-  if(floatButtons.length && coordSections.length){
+  var waAvoidSections = document.querySelectorAll('.wa-avoid');
+  if(floatButtons.length && waAvoidSections.length){
     var waIntersecting = new Set();
     var waObs = new IntersectionObserver(function(entries){
       entries.forEach(function(e){
@@ -90,7 +87,7 @@ document.addEventListener('DOMContentLoaded', function(){
       });
       floatButtons.forEach(function(btn){ btn.classList.toggle('wa-visible', waIntersecting.size === 0); });
     }, {threshold: 0});
-    coordSections.forEach(function(el){ waObs.observe(el); });
+    waAvoidSections.forEach(function(el){ waObs.observe(el); });
   }
 
   var io = new IntersectionObserver(function(entries){
