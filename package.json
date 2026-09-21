@@ -1,0 +1,7 @@
+{
+  "name": "ananta-web",
+  "private": true,
+  "dependencies": {
+    "@anthropic-ai/sdk": "latest"
+  }
+}

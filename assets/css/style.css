@@ -749,6 +749,7 @@ body:has(.wa-avoid) .whatsapp-float.wa-visible{opacity:1; pointer-events:auto;}
 }
 .chatbot-input::placeholder{color:#8a97a3;}
 .chatbot-input:focus{outline:none; border-color:var(--navy); background:var(--white);}
+.chatbot-input:disabled{opacity:.6;}
 .chatbot-send{
   flex-shrink:0; width:36px; height:36px; border-radius:50%; border:none; cursor:pointer;
   background:var(--navy); color:var(--white);
@@ -757,6 +758,7 @@ body:has(.wa-avoid) .whatsapp-float.wa-visible{opacity:1; pointer-events:auto;}
 }
 .chatbot-send svg{width:15px; height:15px;}
 .chatbot-send:hover{background:var(--navy-deep); transform:scale(1.06);}
+.chatbot-send:disabled{opacity:.5; cursor:default; transform:none;}
 
 @media (max-width:640px){
   .chatbot{right:16px; bottom:calc(16px + var(--kb-offset, 0px));}
