@@ -153,8 +153,8 @@ nav.main-nav a.lang-switch::after{display:none;}
 /* HERO específico */
 .hero{align-items:center;}
 .hero .reel-fade{background:
-  linear-gradient(100deg, rgba(5,8,12,.88) 0%, rgba(5,8,12,.66) 32%, rgba(5,8,12,.42) 62%, rgba(5,8,12,.38) 100%),
-  linear-gradient(180deg, rgba(5,8,12,.4) 0%, rgba(5,8,12,.15) 30%, rgba(5,8,12,.95) 100%);}
+  linear-gradient(100deg, rgba(5,8,12,.68) 0%, rgba(5,8,12,.48) 32%, rgba(5,8,12,.28) 62%, rgba(5,8,12,.22) 100%),
+  linear-gradient(180deg, rgba(5,8,12,.25) 0%, rgba(5,8,12,.08) 30%, rgba(5,8,12,.72) 100%);}
 .hero h1, .hero p.lede, .hero .eyebrow{text-shadow:0 2px 30px rgba(0,0,0,.5);}
 
 /* eyebrow: azul marino sobre fondos claros; azul acero sobre fotografías/franjas oscuras */
