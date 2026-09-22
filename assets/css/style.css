@@ -472,6 +472,11 @@ section.content-block.alt .cert-item{background:var(--grey-light);}
   color:var(--navy); border:1px solid var(--navy); padding:10px 18px;
 }
 .cert-download:hover{background:var(--navy); color:var(--white);}
+.cert-pending{
+  display:inline-flex; align-items:center; white-space:nowrap;
+  font-family:var(--label); font-size:11px; letter-spacing:.08em; text-transform:uppercase;
+  color:var(--grey); border:1px solid var(--grey-line); padding:10px 18px;
+}
 
 /* ---------- CONTACTO ---------- */
 section.contact-intro{background:var(--grey-light);padding:0 0 90px;border-top:1px solid var(--grey-line);}
