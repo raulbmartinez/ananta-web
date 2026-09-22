@@ -333,7 +333,6 @@ section.close-cta{background:var(--navy-deep);padding:120px 0;text-align:center;
 .underline-svg path{
   fill:none; stroke:#fff; stroke-width:7; stroke-linecap:round; stroke-linejoin:round;
   stroke-dasharray:600; stroke-dashoffset:600;
-  filter:drop-shadow(0 0 6px rgba(255,255,255,.45));
   transition:stroke-dashoffset 2.1s cubic-bezier(.2,.7,.2,1) .25s;
 }
 .reveal.is-visible .underline-svg path{stroke-dashoffset:0;}
