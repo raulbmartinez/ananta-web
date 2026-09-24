@@ -47,15 +47,21 @@
         <button type="button" class="nav-caret-btn" aria-expanded="false" aria-label="Ver subapartados de Productos"><span class="nav-caret">▾</span></button>
         <div class="nav-dropdown">
           <div class="dropdown-links">
-            <a href="productos.html#bertoli" class="dropdown-link"><span class="dropdown-num">01</span>Bertoli</a>
-            <a href="productos.html#nakakin" class="dropdown-link"><span class="dropdown-num">02</span>Nakakin</a>
-            <a href="productos.html#on-fitting" class="dropdown-link"><span class="dropdown-num">03</span>On Fitting</a>
+            <a href="productos.html#maquinas-propias" class="dropdown-link"><span class="dropdown-num">01</span>Máquinas propias</a>
+            <a href="productos.html#piezas-repuestos" class="dropdown-link"><span class="dropdown-num">02</span>Piezas y repuestos</a>
+            <a href="productos.html#bertoli" class="dropdown-link"><span class="dropdown-num">03</span>Bertoli</a>
+            <a href="productos.html#nakakin" class="dropdown-link"><span class="dropdown-num">04</span>Nakakin</a>
+            <a href="productos.html#on-fitting" class="dropdown-link"><span class="dropdown-num">05</span>On Fitting</a>
           </div>
         </div>
       </div>
       <a href="blog.html">Blog</a>
       <a href="contacto.html" class="nav-cta">Contacto</a>
           <a href="en/productos.html" class="lang-switch"><span class="flag" aria-hidden="true">🇬🇧</span>EN</a>
+          <button type="button" class="cart-toggle" id="cartToggle" aria-label="Ver pedido" aria-expanded="false" aria-controls="cartPanel">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="9" cy="21" r="1"/><circle cx="20" cy="21" r="1"/><path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"/></svg>
+            <span class="cart-badge" id="cartBadge" hidden>0</span>
+          </button>
     </nav>
     <button class="nav-toggle" id="navToggle" type="button" aria-label="Abrir menú" aria-expanded="false" aria-controls="mainNav">
       <span></span><span></span><span></span>
@@ -68,6 +74,30 @@
     <span class="eyebrow reveal">Productos</span>
     <h1 class="reveal reveal-delay-1">Ampliamos nuestros servicios con las mejores compañías</h1>
     <p class="lede reveal reveal-delay-2">Completamos nuestro portfolio de soluciones como distribuidor oficial de firmas de referencia en el sector.</p>
+  </div>
+</section>
+
+<!-- MÁQUINAS PROPIAS -->
+<section class="content-block" id="maquinas-propias">
+  <div class="wrap">
+    <div class="block-head">
+      <span class="eyebrow reveal">Fabricación propia</span>
+      <h2 class="display reveal reveal-delay-1">Máquinas fabricadas por ANANTA</h2>
+      <p class="support reveal reveal-delay-2">Además de distribuidores, fabricamos nuestras propias máquinas. Añádalas al pedido y solicite presupuesto, o páguelas online.</p>
+    </div>
+    <div class="product-card-grid reveal reveal-delay-2" id="maquinasGrid"></div>
+  </div>
+</section>
+
+<!-- PIEZAS Y REPUESTOS -->
+<section class="content-block alt" id="piezas-repuestos">
+  <div class="wrap">
+    <div class="block-head">
+      <span class="eyebrow reveal">Fabricación propia</span>
+      <h2 class="display reveal reveal-delay-1">Piezas y repuestos de acero inoxidable</h2>
+      <p class="support reveal reveal-delay-2">Fabricamos piezas y repuestos a medida, como palas o paletas de rotor en acero inoxidable, para sus equipos.</p>
+    </div>
+    <div class="product-card-grid reveal reveal-delay-2" id="piezasGrid"></div>
   </div>
 </section>
 
@@ -89,16 +119,16 @@
     <p class="block-intro reveal">Homogeneizadores y bombas de alta presión para la industria de procesos, referencia internacional en tecnología de homogeneización.</p>
     <a href="https://www.bertoli-homogenizers.com/" target="_blank" rel="noopener" class="brand-link reveal">bertoli-homogenizers.com ↗</a>
     <ul class="product-list reveal reveal-delay-1">
-      <li>EVO LINE</li>
-      <li>STAR LINE</li>
-      <li>Homogeneizadores de sobremesa y piloto</li>
-      <li>Bombas para productos con trozos</li>
-      <li>Bombas autoaspirantes</li>
+      <li>EVO LINE <button type="button" class="product-list-add" data-add-to-cart data-id="bertoli-evo-line" data-name="Bertoli EVO LINE">+ Añadir</button></li>
+      <li>STAR LINE <button type="button" class="product-list-add" data-add-to-cart data-id="bertoli-star-line" data-name="Bertoli STAR LINE">+ Añadir</button></li>
+      <li>Homogeneizadores de sobremesa y piloto <button type="button" class="product-list-add" data-add-to-cart data-id="bertoli-homog-sobremesa" data-name="Bertoli — Homogeneizadores de sobremesa y piloto">+ Añadir</button></li>
+      <li>Bombas para productos con trozos <button type="button" class="product-list-add" data-add-to-cart data-id="bertoli-bombas-trozos" data-name="Bertoli — Bombas para productos con trozos">+ Añadir</button></li>
+      <li>Bombas autoaspirantes <button type="button" class="product-list-add" data-add-to-cart data-id="bertoli-bombas-autoaspirantes" data-name="Bertoli — Bombas autoaspirantes">+ Añadir</button></li>
       <li class="product-subcat">Griding Applications</li>
-      <li>Bomba centrífuga Plus</li>
-      <li>Bomba trituradora</li>
-      <li>Molino coloidal</li>
-      <li>Mezclador de alto cizallamiento</li>
+      <li>Bomba centrífuga Plus <button type="button" class="product-list-add" data-add-to-cart data-id="bertoli-bomba-centrifuga-plus" data-name="Bertoli — Bomba centrífuga Plus">+ Añadir</button></li>
+      <li>Bomba trituradora <button type="button" class="product-list-add" data-add-to-cart data-id="bertoli-bomba-trituradora" data-name="Bertoli — Bomba trituradora">+ Añadir</button></li>
+      <li>Molino coloidal <button type="button" class="product-list-add" data-add-to-cart data-id="bertoli-molino-coloidal" data-name="Bertoli — Molino coloidal">+ Añadir</button></li>
+      <li>Mezclador de alto cizallamiento <button type="button" class="product-list-add" data-add-to-cart data-id="bertoli-mezclador-cizallamiento" data-name="Bertoli — Mezclador de alto cizallamiento">+ Añadir</button></li>
     </ul>
   </div>
 </section>
@@ -112,10 +142,10 @@
     <p class="block-intro reveal">Equipos y soluciones de ingeniería para procesos industriales, ampliando la capacidad técnica que ANANTA pone a disposición de sus clientes.</p>
     <a href="https://www.nakakin.eu/es/" target="_blank" rel="noopener" class="brand-link reveal">nakakin.eu ↗</a>
     <ul class="product-list reveal reveal-delay-1">
-      <li>JM/JO</li>
-      <li>JMU</li>
-      <li>SC</li>
-      <li>AMXN</li>
+      <li>JM/JO <button type="button" class="product-list-add" data-add-to-cart data-id="nakakin-jm-jo" data-name="Nakakin JM/JO">+ Añadir</button></li>
+      <li>JMU <button type="button" class="product-list-add" data-add-to-cart data-id="nakakin-jmu" data-name="Nakakin JMU">+ Añadir</button></li>
+      <li>SC <button type="button" class="product-list-add" data-add-to-cart data-id="nakakin-sc" data-name="Nakakin SC">+ Añadir</button></li>
+      <li>AMXN <button type="button" class="product-list-add" data-add-to-cart data-id="nakakin-amxn" data-name="Nakakin AMXN">+ Añadir</button></li>
     </ul>
   </div>
 </section>
@@ -128,18 +158,18 @@
   <div class="wrap">
     <p class="block-intro reveal">Componentes y racores para instalaciones industriales, integrados en nuestros proyectos de mantenimiento y montaje.</p>
     <ul class="product-list reveal reveal-delay-1">
-      <li>Codo de 90°</li>
-      <li>Tees iguales</li>
-      <li>Toma</li>
-      <li>Adaptador macho</li>
-      <li>Adaptador hembra</li>
-      <li>Adaptador a brida</li>
-      <li>Codo reducido</li>
-      <li>Tees reducidas</li>
-      <li>Reductor</li>
+      <li>Codo de 90° <button type="button" class="product-list-add" data-add-to-cart data-id="onfitting-codo-90" data-name="On Fitting — Codo de 90°">+ Añadir</button></li>
+      <li>Tees iguales <button type="button" class="product-list-add" data-add-to-cart data-id="onfitting-tees-iguales" data-name="On Fitting — Tees iguales">+ Añadir</button></li>
+      <li>Toma <button type="button" class="product-list-add" data-add-to-cart data-id="onfitting-toma" data-name="On Fitting — Toma">+ Añadir</button></li>
+      <li>Adaptador macho <button type="button" class="product-list-add" data-add-to-cart data-id="onfitting-adaptador-macho" data-name="On Fitting — Adaptador macho">+ Añadir</button></li>
+      <li>Adaptador hembra <button type="button" class="product-list-add" data-add-to-cart data-id="onfitting-adaptador-hembra" data-name="On Fitting — Adaptador hembra">+ Añadir</button></li>
+      <li>Adaptador a brida <button type="button" class="product-list-add" data-add-to-cart data-id="onfitting-adaptador-brida" data-name="On Fitting — Adaptador a brida">+ Añadir</button></li>
+      <li>Codo reducido <button type="button" class="product-list-add" data-add-to-cart data-id="onfitting-codo-reducido" data-name="On Fitting — Codo reducido">+ Añadir</button></li>
+      <li>Tees reducidas <button type="button" class="product-list-add" data-add-to-cart data-id="onfitting-tees-reducidas" data-name="On Fitting — Tees reducidas">+ Añadir</button></li>
+      <li>Reductor <button type="button" class="product-list-add" data-add-to-cart data-id="onfitting-reductor" data-name="On Fitting — Reductor">+ Añadir</button></li>
       <li class="product-subcat">Expansora tuberías</li>
-      <li class="product-child">Tipo NE30C</li>
-      <li class="product-child">Tipo NE40C</li>
+      <li class="product-child">Tipo NE30C <button type="button" class="product-list-add" data-add-to-cart data-id="onfitting-expansora-ne30c" data-name="On Fitting — Expansora tuberías tipo NE30C">+ Añadir</button></li>
+      <li class="product-child">Tipo NE40C <button type="button" class="product-list-add" data-add-to-cart data-id="onfitting-expansora-ne40c" data-name="On Fitting — Expansora tuberías tipo NE40C">+ Añadir</button></li>
     </ul>
   </div>
 </section>
@@ -224,6 +254,21 @@
   </button>
 </div>
 <script src="assets/js/chatbot.js"></script>
+
+<div class="cart-drawer" id="cartDrawer">
+  <div class="cart-panel" id="cartPanel">
+    <div class="cart-header">
+      <strong>Su pedido</strong>
+      <button type="button" class="cart-close" id="cartClose" aria-label="Cerrar pedido">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M6 6l12 12M18 6L6 18"/></svg>
+      </button>
+    </div>
+    <div class="cart-body" id="cartBody"></div>
+    <div class="cart-footer" id="cartFooter"></div>
+  </div>
+</div>
+<script src="assets/js/products-data.js"></script>
+<script src="assets/js/cart.js"></script>
 
 </body>
 </html>
