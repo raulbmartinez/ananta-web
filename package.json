@@ -1,7 +1,0 @@
-{
-  "name": "ananta-web",
-  "private": true,
-  "dependencies": {
-    "stripe": "latest"
-  }
-}

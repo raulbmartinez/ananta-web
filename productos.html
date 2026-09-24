@@ -47,21 +47,16 @@
         <button type="button" class="nav-caret-btn" aria-expanded="false" aria-label="Ver subapartados de Productos"><span class="nav-caret">▾</span></button>
         <div class="nav-dropdown">
           <div class="dropdown-links">
-            <a href="productos.html#maquinas-propias" class="dropdown-link"><span class="dropdown-num">01</span>Máquinas propias</a>
-            <a href="productos.html#piezas-repuestos" class="dropdown-link"><span class="dropdown-num">02</span>Piezas y repuestos</a>
-            <a href="productos.html#bertoli" class="dropdown-link"><span class="dropdown-num">03</span>Bertoli</a>
-            <a href="productos.html#nakakin" class="dropdown-link"><span class="dropdown-num">04</span>Nakakin</a>
-            <a href="productos.html#on-fitting" class="dropdown-link"><span class="dropdown-num">05</span>On Fitting</a>
+            <a href="productos.html#catalogo" class="dropdown-link"><span class="dropdown-num">01</span>Catálogo de productos</a>
+            <a href="productos.html#bertoli" class="dropdown-link"><span class="dropdown-num">02</span>Bertoli</a>
+            <a href="productos.html#nakakin" class="dropdown-link"><span class="dropdown-num">03</span>Nakakin</a>
+            <a href="productos.html#on-fitting" class="dropdown-link"><span class="dropdown-num">04</span>On Fitting</a>
           </div>
         </div>
       </div>
       <a href="blog.html">Blog</a>
       <a href="contacto.html" class="nav-cta">Contacto</a>
           <a href="en/productos.html" class="lang-switch"><span class="flag" aria-hidden="true">🇬🇧</span>EN</a>
-          <button type="button" class="cart-toggle" id="cartToggle" aria-label="Ver pedido" aria-expanded="false" aria-controls="cartPanel">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="9" cy="21" r="1"/><circle cx="20" cy="21" r="1"/><path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"/></svg>
-            <span class="cart-badge" id="cartBadge" hidden>0</span>
-          </button>
     </nav>
     <button class="nav-toggle" id="navToggle" type="button" aria-label="Abrir menú" aria-expanded="false" aria-controls="mainNav">
       <span></span><span></span><span></span>
@@ -77,27 +72,35 @@
   </div>
 </section>
 
-<!-- MÁQUINAS PROPIAS -->
-<section class="content-block" id="maquinas-propias">
+<!-- CATÁLOGO DE PRODUCTOS -->
+<!--
+  CÓMO AÑADIR O EDITAR UN PRODUCTO
+  =================================
+  Todos los productos del catálogo están en el array ANANTA_CATALOG,
+  dentro del <script> que hay unas líneas más abajo (búsquelo por
+  "ANANTA_CATALOG"). Cada categoría es un objeto con un "id", un
+  "nombre" y una lista de "productos". Para añadir un producto nuevo,
+  copie uno de los bloques { ... } existentes dentro de la categoría
+  que corresponda y cambie sus datos. No hace falta tocar el HTML ni
+  el CSS: las tarjetas se generan solas a partir de ese array.
+-->
+<section class="content-block" id="catalogo">
   <div class="wrap">
     <div class="block-head">
-      <span class="eyebrow reveal">Fabricación propia</span>
-      <h2 class="display reveal reveal-delay-1">Máquinas fabricadas por ANANTA</h2>
-      <p class="support reveal reveal-delay-2">Además de distribuidores, fabricamos nuestras propias máquinas. Añádalas al pedido y solicite presupuesto, o páguelas online.</p>
+      <span class="eyebrow reveal">Catálogo</span>
+      <h2 class="display reveal reveal-delay-1">Productos por aplicación</h2>
+      <p class="support reveal reveal-delay-2">Suministro, instalación, puesta en marcha y mantenimiento por técnicos de ANANTA. Las fichas marcadas como [EJEMPLO – SUSTITUIR] son de muestra: sustitúyalas por sus productos reales.</p>
     </div>
-    <div class="product-card-grid reveal reveal-delay-2" id="maquinasGrid"></div>
+    <div id="catalogoCategorias"></div>
   </div>
 </section>
 
-<!-- PIEZAS Y REPUESTOS -->
-<section class="content-block alt" id="piezas-repuestos">
+<!-- CTA DE CIERRE DEL CATÁLOGO -->
+<section class="close-cta">
   <div class="wrap">
-    <div class="block-head">
-      <span class="eyebrow reveal">Fabricación propia</span>
-      <h2 class="display reveal reveal-delay-1">Piezas y repuestos de acero inoxidable</h2>
-      <p class="support reveal reveal-delay-2">Fabricamos piezas y repuestos a medida, como palas o paletas de rotor en acero inoxidable, para sus equipos.</p>
-    </div>
-    <div class="product-card-grid reveal reveal-delay-2" id="piezasGrid"></div>
+    <span class="eyebrow reveal" style="justify-content:center;">¿No encuentra lo que busca?</span>
+    <h2 class="reveal reveal-delay-1">Hable con un técnico</h2>
+    <a href="contacto.html#formulario" class="btn btn-primary reveal reveal-delay-2">Contactar →</a>
   </div>
 </section>
 
@@ -119,16 +122,16 @@
     <p class="block-intro reveal">Homogeneizadores y bombas de alta presión para la industria de procesos, referencia internacional en tecnología de homogeneización.</p>
     <a href="https://www.bertoli-homogenizers.com/" target="_blank" rel="noopener" class="brand-link reveal">bertoli-homogenizers.com ↗</a>
     <ul class="product-list reveal reveal-delay-1">
-      <li>EVO LINE <button type="button" class="product-list-add" data-add-to-cart data-id="bertoli-evo-line" data-name="Bertoli EVO LINE">+ Añadir</button></li>
-      <li>STAR LINE <button type="button" class="product-list-add" data-add-to-cart data-id="bertoli-star-line" data-name="Bertoli STAR LINE">+ Añadir</button></li>
-      <li>Homogeneizadores de sobremesa y piloto <button type="button" class="product-list-add" data-add-to-cart data-id="bertoli-homog-sobremesa" data-name="Bertoli — Homogeneizadores de sobremesa y piloto">+ Añadir</button></li>
-      <li>Bombas para productos con trozos <button type="button" class="product-list-add" data-add-to-cart data-id="bertoli-bombas-trozos" data-name="Bertoli — Bombas para productos con trozos">+ Añadir</button></li>
-      <li>Bombas autoaspirantes <button type="button" class="product-list-add" data-add-to-cart data-id="bertoli-bombas-autoaspirantes" data-name="Bertoli — Bombas autoaspirantes">+ Añadir</button></li>
+      <li>EVO LINE</li>
+      <li>STAR LINE</li>
+      <li>Homogeneizadores de sobremesa y piloto</li>
+      <li>Bombas para productos con trozos</li>
+      <li>Bombas autoaspirantes</li>
       <li class="product-subcat">Griding Applications</li>
-      <li>Bomba centrífuga Plus <button type="button" class="product-list-add" data-add-to-cart data-id="bertoli-bomba-centrifuga-plus" data-name="Bertoli — Bomba centrífuga Plus">+ Añadir</button></li>
-      <li>Bomba trituradora <button type="button" class="product-list-add" data-add-to-cart data-id="bertoli-bomba-trituradora" data-name="Bertoli — Bomba trituradora">+ Añadir</button></li>
-      <li>Molino coloidal <button type="button" class="product-list-add" data-add-to-cart data-id="bertoli-molino-coloidal" data-name="Bertoli — Molino coloidal">+ Añadir</button></li>
-      <li>Mezclador de alto cizallamiento <button type="button" class="product-list-add" data-add-to-cart data-id="bertoli-mezclador-cizallamiento" data-name="Bertoli — Mezclador de alto cizallamiento">+ Añadir</button></li>
+      <li>Bomba centrífuga Plus</li>
+      <li>Bomba trituradora</li>
+      <li>Molino coloidal</li>
+      <li>Mezclador de alto cizallamiento</li>
     </ul>
   </div>
 </section>
@@ -142,10 +145,10 @@
     <p class="block-intro reveal">Equipos y soluciones de ingeniería para procesos industriales, ampliando la capacidad técnica que ANANTA pone a disposición de sus clientes.</p>
     <a href="https://www.nakakin.eu/es/" target="_blank" rel="noopener" class="brand-link reveal">nakakin.eu ↗</a>
     <ul class="product-list reveal reveal-delay-1">
-      <li>JM/JO <button type="button" class="product-list-add" data-add-to-cart data-id="nakakin-jm-jo" data-name="Nakakin JM/JO">+ Añadir</button></li>
-      <li>JMU <button type="button" class="product-list-add" data-add-to-cart data-id="nakakin-jmu" data-name="Nakakin JMU">+ Añadir</button></li>
-      <li>SC <button type="button" class="product-list-add" data-add-to-cart data-id="nakakin-sc" data-name="Nakakin SC">+ Añadir</button></li>
-      <li>AMXN <button type="button" class="product-list-add" data-add-to-cart data-id="nakakin-amxn" data-name="Nakakin AMXN">+ Añadir</button></li>
+      <li>JM/JO</li>
+      <li>JMU</li>
+      <li>SC</li>
+      <li>AMXN</li>
     </ul>
   </div>
 </section>
@@ -158,18 +161,18 @@
   <div class="wrap">
     <p class="block-intro reveal">Componentes y racores para instalaciones industriales, integrados en nuestros proyectos de mantenimiento y montaje.</p>
     <ul class="product-list reveal reveal-delay-1">
-      <li>Codo de 90° <button type="button" class="product-list-add" data-add-to-cart data-id="onfitting-codo-90" data-name="On Fitting — Codo de 90°">+ Añadir</button></li>
-      <li>Tees iguales <button type="button" class="product-list-add" data-add-to-cart data-id="onfitting-tees-iguales" data-name="On Fitting — Tees iguales">+ Añadir</button></li>
-      <li>Toma <button type="button" class="product-list-add" data-add-to-cart data-id="onfitting-toma" data-name="On Fitting — Toma">+ Añadir</button></li>
-      <li>Adaptador macho <button type="button" class="product-list-add" data-add-to-cart data-id="onfitting-adaptador-macho" data-name="On Fitting — Adaptador macho">+ Añadir</button></li>
-      <li>Adaptador hembra <button type="button" class="product-list-add" data-add-to-cart data-id="onfitting-adaptador-hembra" data-name="On Fitting — Adaptador hembra">+ Añadir</button></li>
-      <li>Adaptador a brida <button type="button" class="product-list-add" data-add-to-cart data-id="onfitting-adaptador-brida" data-name="On Fitting — Adaptador a brida">+ Añadir</button></li>
-      <li>Codo reducido <button type="button" class="product-list-add" data-add-to-cart data-id="onfitting-codo-reducido" data-name="On Fitting — Codo reducido">+ Añadir</button></li>
-      <li>Tees reducidas <button type="button" class="product-list-add" data-add-to-cart data-id="onfitting-tees-reducidas" data-name="On Fitting — Tees reducidas">+ Añadir</button></li>
-      <li>Reductor <button type="button" class="product-list-add" data-add-to-cart data-id="onfitting-reductor" data-name="On Fitting — Reductor">+ Añadir</button></li>
+      <li>Codo de 90°</li>
+      <li>Tees iguales</li>
+      <li>Toma</li>
+      <li>Adaptador macho</li>
+      <li>Adaptador hembra</li>
+      <li>Adaptador a brida</li>
+      <li>Codo reducido</li>
+      <li>Tees reducidas</li>
+      <li>Reductor</li>
       <li class="product-subcat">Expansora tuberías</li>
-      <li class="product-child">Tipo NE30C <button type="button" class="product-list-add" data-add-to-cart data-id="onfitting-expansora-ne30c" data-name="On Fitting — Expansora tuberías tipo NE30C">+ Añadir</button></li>
-      <li class="product-child">Tipo NE40C <button type="button" class="product-list-add" data-add-to-cart data-id="onfitting-expansora-ne40c" data-name="On Fitting — Expansora tuberías tipo NE40C">+ Añadir</button></li>
+      <li class="product-child">Tipo NE30C</li>
+      <li class="product-child">Tipo NE40C</li>
     </ul>
   </div>
 </section>
@@ -255,20 +258,164 @@
 </div>
 <script src="assets/js/chatbot.js"></script>
 
-<div class="cart-drawer" id="cartDrawer">
-  <div class="cart-panel" id="cartPanel">
-    <div class="cart-header">
-      <strong>Su pedido</strong>
-      <button type="button" class="cart-close" id="cartClose" aria-label="Cerrar pedido">
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M6 6l12 12M18 6L6 18"/></svg>
-      </button>
-    </div>
-    <div class="cart-body" id="cartBody"></div>
-    <div class="cart-footer" id="cartFooter"></div>
-  </div>
-</div>
-<script src="assets/js/products-data.js"></script>
-<script src="assets/js/cart.js"></script>
+<script>
+/*
+ * CATÁLOGO DE PRODUCTOS — ANANTA
+ * ================================
+ * Un único array con todos los productos, organizados por categoría.
+ * Para AÑADIR UN PRODUCTO NUEVO: copie uno de los objetos { ... } que
+ * hay dentro de "productos" en la categoría que corresponda, péguelo
+ * justo debajo (separado por una coma) y cambie sus datos.
+ * Para AÑADIR UNA CATEGORÍA NUEVA: copie un bloque { id, nombre,
+ * productos: [...] } completo y cámbiele el id y el nombre.
+ *
+ * CAMPOS DE CADA PRODUCTO:
+ *   nombre      → nombre comercial del producto
+ *   marca       → marca del fabricante
+ *   modelo      → referencia / modelo
+ *   imagen      → ruta a la foto (p.ej. "assets/img/productos/mi-foto.jpg"),
+ *                 o null si todavía no tiene foto (se muestra un marcador
+ *                 de posición automáticamente)
+ *   uso         → 1-2 líneas: para qué sirve y en qué industrias se usa
+ *   specs       → lista de 3-4 datos técnicos clave (texto libre)
+ *   ficha       → ruta al PDF de la ficha técnica dentro de la carpeta
+ *                 /fichas/ (puede no existir todavía el archivo)
+ *   precioConsulta → true siempre que no se indique precio (se muestra
+ *                 "Precio bajo consulta")
+ */
+var ANANTA_CATALOG = [
+  {
+    id: 'bombas-viscosos',
+    nombre: 'Bombas para fluidos viscosos',
+    productos: [
+      {
+        nombre: '[EJEMPLO – SUSTITUIR] Bomba de lóbulos rotativos',
+        marca: '[Marca ejemplo]',
+        modelo: '[Modelo ejemplo]',
+        imagen: null,
+        uso: '[EJEMPLO – SUSTITUIR] Texto de ejemplo: bombeo de productos viscosos, con o sin sólidos en suspensión, en industria alimentaria y química.',
+        specs: [
+          'Caudal: [dato ejemplo] m³/h',
+          'Presión: [dato ejemplo] bar',
+          'Materiales: [dato ejemplo] (p. ej. AISI 316)',
+          'Temperatura máx.: [dato ejemplo] °C'
+        ],
+        ficha: 'fichas/ejemplo-bomba-lobulos.pdf',
+        precioConsulta: true
+      }
+    ]
+  },
+  {
+    id: 'bombas-piston',
+    nombre: 'Bombas de pistones de alta presión',
+    productos: [
+      {
+        nombre: '[EJEMPLO – SUSTITUIR] Bomba de pistones de alta presión',
+        marca: '[Marca ejemplo]',
+        modelo: '[Modelo ejemplo]',
+        imagen: null,
+        uso: '[EJEMPLO – SUSTITUIR] Texto de ejemplo: impulsión de producto a alta presión en líneas de proceso y homogeneización.',
+        specs: [
+          'Caudal: [dato ejemplo] l/h',
+          'Presión máx.: [dato ejemplo] bar',
+          'Nº de pistones: [dato ejemplo]',
+          'Materiales en contacto: [dato ejemplo]'
+        ],
+        ficha: 'fichas/ejemplo-bomba-pistones.pdf',
+        precioConsulta: true
+      }
+    ]
+  },
+  {
+    id: 'equipos-concentrado',
+    nombre: 'Equipos para líneas de concentrado y procesado',
+    productos: []
+  },
+  {
+    id: 'repuestos-consumibles',
+    nombre: 'Repuestos y consumibles',
+    productos: [
+      {
+        nombre: '[EJEMPLO – SUSTITUIR] Kit de juntas y retenes',
+        marca: '[Marca ejemplo]',
+        modelo: '[Modelo ejemplo]',
+        imagen: null,
+        uso: '[EJEMPLO – SUSTITUIR] Texto de ejemplo: recambio periódico de estanqueidad para bombas y equipos de proceso.',
+        specs: [
+          'Material: [dato ejemplo] (EPDM / FKM / PTFE)',
+          'Compatibilidad: [dato ejemplo]',
+          'Vida útil estimada: [dato ejemplo]'
+        ],
+        ficha: 'fichas/ejemplo-kit-juntas.pdf',
+        precioConsulta: true
+      }
+    ]
+  }
+];
+
+(function(){
+  var QUOTE_EMAIL = 'joseabobo@ananta.es';
+
+  function el(tag, cls, html){
+    var e = document.createElement(tag);
+    if(cls) e.className = cls;
+    if(html !== undefined) e.innerHTML = html;
+    return e;
+  }
+
+  function mailtoUrl(productName){
+    var subject = 'Solicitud de presupuesto — ' + productName;
+    return 'mailto:' + QUOTE_EMAIL + '?subject=' + encodeURIComponent(subject);
+  }
+
+  function productCard(p){
+    var img = p.imagen
+      ? '<div class="product-card-img"><img src="' + p.imagen + '" alt="' + p.nombre + '" loading="lazy"></div>'
+      : '<div class="product-card-img is-placeholder"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M3 16l5-5 4 4 5-6 4 5"/></svg><span>Foto pendiente</span></div>';
+
+    var specsHtml = (p.specs || []).map(function(s){ return '<li>' + s + '</li>'; }).join('');
+
+    return (
+      '<div class="product-card">' + img +
+      '<div class="product-card-body">' +
+      '<span class="product-card-sku">' + p.marca + (p.modelo ? ' — ' + p.modelo : '') + '</span>' +
+      '<h3 class="product-card-name">' + p.nombre + '</h3>' +
+      '<p class="product-card-desc">' + p.uso + '</p>' +
+      '<ul class="product-card-specs">' + specsHtml + '</ul>' +
+      '<p class="product-card-service">Suministro, instalación, puesta en marcha y mantenimiento por técnicos de ANANTA</p>' +
+      '<span class="product-card-price">Precio bajo consulta</span>' +
+      '<div class="product-card-actions">' +
+      '<a class="product-add-btn" href="' + mailtoUrl(p.nombre) + '">Solicitar presupuesto →</a>' +
+      '<a class="product-datasheet-link" href="' + p.ficha + '" target="_blank" rel="noopener">Descargar ficha técnica (PDF) ↓</a>' +
+      '</div>' +
+      '</div></div>'
+    );
+  }
+
+  function mount(){
+    var container = document.getElementById('catalogoCategorias');
+    if(!container) return;
+    ANANTA_CATALOG.forEach(function(cat){
+      var section = el('div', 'catalog-category');
+      section.appendChild(el('h3', 'catalog-category-title', cat.nombre));
+      if(cat.productos.length){
+        var grid = el('div', 'product-card-grid');
+        grid.innerHTML = cat.productos.map(productCard).join('');
+        section.appendChild(grid);
+      } else {
+        section.appendChild(el('p', 'catalog-category-empty', 'Próximamente. Añada aquí sus productos de esta categoría en ANANTA_CATALOG.'));
+      }
+      container.appendChild(section);
+    });
+  }
+
+  if(document.readyState === 'loading'){
+    document.addEventListener('DOMContentLoaded', mount);
+  } else {
+    mount();
+  }
+})();
+</script>
 
 </body>
 </html>
