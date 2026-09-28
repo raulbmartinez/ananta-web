@@ -891,4 +891,8 @@ section.intro-text{background:var(--white);padding:84px 0 76px;}
 
 .intro-hero .reel-bg{animation:none;inset:0;background-position:center;}
 
-section.close-cta.slogan-close h2{margin-bottom:0;}
+section.close-cta.slogan-close{padding:150px 0 140px;}
+section.close-cta.slogan-close h2{margin:0 auto;max-width:1240px;font-size:clamp(38px,7.2vw,104px);font-weight:500;line-height:1.04;letter-spacing:-.025em;text-wrap:balance;}
+section.close-cta.slogan-close h2 em{font-style:italic;font-weight:500;color:var(--steel);}
+section.close-cta.slogan-close .underline-svg{height:clamp(22px,3vw,40px);margin-top:clamp(14px,2vw,26px);}
+@media (max-width:640px){section.close-cta.slogan-close{padding:100px 0 96px;}}
