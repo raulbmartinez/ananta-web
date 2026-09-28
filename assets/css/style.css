@@ -890,3 +890,5 @@ section.intro-text{background:var(--white);padding:84px 0 76px;}
 @media (max-width:640px){.reel.intro-hero{min-height:44vh;}section.intro-text{padding:56px 0 48px;}}
 
 .intro-hero .reel-bg{animation:none;inset:0;background-position:center;}
+
+section.close-cta.slogan-close h2{margin-bottom:0;}
