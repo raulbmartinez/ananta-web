@@ -321,7 +321,7 @@ section.clients{background:var(--white);padding:0 0 100px;}
 
 /* CTA CIERRE — franja navy con la frase, seguida de una foto a toda anchura (marcas → frase → foto → logos) */
 section.close-cta{background:var(--navy-deep);padding:120px 0;text-align:center;}
-.close-cta h2{font-size:clamp(22px,3.6vw,44px);line-height:1.15;max-width:1120px;margin:0 auto;white-space:normal;}
+.close-cta h2{font-size:clamp(22px,3.6vw,44px);line-height:1.15;max-width:1120px;margin:0 auto 36px;white-space:normal;}
 
 .close-photo{
   height:60vh; min-height:360px; max-height:560px;
@@ -781,52 +781,3 @@ body:has(.wa-avoid) .whatsapp-float.wa-visible{opacity:1; pointer-events:auto;}
   .chatbot{right:16px; bottom:calc(16px + var(--kb-offset, 0px));}
   .chatbot-panel{right:-8px; bottom:74px; width:calc(100vw - 24px); height:min(70vh, 560px); height:min(70dvh, 560px);}
 }
-
-/* ---------- CATÁLOGO DE PRODUCTOS (productos.html) ---------- */
-.catalog-category{margin-top:56px;}
-.catalog-category:first-child{margin-top:0;}
-.catalog-category-title{
-  font-family:var(--serif); font-size:22px; font-weight:500; color:var(--ink);
-  padding-bottom:14px; margin-bottom:0; border-bottom:1px solid var(--grey-line);
-}
-.catalog-category-empty{color:var(--grey); font-size:13.5px; margin-top:20px;}
-
-.product-card-grid{display:grid; grid-template-columns:repeat(auto-fit, minmax(280px,1fr)); gap:28px; margin-top:36px;}
-.product-card{background:var(--white); border:1px solid var(--grey-line); display:flex; flex-direction:column;}
-.product-card-img{aspect-ratio:16/10; background:var(--grey-light); overflow:hidden; display:flex; align-items:center; justify-content:center;}
-.product-card-img img{width:100%; height:100%; object-fit:contain;}
-.product-card-img.is-placeholder{color:var(--steel-dim); flex-direction:column; gap:8px;}
-.product-card-img.is-placeholder svg{width:38px; height:38px;}
-.product-card-img.is-placeholder span{font-family:var(--label); font-size:10px; letter-spacing:.06em; text-transform:uppercase;}
-.product-card-body{padding:22px 24px; display:flex; flex-direction:column; flex:1;}
-.product-card-sku{font-family:var(--label); font-size:10.5px; letter-spacing:.08em; text-transform:uppercase; color:var(--steel-dim); margin-bottom:6px;}
-.product-card-name{font-family:var(--serif); font-size:18px; font-weight:500; color:var(--ink); margin-bottom:8px;}
-.product-card-desc{font-size:13.5px; color:var(--slate); line-height:1.6; margin:0;}
-.product-card-specs{list-style:none; margin:14px 0 0; padding:0; display:flex; flex-direction:column; gap:5px;}
-.product-card-specs li{
-  font-size:12.5px; color:var(--slate); line-height:1.5; padding-left:14px; position:relative;
-}
-.product-card-specs li::before{
-  content:""; position:absolute; left:0; top:7px; width:5px; height:5px; border-radius:50%; background:var(--navy);
-}
-.product-card-service{
-  font-size:12px; color:var(--navy); line-height:1.5; margin:16px 0 0;
-  padding:10px 12px; background:var(--grey-light); border-left:2px solid var(--navy);
-}
-.product-card-price{font-size:12.5px; color:var(--grey); margin-top:14px;}
-.product-card-actions{display:flex; flex-direction:column; gap:10px; margin-top:14px;}
-
-.product-add-btn{
-  display:inline-flex; align-items:center; justify-content:center; gap:6px;
-  font-family:var(--label); font-size:11px; letter-spacing:.06em; text-transform:uppercase;
-  color:var(--white); background:var(--navy); border:1px solid var(--navy); border-radius:8px; padding:10px 16px; cursor:pointer;
-  transition:background .15s ease, color .15s ease; text-decoration:none;
-}
-.product-add-btn:hover{background:var(--navy-deep);}
-.product-datasheet-link{
-  display:inline-flex; align-items:center; justify-content:center; gap:6px;
-  font-family:var(--label); font-size:11px; letter-spacing:.06em; text-transform:uppercase;
-  color:var(--navy); border:1px solid var(--grey-line); border-radius:8px; padding:9px 16px;
-  text-decoration:none; transition:border-color .15s ease, background .15s ease;
-}
-.product-datasheet-link:hover{border-color:var(--navy); background:var(--grey-light);}
