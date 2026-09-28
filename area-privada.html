@@ -3,8 +3,8 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Sector agua — ANANTA</title>
-<meta name="description" content="Mantenimiento de centrífugas decánter, bombas y activos críticos en EDAR, ETAP y redes de agua. Correctivo, predictivo y proyectos llave en mano.">
+<title>Área privada — ANANTA</title>
+<meta name="description" content="Área privada de clientes de ANANTA: acceda a los informes de su servicio.">
 <link rel="icon" type="image/png" href="assets/img/favicon.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,500;0,9..144,600;1,9..144,400;1,9..144,500&family=Inter:wght@400;500;600;700&family=Raleway:ital,wght@0,400;0,500;0,600;0,700;1,500&display=swap" rel="stylesheet">
@@ -17,7 +17,7 @@
     <a href="index.html" class="logo"><img src="assets/img/logo-navy.png" alt="ANANTA"></a>
     <nav class="main-nav" id="mainNav">
       <div class="nav-item">
-        <a href="compania.html" class="active">Compañía</a>
+        <a href="compania.html">Compañía</a>
         <button type="button" class="nav-caret-btn" aria-expanded="false" aria-label="Ver subapartados de Compañía"><span class="nav-caret">▾</span></button>
         <div class="nav-dropdown">
           <div class="dropdown-links">
@@ -54,9 +54,9 @@
         </div>
       </div>
       <a href="blog.html">Blog</a>
-      <a href="area-privada.html" class="nav-private"><svg class="nav-lock" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><rect x="5" y="11" width="14" height="9" rx="2"/><path d="M8 11V8a4 4 0 0 1 8 0v3"/></svg>Área privada</a>
+      <a href="area-privada.html" class="nav-private active"><svg class="nav-lock" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><rect x="5" y="11" width="14" height="9" rx="2"/><path d="M8 11V8a4 4 0 0 1 8 0v3"/></svg>Área privada</a>
       <a href="contacto.html" class="nav-cta">Contacto</a>
-          <a href="en/negocio.html" class="lang-switch"><span class="flag" aria-hidden="true">🇬🇧</span>EN</a>
+          <a href="en/area-privada.html" class="lang-switch"><span class="flag" aria-hidden="true">🇬🇧</span>EN</a>
     </nav>
     <button class="nav-toggle" id="navToggle" type="button" aria-label="Abrir menú" aria-expanded="false" aria-controls="mainNav">
       <span></span><span></span><span></span>
@@ -66,105 +66,44 @@
 
 <section class="page-hero">
   <div class="wrap">
-    <span class="eyebrow reveal">Inicio / Sectores / Sector agua</span>
-    <h1 class="reveal reveal-delay-1">Lideramos el mantenimiento del sector del agua en España</h1>
-    <p class="lede reveal reveal-delay-2">Más de 6.000 depuradoras en España y Portugal. Somos el equipo de referencia para el mantenimiento de centrífugas decánter, bombas y activos críticos en EDAR, ETAP y redes de agua.</p>
-    <a href="contacto.html#formulario" class="btn btn-primary reveal reveal-delay-3">Solicitar inspección técnica →</a>
+    <span class="eyebrow reveal">Área privada</span>
+    <h1 class="reveal reveal-delay-1">Acceso de clientes</h1>
+    <p class="lede reveal reveal-delay-2">Consulte el informe correspondiente a su servicio con ANANTA.</p>
   </div>
 </section>
 
-<section class="service-block" id="servicios-agua">
-  <div class="block-band">
-    <div class="wrap"><h2 class="reveal">Servicios para el sector agua</h2></div>
-  </div>
+<section class="contact private-area">
   <div class="wrap">
-    <div class="card-grid" style="margin-top:40px;">
-      <div class="reveal">
-        <h3>Mantenimiento correctivo</h3>
-        <p>Reparación completa de centrífugas decánter, bombas y turbinas. Fabricación de piezas, equilibrado en campo y taller, alineaciones y recubrimientos cerámicos anticorrosión.</p>
-        <a href="negocio.html#mantenimiento-industrial" class="card-link">Ver servicio completo →</a>
+    <div class="private-grid">
+      <form class="contact-form reveal" id="privateForm" autocomplete="off" novalidate>
+        <div class="field">
+          <label for="pa-user">Correo electrónico *</label>
+          <input type="email" id="pa-user" name="user" required autocomplete="username">
+        </div>
+        <div class="field">
+          <label for="pa-pass">Contraseña *</label>
+          <input type="password" id="pa-pass" name="pass" required autocomplete="current-password">
+        </div>
+        <button type="submit" class="btn btn-primary">Acceder →</button>
+        <p class="form-note">El acceso al área privada estará disponible próximamente.</p>
+        <p class="form-success" id="privateMsg">El área privada está en preparación. Cuando esté activa, recibirá sus credenciales de acceso por correo.</p>
+      </form>
+      <div class="private-help reveal reveal-delay-1">
+        <h3>¿Aún no tiene acceso?</h3>
+        <p>Si es cliente de ANANTA, solicite sus credenciales a su contacto habitual o escríbanos.</p>
+        <a href="contacto.html#formulario" class="card-link">Contactar →</a>
       </div>
-      <div class="reveal reveal-delay-1">
-        <h3>Mantenimiento predictivo</h3>
-        <p>Análisis de vibraciones, termografía infrarroja y ultrasonidos en activos críticos. Detectamos el fallo antes de la parada. Informes técnicos detallados con causa raíz y plan de acción.</p>
-        <a href="negocio.html#mantenimiento-industrial" class="card-link">Ver servicio completo →</a>
-      </div>
-      <div class="reveal" style="grid-column:1 / -1;">
-        <h3>Proyectos llave en mano</h3>
-        <p>Diseño, construcción y puesta en marcha de instalaciones en EDAR y ETAP. Traslado de líneas de proceso, instalación electromecánica y asistencia técnica desde el día uno.</p>
-        <a href="negocio.html#montajes-paradas" class="card-link">Ver servicio completo →</a>
-      </div>
-    </div>
-  </div>
-</section>
-
-<section class="content-block alt" id="problema">
-  <div class="wrap">
-    <div class="block-head">
-      <span class="eyebrow reveal">El problema que resolvemos</span>
-      <h2 class="display reveal reveal-delay-1">El mantenimiento de centrífugas decánter ya no es exclusivo de los fabricantes</h2>
-      <p class="support reveal reveal-delay-2">Durante décadas, el mantenimiento de centrífugas decánter —la maquinaria crítica en toda EDAR— estaba en manos exclusivas de los propios fabricantes: Pieralisi, GEA, Alfa Laval, Andritz. Sin alternativa real en el mercado.</p>
-      <p class="support reveal reveal-delay-3">Ananta rompió ese monopolio. Nuestros técnicos tienen el conocimiento para intervenir, diagnosticar y reparar estas máquinas independientemente del fabricante. Con resultados equivalentes o superiores, y con tiempos de respuesta que los grandes fabricantes no pueden ofrecer.</p>
-      <p class="support reveal reveal-delay-3"><strong>Una reparación media de centrífuga oscila entre 5.000 y 10.000 euros.</strong> Ananta ofrece el mismo nivel técnico que el fabricante, con mayor flexibilidad y menor tiempo de respuesta.</p>
     </div>
   </div>
 </section>
 
-<section class="content-block" id="equipos-agua">
-  <div class="wrap">
-    <div class="block-head">
-      <span class="eyebrow reveal">Equipos en los que somos especialistas</span>
-      <h2 class="display reveal reveal-delay-1">Conocemos cada pieza de estas máquinas</h2>
-      <p class="support reveal reveal-delay-2">Nuestra especialización no es genérica. Trabajamos a diario con los equipos que constituyen el corazón operativo de toda depuradora y planta de tratamiento.</p>
-    </div>
-    <div class="card-grid">
-      <div class="reveal">
-        <span class="card-tag">Servicio estrella</span>
-        <h3>Centrífugas decánter</h3>
-        <p>La máquina estrella de toda EDAR. Especialistas en su reparación independientemente del fabricante: Pieralisi, GEA, Alfa Laval, Andritz. Deshidratación de lodos, rodamientos, husillo y tambor.</p>
-      </div>
-      <div class="reveal reveal-delay-1">
-        <h3>Bombas de proceso</h3>
-        <p>Bombas lobulares, centrífugas, de pistones y peristálticas en redes de agua potable y residual. Reparación, equilibrado dinámico, recubrimientos cerámicos y sellados mecánicos.</p>
-      </div>
-      <div class="reveal">
-        <h3>Turbinas y soplantes</h3>
-        <p>Aireación en balsas biológicas y caudales de proceso. Mantenimiento predictivo con análisis de vibraciones, equilibrado de rotores y reemplazo de rodamientos de alta velocidad.</p>
-      </div>
-      <div class="reveal reveal-delay-1">
-        <h3>Sistemas de filtración y calderería</h3>
-        <p>Instalación y mantenimiento de tuberías en todo tipo de materiales, soldaduras especiales, calderería y modificación de instalaciones en plantas de tratamiento.</p>
-      </div>
-    </div>
-    <a href="contacto.html#formulario" class="btn btn-primary" style="margin-top:36px;">Contactar ahora →</a>
-  </div>
-</section>
-
-<section class="content-block alt" id="razones">
-  <div class="wrap">
-    <div class="block-head">
-      <span class="eyebrow reveal">Por qué elegirnos</span>
-      <h2 class="display reveal reveal-delay-1">Razones que nos distinguen en el sector del agua</h2>
-    </div>
-    <div class="card-grid">
-      <div class="reveal">
-        <span class="card-tag">01</span>
-        <h3>Conocimiento propio, sin dependencia del fabricante</h3>
-        <p>Hemos desarrollado durante 20 años un conocimiento técnico propio sobre maquinaria de proceso en agua. No dependemos de manuales de fabricante: conocemos las máquinas desde dentro.</p>
-      </div>
-      <div class="reveal reveal-delay-1">
-        <span class="card-tag">02</span>
-        <h3>Taller propio con maquinaria de precisión</h3>
-        <p>Nuestras instalaciones en Casarrubios del Monte cuentan con tornos, fresadoras, equilibradoras dinámicas y medición láser. La reparación se ejecuta en nuestro taller con control total de calidad.</p>
-      </div>
-      <div class="reveal" style="grid-column:1 / -1;">
-        <span class="card-tag">03</span>
-        <h3>Respuesta rápida y equipos listos</h3>
-        <p>Disponemos de equipos técnicos en campo, listos para actuar en instalaciones EDAR.</p>
-      </div>
-    </div>
-  </div>
-</section>
+<script>
+(function(){
+  var f=document.getElementById('privateForm'), m=document.getElementById('privateMsg');
+  if(!f) return;
+  f.addEventListener('submit',function(e){ e.preventDefault(); f.reset(); m.classList.add('is-shown'); });
+})();
+</script>
 
 <footer class="site-footer wa-avoid">
   <div class="wrap">
@@ -237,6 +176,22 @@
     <svg class="icon-close" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M6 6l12 12M18 6L6 18"/></svg>
   </button>
 </div>
+<script>
+(function(){
+  var links=document.querySelectorAll('#areaNav a[data-area]');
+  if(!links.length||!('IntersectionObserver' in window)) return;
+  var map={};
+  links.forEach(function(a){ map[a.getAttribute('data-area')]=a; });
+  var visible={};
+  var io=new IntersectionObserver(function(entries){
+    entries.forEach(function(e){ visible[e.target.id]=e.isIntersecting ? e.intersectionRatio : 0; });
+    var best=null,bestV=0;
+    Object.keys(visible).forEach(function(id){ if(visible[id]>bestV){bestV=visible[id];best=id;} });
+    if(best){ links.forEach(function(a){ a.classList.toggle('is-active', a===map[best]); }); }
+  },{rootMargin:'-120px 0px -40% 0px',threshold:[0,.1,.25,.5,.75,1]});
+  Object.keys(map).forEach(function(id){ var s=document.getElementById(id); if(s) io.observe(s); });
+})();
+</script>
 <script src="assets/js/chatbot.js"></script>
 
 </body>
