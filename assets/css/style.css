@@ -807,7 +807,7 @@ body:has(.wa-avoid) .whatsapp-float.wa-visible{opacity:1; pointer-events:auto;}
 }
 
 /* ---------- NEGOCIO: áreas, navegación fija y bloques visuales ---------- */
-.area-nav{position:sticky;top:64px;z-index:150;background:rgba(255,255,255,.96);backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);border-bottom:1px solid var(--grey-line);}
+.area-nav{margin-top:68px;position:sticky;top:64px;z-index:150;background:rgba(255,255,255,.96);backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);border-bottom:1px solid var(--grey-line);}
 .area-nav ul{list-style:none;margin:0;padding:0;display:flex;gap:10px;overflow-x:auto;scrollbar-width:none;}
 .area-nav ul::-webkit-scrollbar{display:none;}
 .area-nav a{display:flex;align-items:center;gap:12px;padding:16px 20px;white-space:nowrap;border-bottom:3px solid transparent;color:var(--slate);transition:color .2s ease,border-color .2s ease,background .2s ease;}
@@ -851,7 +851,7 @@ section.area.alt .equip-grid li{background:var(--grey-light);}
 
 
 @media (max-width:980px){
-  .area-nav{top:62px;}
+  .area-nav{top:62px;margin-top:62px;}
   .steps-grid{grid-template-columns:repeat(2,1fr);}
   .area-head-inner{flex-direction:column;align-items:flex-start;gap:6px;}
   .area-bignum{font-size:84px;}
