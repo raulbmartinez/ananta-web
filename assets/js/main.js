@@ -1,3 +1,13 @@
+(function(){
+  try{
+    if(location.search.indexOf('intl=es') === -1) return;
+    document.cookie = 'ananta_lang=es; Path=/; Max-Age=31536000; SameSite=Lax';
+    var url = new URL(location.href);
+    url.searchParams.delete('intl');
+    history.replaceState(null, '', url.pathname + url.search + url.hash);
+  }catch(e){}
+})();
+
 document.addEventListener('DOMContentLoaded', function(){
   var y = document.querySelector('[data-year]');
   if(y) y.textContent = new Date().getFullYear();
