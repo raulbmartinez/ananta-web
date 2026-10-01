@@ -172,13 +172,11 @@ nav.main-nav a.lang-switch::after{display:none;}
 .hero-slideshow{position:absolute; inset:-9%; overflow:hidden; will-change:transform; transition:transform .1s linear;}
 .hero-slideshow .slide{
   position:absolute; inset:0;
-  background-color:var(--navy-deep);
-  background-size:contain; background-repeat:no-repeat; background-position:center;
+  background-size:cover; background-position:center 18%;
   opacity:0;
   clip-path: inset(0 100% 0 0);
   animation: kenburnsSlide 52s ease-in-out infinite, heroWipe 20s cubic-bezier(.65,0,.35,1) infinite;
 }
-.hero-slideshow .slide.slide-cover{background-size:cover; background-repeat:no-repeat; background-position:center 20%;}
 .hero-slideshow .slide:nth-child(1){animation-delay:0s, 0s;}
 .hero-slideshow .slide:nth-child(2){animation-delay:0s, 4s;}
 .hero-slideshow .slide:nth-child(3){animation-delay:0s, 8s;}
