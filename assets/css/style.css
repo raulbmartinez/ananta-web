@@ -238,6 +238,7 @@ h1, .display{
 /* ---------- MAPA DE SEDES ---------- */
 section.locations{background:var(--white);padding:100px 0;}
 .locations-head{max-width:640px;margin-bottom:56px;}
+.locations-head h2{font-family:var(--sans);font-weight:700;letter-spacing:-.015em;color:var(--navy);line-height:1.15;}
 .locations-head p.support{color:var(--slate);font-size:16px;max-width:540px;margin:18px 0 0;}
 .map-graphic{position:relative;border:1px solid var(--grey-line);border-radius:6px;overflow:hidden;aspect-ratio:440/152;}
 .map-graphic .world-map-img{position:absolute;inset:0;width:100%;height:100%;display:block;}
@@ -276,7 +277,7 @@ section.locations{background:var(--white);padding:100px 0;}
 /* STATS — franja clara */
 section.stats{background:var(--grey-light); padding:110px 0; border-top:1px solid var(--grey-line); border-bottom:1px solid var(--grey-line);}
 .stats-head{max-width:640px;margin-bottom:64px;}
-.stats-head h2{font-size:clamp(26px,3vw,38px);line-height:1.2;}
+.stats-head h2{font-family:var(--sans);font-weight:700;letter-spacing:-.015em;color:var(--navy);font-size:clamp(26px,3vw,38px);line-height:1.15;}
 .stat-strip{display:grid;grid-template-columns:repeat(4,1fr);}
 .stat-item{padding:0 28px 0 0;border-right:1px solid var(--grey-line);}
 .stat-item:not(:first-child){padding-left:28px;}
@@ -550,7 +551,7 @@ section.contact-intro{background:var(--grey-light);padding:0 0 90px;border-top:1
 
 section.contact{background:var(--white);padding:100px 0 130px;}
 .contact-head{max-width:640px;margin-bottom:64px;}
-.contact-head h2{font-size:clamp(26px,3.4vw,42px);line-height:1.18;margin:18px 0;}
+.contact-head h2{font-family:var(--sans);font-weight:700;letter-spacing:-.015em;color:var(--navy);font-size:clamp(26px,3.4vw,42px);line-height:1.15;margin:18px 0;}
 .contact-head p.support{color:var(--slate);font-size:16px;max-width:540px;margin:0;}
 
 .contact-grid{display:grid;grid-template-columns:0.85fr 1.3fr;gap:80px;align-items:start;}
