@@ -891,11 +891,20 @@ section.intro-text{background:var(--white);padding:84px 0 76px;}
 
 .intro-hero .reel-bg{animation:none;inset:0;background-position:center;}
 
-section.close-cta.slogan-close{padding:150px 0 140px;}
-section.close-cta.slogan-close h2{margin:0 auto;max-width:1240px;font-size:clamp(38px,7.2vw,104px);font-weight:500;line-height:1.04;letter-spacing:-.025em;text-wrap:balance;}
+section.close-cta.slogan-close{padding:160px 0 150px;position:relative;overflow:hidden;}
+section.close-cta.slogan-close::before{
+  content:""; position:absolute; inset:0;
+  background:radial-gradient(60% 90% at 50% 45%, rgba(126,163,201,.16) 0%, rgba(126,163,201,0) 70%);
+  pointer-events:none;
+}
+section.close-cta.slogan-close .wrap{max-width:1680px; padding:0 5vw;}
+section.close-cta.slogan-close h2{position:relative;margin:0 auto;max-width:none;font-size:clamp(42px,9.2vw,168px);font-weight:500;line-height:0.98;letter-spacing:-.03em;text-wrap:balance;}
 section.close-cta.slogan-close h2 em{font-style:italic;font-weight:500;color:var(--steel);}
-section.close-cta.slogan-close .underline-svg{height:clamp(22px,3vw,40px);margin-top:clamp(14px,2vw,26px);}
-@media (max-width:640px){section.close-cta.slogan-close{padding:100px 0 96px;}}
+section.close-cta.slogan-close .underline-svg{width:100%;height:clamp(24px,3.4vw,46px);margin-top:clamp(16px,2.4vw,30px);}
+@media (max-width:640px){
+  section.close-cta.slogan-close{padding:110px 0 100px;}
+  section.close-cta.slogan-close .wrap{padding:0 24px;}
+}
 
 .card-grid .card-list{list-style:none;margin:16px 0 0;padding:0;display:grid;gap:8px;}
 .card-grid .card-list li{position:relative;padding-left:20px;font-size:14px;line-height:1.5;color:var(--slate);}
