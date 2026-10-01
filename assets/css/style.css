@@ -159,10 +159,10 @@ nav.main-nav a.lang-switch::after{display:none;}
 
 /* eyebrow: azul marino sobre fondos claros; azul acero sobre fotografías/franjas oscuras */
 .eyebrow{
-  font-family:var(--label); font-weight:600; font-size:13.5px; letter-spacing:.13em; text-transform:uppercase;
+  font-family:var(--label); font-weight:600; font-size:13.5px; letter-spacing:.01em;
   color:var(--navy); display:inline-flex; align-items:center; gap:14px; margin-bottom:22px;
 }
-.eyebrow::before{content:"";width:30px;height:1px;background:var(--navy);}
+.eyebrow::before{content:none;}
 .reel .eyebrow, .close-cta .eyebrow{color:var(--steel);}
 .reel .eyebrow::before, .close-cta .eyebrow::before{background:var(--steel-dim);}
 
