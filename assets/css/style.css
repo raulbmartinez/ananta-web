@@ -902,8 +902,8 @@ section.close-cta.slogan-close::before{
   background:radial-gradient(60% 90% at 50% 45%, rgba(126,163,201,.16) 0%, rgba(126,163,201,0) 70%);
   pointer-events:none;
 }
-section.close-cta.slogan-close .wrap{max-width:1680px; padding:0 5vw;}
-section.close-cta.slogan-close h2{position:relative;margin:0 auto;max-width:none;font-size:clamp(42px,9.2vw,168px);font-weight:500;line-height:0.98;letter-spacing:-.03em;text-wrap:balance;}
+section.close-cta.slogan-close .wrap{max-width:1760px; padding:0 3.5vw;}
+section.close-cta.slogan-close h2{position:relative;margin:0 auto;max-width:none;font-size:clamp(34px,7.6vw,136px);font-weight:500;line-height:1.02;letter-spacing:-.025em;text-wrap:balance;}
 section.close-cta.slogan-close h2 em{font-style:italic;font-weight:500;color:var(--steel);}
 section.close-cta.slogan-close .underline-svg{width:100%;height:clamp(24px,3.4vw,46px);margin-top:clamp(16px,2.4vw,30px);}
 @media (max-width:640px){
