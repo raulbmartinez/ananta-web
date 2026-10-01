@@ -160,7 +160,7 @@ nav.main-nav a.lang-switch::after{display:none;}
 /* eyebrow: azul marino sobre fondos claros; azul acero sobre fotografías/franjas oscuras */
 .eyebrow{
   font-family:var(--sans); font-weight:700; font-size:13.5px; letter-spacing:.04em; text-transform:uppercase;
-  color:var(--navy); display:inline-flex; align-items:center; gap:14px; margin-bottom:22px;
+  color:var(--grey); display:inline-flex; align-items:center; gap:14px; margin-bottom:22px;
 }
 .eyebrow::before{content:none;}
 .reel .eyebrow, .close-cta .eyebrow{color:var(--steel);}
