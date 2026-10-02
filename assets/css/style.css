@@ -893,16 +893,17 @@ section.intro-text{background:var(--white);padding:84px 0 76px;}
 
 .intro-hero .reel-bg{animation:none;inset:0;background-position:center top;}
 
-section.close-cta.slogan-close{padding:92px 0 84px;position:relative;overflow:hidden;}
+section.close-cta.slogan-close{background:var(--white);padding:92px 0 84px;position:relative;overflow:hidden;}
 section.close-cta.slogan-close::before{
   content:""; position:absolute; inset:0;
-  background:radial-gradient(60% 90% at 50% 45%, rgba(126,163,201,.16) 0%, rgba(126,163,201,0) 70%);
+  background:radial-gradient(60% 90% at 50% 45%, rgba(111,163,201,.14) 0%, rgba(111,163,201,0) 70%);
   pointer-events:none;
 }
 section.close-cta.slogan-close .wrap{max-width:1760px; padding:0 3.5vw;}
-section.close-cta.slogan-close h2{position:relative;margin:0 auto;max-width:1320px;font-size:clamp(26px,4.4vw,74px);font-weight:500;line-height:1.12;letter-spacing:-.02em;text-wrap:balance;}
-section.close-cta.slogan-close h2 em{font-style:italic;font-weight:500;color:var(--steel);}
+section.close-cta.slogan-close h2{position:relative;margin:0 auto;max-width:1320px;font-size:clamp(26px,4.4vw,74px);font-weight:500;line-height:1.12;letter-spacing:-.02em;text-wrap:balance;color:var(--ink);}
+section.close-cta.slogan-close h2 em{font-style:italic;font-weight:500;color:var(--steel-dim);}
 section.close-cta.slogan-close .underline-svg{width:100%;height:clamp(16px,2vw,28px);margin-top:clamp(10px,1.4vw,18px);}
+section.close-cta.slogan-close .underline-svg path{stroke:var(--navy);}
 @media (max-width:640px){
   section.close-cta.slogan-close{padding:64px 0 58px;}
   section.close-cta.slogan-close .wrap{padding:0 24px;}
