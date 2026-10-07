@@ -293,6 +293,7 @@ section.stats{background:var(--grey-light); padding:110px 0; border-top:1px soli
 section.brands{background:var(--white);padding:90px 0;text-align:center;}
 .brands .eyebrow{justify-content:center;}
 .brands .eyebrow::before{display:none;}
+.brands .chip-row{justify-content:center;margin-top:28px;}
 .brand-row{display:flex;justify-content:center;align-items:baseline;gap:56px;flex-wrap:wrap;margin-top:40px;}
 .brand-row a{
   position:relative;
