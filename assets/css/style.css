@@ -300,6 +300,7 @@ section.sectors-home{background:var(--white);padding:70px 0;text-align:center;}
 section.sectors-home .eyebrow{justify-content:center;}
 section.sectors-home .eyebrow::before{display:none;}
 .sector-grid{display:flex;flex-wrap:wrap;justify-content:center;gap:40px 30px;margin-top:40px;}
+.sector-grid-left{justify-content:flex-start;margin-top:48px;}
 .sector-item{display:flex;flex-direction:column;align-items:center;gap:14px;width:104px;}
 .sector-icon{
   display:flex;align-items:center;justify-content:center;width:64px;height:64px;border-radius:50%;
