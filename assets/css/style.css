@@ -299,22 +299,29 @@ section.brands{background:var(--white);padding:90px 0;text-align:center;}
 section.sectors-home{background:var(--white);padding:70px 0;text-align:center;}
 section.sectors-home .eyebrow{justify-content:center;}
 section.sectors-home .eyebrow::before{display:none;}
-.sector-grid{display:flex;flex-wrap:wrap;justify-content:center;gap:40px 30px;margin-top:40px;}
+.sector-grid{display:flex;flex-wrap:wrap;justify-content:center;gap:48px 40px;margin-top:44px;}
 .sector-grid-left{justify-content:flex-start;margin-top:48px;}
-.sector-item{display:flex;flex-direction:column;align-items:center;gap:14px;width:104px;}
+.sector-item{display:flex;flex-direction:column;align-items:center;gap:16px;width:180px;}
 .sector-icon{
-  display:flex;align-items:center;justify-content:center;width:64px;height:64px;border-radius:50%;
+  display:flex;align-items:center;justify-content:center;width:92px;height:92px;border-radius:50%;
   background:var(--navy);color:var(--white);flex-shrink:0;
   transition:transform .3s cubic-bezier(.2,.7,.2,1), background .3s ease, box-shadow .3s ease;
 }
-.sector-icon svg{width:28px;height:28px;}
+.sector-icon svg{width:40px;height:40px;}
 .sector-item:hover .sector-icon{transform:translateY(-5px);background:var(--navy-deep);box-shadow:0 14px 26px rgba(10,47,87,.28);}
-.sector-label{font-family:var(--label);font-size:11.5px;font-weight:600;letter-spacing:.06em;text-transform:uppercase;color:var(--slate);}
+.sector-label{font-family:var(--label);font-size:12.5px;font-weight:600;letter-spacing:.06em;text-transform:uppercase;color:var(--slate);}
+@media (max-width:860px){
+  .sector-grid{gap:34px 24px;}
+  .sector-item{width:120px;gap:12px;}
+  .sector-icon{width:68px;height:68px;}
+  .sector-icon svg{width:30px;height:30px;}
+  .sector-label{font-size:11px;}
+}
 @media (max-width:640px){
   .sector-grid{gap:28px 18px;}
-  .sector-item{width:78px;gap:10px;}
-  .sector-icon{width:52px;height:52px;}
-  .sector-icon svg{width:22px;height:22px;}
+  .sector-item{width:84px;gap:10px;}
+  .sector-icon{width:56px;height:56px;}
+  .sector-icon svg{width:24px;height:24px;}
   .sector-label{font-size:10px;}
 }
 .brand-row{display:flex;justify-content:center;align-items:baseline;gap:56px;flex-wrap:wrap;margin-top:40px;}
