@@ -1029,9 +1029,10 @@ section.service-block.alt .chip-row li{background:var(--white);}
 
 /* Compañía: foto fija de la sede (nave + furgonetas), sin zoom */
 .hq-chapter{min-height:82vh;}
-.hq-chapter .reel-bg{inset:70px 0 0; animation:none; background-position:center 40%;}
+.hq-chapter .reel-bg{inset:70px 0 0; animation:none; background-position:center 40%; filter:brightness(1.12) saturate(1.05);}
 .hq-chapter.is-revealed .reel-bg{clip-path:circle(150% at 30% 50%);}
-.hq-chapter .reel-fade{background:linear-gradient(0deg, rgba(5,8,12,.78) 0%, rgba(5,8,12,.3) 38%, rgba(5,8,12,0) 70%);}
+.hq-chapter .reel-fade{background:linear-gradient(0deg, rgba(5,8,12,.5) 0%, rgba(5,8,12,.14) 26%, rgba(5,8,12,0) 50%);}
+.hq-chapter blockquote{text-shadow:0 2px 24px rgba(0,0,0,.55);}
 @media (max-width:760px){.hq-chapter{min-height:64vh;} .hq-chapter .reel-bg{background-position:42% center;}}
 
 /* Área privada: cabecera con el plano técnico y la espiral de marca */
