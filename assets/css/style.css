@@ -1042,3 +1042,69 @@ section.service-block.alt .chip-row li{background:var(--white);}
     url('../img/mantenimiento-precision-bg.jpg') right center / cover no-repeat;
 }
 @media (max-width:760px){.page-hero.page-hero-blueprint{background:linear-gradient(180deg, rgba(255,255,255,.92), rgba(255,255,255,.75)), url('../img/mantenimiento-precision-bg.jpg') right center / cover no-repeat;}}
+
+/* ---------- HOME: huecos de foto (sustituir por <img> dentro del <figure>) ---------- */
+.ph-photo{margin:0;position:relative;aspect-ratio:4/3;background:var(--grey-light);border:1px dashed var(--grey-line);color:var(--steel-dim);display:flex;flex-direction:column;align-items:center;justify-content:center;gap:10px;overflow:hidden;}
+.ph-photo svg{width:40px;height:40px;}
+.ph-photo figcaption{font-family:var(--label);font-size:10.5px;letter-spacing:.08em;text-transform:uppercase;text-align:center;padding:0 16px;}
+.ph-photo.ph-tall{aspect-ratio:1/1;}
+.ph-photo:has(img){border:none;}
+.ph-photo img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;}
+.ph-photo:has(img) svg, .ph-photo:has(img) figcaption{display:none;}
+
+/* botones para fondos claros */
+.btn-navy{background:var(--navy);color:var(--white);}
+.btn-navy:hover{background:var(--navy-deep);color:var(--white);box-shadow:0 14px 28px rgba(10,30,50,.22);}
+.btn-line{border-color:var(--navy);color:var(--navy);}
+.btn-line:hover{background:var(--navy);color:var(--white);}
+.home-actions{display:flex;flex-wrap:wrap;gap:14px;margin-top:30px;}
+.home-actions.center{justify-content:center;margin-top:48px;}
+
+/* SERVICIOS */
+section.home-services{background:var(--grey-light);padding:110px 0;border-top:1px solid var(--grey-line);}
+.home-head{max-width:760px;margin-bottom:56px;}
+.home-head h2, .home-split h2, .stats-head-split h2{font-size:clamp(26px,3vw,38px);line-height:1.15;margin-bottom:20px;}
+.home-head p, .home-split p, .stats-head-split p{font-size:16px;line-height:1.75;color:var(--slate);margin:0;}
+.home-svc-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:28px;}
+.home-svc{background:var(--white);border:1px solid var(--grey-line);display:flex;flex-direction:column;transition:transform .3s cubic-bezier(.2,.7,.2,1), box-shadow .3s ease;}
+.home-svc:hover{transform:translateY(-6px);box-shadow:0 26px 48px rgba(10,30,50,.12);}
+.home-svc .ph-photo{border-width:0 0 1px;}
+.home-svc-body{padding:30px;display:flex;flex-direction:column;flex:1;}
+.home-svc h3{font-family:var(--serif);font-size:22px;font-weight:500;color:var(--ink);margin:0 0 12px;}
+.home-svc p{font-size:14.5px;line-height:1.7;color:var(--slate);margin:0;}
+.home-svc-list{list-style:none;margin:18px 0 0;padding:0;display:grid;gap:8px;}
+.home-svc-list li{position:relative;padding-left:20px;font-size:14px;line-height:1.5;color:var(--slate);}
+.home-svc-list li::before{content:"";position:absolute;left:0;top:8px;width:7px;height:7px;background:var(--navy);}
+.home-svc .card-link{margin-top:auto;padding-top:22px;align-self:flex-start;font-family:var(--label);font-size:11.5px;letter-spacing:.06em;text-transform:uppercase;color:var(--navy);}
+.home-svc .card-link:hover{color:var(--navy-deep);}
+.home-cta-row{margin-top:56px;padding:30px 34px;background:var(--white);border-left:4px solid var(--navy);display:flex;align-items:center;justify-content:space-between;gap:24px;flex-wrap:wrap;}
+.home-cta-row p{margin:0;font-family:var(--serif);font-size:clamp(18px,1.8vw,22px);color:var(--ink);}
+
+/* SOBRE ANANTA (texto + foto) */
+section.home-split{background:var(--white);padding:110px 0;}
+.home-split-inner{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:64px;align-items:center;}
+
+/* sectores / calidad / marcas */
+.sectors-cta{margin-top:44px;}
+.stats-head.stats-head-split{max-width:none;display:grid;grid-template-columns:minmax(0,1.1fr) minmax(0,1fr);gap:64px;align-items:center;}
+.stats-head-split .btn{margin-top:28px;}
+.brands-lede{max-width:620px;margin:36px auto 0;font-size:15.5px;line-height:1.7;color:var(--slate);}
+.brands .brands-cta{margin-top:26px;}
+
+/* CTA FINAL */
+section.home-final-cta{background:var(--navy-deep);padding:90px 0;}
+.home-final-inner{display:grid;grid-template-columns:minmax(0,1.4fr) auto;gap:40px;align-items:center;}
+.home-final-cta h2{color:var(--paper);font-size:clamp(26px,3vw,40px);line-height:1.15;margin:0 0 14px;}
+.home-final-cta p{color:var(--ink-soft);font-size:16px;margin:0;max-width:560px;}
+.home-final-cta .home-actions{margin-top:0;}
+
+@media (max-width:980px){
+  .home-svc-grid{grid-template-columns:1fr;max-width:560px;}
+  .home-split-inner, .stats-head.stats-head-split, .home-final-inner{grid-template-columns:1fr;gap:36px;}
+  .ph-photo.ph-tall{aspect-ratio:4/3;}
+}
+@media (max-width:760px){
+  section.home-services, section.home-split{padding:80px 0;}
+  .home-cta-row{padding:24px;}
+  .home-actions .btn, .home-cta-row .btn{width:100%;justify-content:center;}
+}
