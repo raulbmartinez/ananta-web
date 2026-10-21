@@ -1122,3 +1122,13 @@ section.content-block.alt .card-grid .ph-photo.ph-card{background:var(--white);}
   .block-split.reverse > :first-child{order:0;}
 }
 section.alt .ph-photo, section.stats .ph-photo{background:var(--white);}
+
+/* Tablas técnicas de producto */
+.spec-table-wrap{overflow-x:auto;border:1px solid var(--grey-line);background:var(--white);}
+.spec-table{width:100%;border-collapse:collapse;font-size:13.5px;font-variant-numeric:tabular-nums;}
+.spec-table th{font-family:var(--label);font-size:10.5px;letter-spacing:.06em;text-transform:uppercase;color:var(--navy);text-align:right;padding:14px 16px;border-bottom:1px solid var(--grey-line);background:var(--grey-light);white-space:nowrap;}
+.spec-table td{padding:11px 16px;text-align:right;color:var(--slate);border-bottom:1px solid var(--grey-line);}
+.spec-table th:first-child, .spec-table td:first-child{text-align:left;color:var(--ink);font-weight:600;}
+.spec-table tbody tr:last-child td{border-bottom:none;}
+.spec-table tbody tr:hover td{background:var(--grey-light);}
+.spec-note{font-size:12.5px;color:var(--grey);margin:10px 0 0;}
