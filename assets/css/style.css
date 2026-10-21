@@ -1227,3 +1227,7 @@ main.blog-post{padding-top:140px;background:var(--white);}
   .post-grid{grid-template-columns:1fr;}
   main.blog-post{padding-top:110px;}
 }
+
+/* Productos · fotos de serie Nakakin (fondo de estudio, sin recortar la bomba) */
+.card-grid .card-media.nak-media img{object-fit:cover;}
+.card-grid .card-media.nak-media::after{display:none;}
