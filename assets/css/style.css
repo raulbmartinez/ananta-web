@@ -1154,3 +1154,9 @@ section.alt .ph-photo, section.stats .ph-photo{background:var(--white);}
   .stats-head.stats-head-row{flex-direction:column;align-items:flex-start;gap:24px;}
   .pillar-grid{grid-template-columns:1fr;}
 }
+
+/* Fotos pendientes dentro de tarjetas con .card-media */
+.card-grid .card-media.is-pending{background:var(--grey-light);}
+.card-grid .card-media.is-pending::after{display:none;}
+.card-media.is-pending > .ph-photo{position:absolute;inset:0;aspect-ratio:auto;border:0;}
+section.alt .card-media.is-pending, section.area.alt .card-media.is-pending{background:var(--white);}
