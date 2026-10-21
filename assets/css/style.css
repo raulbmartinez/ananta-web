@@ -1133,20 +1133,24 @@ section.alt .ph-photo, section.stats .ph-photo{background:var(--white);}
 .spec-table tbody tr:hover td{background:var(--grey-light);}
 .spec-note{font-size:12.5px;color:var(--grey);margin:10px 0 0;}
 
-/* Compañía · Calidad y medioambiente */
-.quality-split{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:64px;align-items:center;}
-.quality-split .block-head{margin-bottom:0;}
-.quality-split .cert-list{margin:0;max-width:none;}
-section.content-block.alt .quality-split .cert-item{background:var(--white);}
-.env-grid{margin-top:72px;}
-section.content-block.alt .env-grid > *{background:var(--white);}
-.card-grid > .env-feature .card-media{min-height:360px;}
-.card-grid > .env-feature .card-wide-body{padding:44px;}
-.env-feature h3{font-size:clamp(22px,2.2vw,28px);line-height:1.2;}
-.env-feature p{font-size:15.5px;}
-@media (max-width:980px){
-  .quality-split{grid-template-columns:1fr;gap:32px;}
-  .card-grid > .env-feature{grid-template-columns:1fr;}
-  .card-grid > .env-feature .card-media{min-height:240px;}
-  .card-grid > .env-feature .card-wide-body{padding:30px;}
+
+/* HOME · Compromiso y calidad: cabecera + dos pilares con foto + cifras */
+.stats-head.stats-head-row{max-width:none;display:flex;align-items:flex-end;justify-content:space-between;gap:40px;margin-bottom:48px;}
+.stats-head-row > div{max-width:680px;}
+.stats-head-row h2{font-size:clamp(26px,3vw,38px);line-height:1.15;margin-bottom:20px;}
+.stats-head-row p{font-size:16px;line-height:1.75;color:var(--slate);margin:0;}
+.stats-head-row .btn{flex-shrink:0;}
+.pillar-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:28px;margin-bottom:80px;}
+.pillar{background:var(--white);border:1px solid var(--grey-line);display:flex;flex-direction:column;transition:transform .3s cubic-bezier(.2,.7,.2,1), box-shadow .3s ease;}
+.pillar:hover{transform:translateY(-6px);box-shadow:0 26px 48px rgba(10,30,50,.12);}
+.pillar-media{margin:0;position:relative;aspect-ratio:16/9;overflow:hidden;background:var(--white);border-bottom:1px solid var(--grey-line);}
+.pillar-media img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;transition:transform .6s cubic-bezier(.2,.7,.2,1);}
+.pillar:hover .pillar-media img{transform:scale(1.05);}
+.pillar-body{padding:30px 32px 34px;display:flex;flex-direction:column;}
+.pillar-tag{font-family:var(--label);font-size:10.5px;letter-spacing:.1em;text-transform:uppercase;color:var(--steel-dim);margin-bottom:12px;}
+.pillar h3{font-family:var(--serif);font-size:22px;font-weight:500;color:var(--ink);margin:0 0 12px;}
+.pillar p{font-size:14.5px;line-height:1.7;color:var(--slate);margin:0;}
+@media (max-width:760px){
+  .stats-head.stats-head-row{flex-direction:column;align-items:flex-start;gap:24px;}
+  .pillar-grid{grid-template-columns:1fr;margin-bottom:56px;}
 }
