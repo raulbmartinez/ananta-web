@@ -7,7 +7,7 @@ document.addEventListener('DOMContentLoaded', function(){
   var input = document.getElementById('chatbotInput');
   if(!wrapper || !toggle || !closeBtn || !body) return;
 
-  var WA_URL = "https://wa.me/15599975398?text=Hola%2C%20equipo%20de%20ANANTA.%20Me%20gustar%C3%ADa%20consultar%20con%20un%20t%C3%A9cnico.%0A%0A%E2%80%A2%20Empresa%3A%0A%E2%80%A2%20Equipo%20o%20instalaci%C3%B3n%20%28bomba%2C%20homogeneizador%2C%20decantador%E2%80%A6%29%3A%0A%E2%80%A2%20Qu%C3%A9%20necesito%20%28reparaci%C3%B3n%2C%20mantenimiento%2C%20montaje%2Fparada%20o%20producto%29%3A%0A%E2%80%A2%20Ubicaci%C3%B3n%20de%20la%20planta%3A%0A%0AGracias.";
+  var WA_URL = "https://wa.me/15599975398?text=Hola%2C%20ANANTA.%20Quiero%20hacer%20una%20consulta%20sobre%3A%20";
 
   var ICONS = {
     servicios: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M14.7 6.3a4 4 0 0 0-5.4 5.4L3 18l3 3 6.3-6.3a4 4 0 0 0 5.4-5.4l-2.8 2.8-2-2 2.8-2.8Z"/></svg>',
