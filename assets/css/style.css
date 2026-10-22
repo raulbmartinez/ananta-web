@@ -1233,3 +1233,8 @@ main.blog-post{padding-top:140px;background:var(--white);}
 .card-grid .card-media.nak-media::after{display:none;}
 .ph-photo.ph-portrait{aspect-ratio:3/4;max-height:640px;width:100%;}
 @media (max-width:980px){.ph-photo.ph-portrait{aspect-ratio:4/5;max-height:none;}}
+
+/* Tarjeta con dos fotos lado a lado */
+.card-grid .card-media.card-media-duo{display:grid;grid-template-columns:1fr 1fr;gap:3px;background:var(--white);}
+.card-grid .card-media.card-media-duo img{width:100%;height:100%;object-fit:cover;}
+.card-grid .card-media.card-media-duo::after{display:none;}
