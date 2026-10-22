@@ -1220,3 +1220,9 @@ body.dialog-open{overflow:hidden;}
 .card-media-pair .ba-tag{top:12px;padding:6px 10px;font-size:10.5px;}
 .card-media-pair .ba-tag-before{left:12px;}
 .card-media-pair .ba-tag-after{right:12px;}
+
+/* Tarjeta con la imagen completa, sin recortar */
+.card-grid .card-media.card-media-full{height:auto;background:var(--white);}
+.card-grid .card-media.card-media-full img{position:static;width:100%;height:auto;object-fit:contain;}
+.card-grid .card-media.card-media-full::after{display:none;}
+.card-grid > *:hover .card-media-full img{transform:none;}
