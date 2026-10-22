@@ -218,9 +218,10 @@
         </ul>
       </div>
       <div class="reveal reveal-delay-2">
-        <a class="card-media card-media-link" href="#caso-montaje"><img src="assets/img/negocio/montaje-despues.jpg" alt="Instalación renovada tras un montaje y puesta en marcha de ANANTA" loading="lazy"><span class="card-media-chip">Ver antes y después ↓</span></a>
+        <div class="card-media card-media-duo card-media-ba"><button type="button" class="ba-open" data-dialog="casoMontaje" aria-label="Ver el caso completo"></button><img src="assets/img/negocio/montaje-antes.jpg" alt="Equipo de proceso antes de la intervención, con la bancada deteriorada" loading="lazy"><img src="assets/img/negocio/montaje-despues.jpg" alt="El mismo equipo tras el montaje y la puesta en marcha de ANANTA" loading="lazy"><span class="ba-tag ba-tag-before">Antes</span><span class="ba-tag ba-tag-after">Después</span></div>
         <h3>Puesta en marcha y paradas</h3>
         <p>Planificación y ejecución de paradas programadas y de la puesta en marcha posterior, minimizando el impacto en la producción.</p>
+        <button type="button" class="card-case-link" data-dialog="casoMontaje"><span class="card-case-tag">Caso real: montaje y puesta en marcha</span>Ver el caso completo →</button>
         <ul class="card-list">
           <li><strong>Antes:</strong> planificación de los trabajos y de los recursos necesarios para la parada.</li>
           <li><strong>Durante:</strong> mantenimiento, reparaciones y montajes ejecutados dentro de la ventana disponible.</li>
@@ -240,31 +241,7 @@
       </div>
     </div>
 
-    <div class="ba-case" id="caso-montaje">
-      <div class="ba-case-head">
-        <span class="eyebrow reveal">Caso real</span>
-        <h3 class="reveal reveal-delay-1">Antes y después de un montaje con puesta en marcha</h3>
-        <p class="reveal reveal-delay-2">Desmontamos el equipo, renovamos su bancada y estructura, instalamos nuevas protecciones y lo pusimos de nuevo en marcha. Arrastre la barra para comparar el estado inicial con el resultado.</p>
-      </div>
-      <div class="ba-compare reveal" style="--pos:50%">
-        <img class="ba-img ba-after" src="assets/img/negocio/montaje-despues.jpg" alt="El mismo equipo después de la intervención: bancada nueva pintada, protecciones de malla y zona limpia" loading="lazy">
-        <img class="ba-img ba-before" src="assets/img/negocio/montaje-antes.jpg" alt="Equipo de proceso antes de la intervención: bancada deteriorada, corrosión y suciedad" loading="lazy">
-        <span class="ba-tag ba-tag-before">Antes</span>
-        <span class="ba-tag ba-tag-after">Después</span>
-        <span class="ba-handle" aria-hidden="true"><span class="ba-knob"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 6l-6 6 6 6M15 6l6 6-6 6"/></svg></span></span>
-        <input class="ba-range" type="range" min="0" max="100" value="50" aria-label="Comparar antes y después">
-      </div>
-      <div class="ba-case-foot">
-        <ul class="ba-points reveal"><li>Bancada y estructura nuevas, niveladas y ancladas</li><li>Protecciones de seguridad en malla en toda la transmisión</li><li>Zona de trabajo limpia y ordenada para la puesta en marcha</li></ul>
-        <div class="ba-actions reveal reveal-delay-1">
-          <button type="button" class="btn btn-line" data-ba-video="baVideo"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M8 5v14l11-7z"/></svg>Ver vídeo del resultado</button>
-          <a href="contacto.html#formulario" class="btn btn-navy">Hablar con un técnico →</a>
-        </div>
-      </div>
-      <div class="ba-video" id="baVideo" hidden>
-        <video controls playsinline preload="none" poster="assets/img/negocio/montaje-despues.jpg"><source src="assets/video/montaje-despues.mp4" type="video/mp4"></video>
-      </div>
-    </div>
+    
     </div>
   </div>
 </section>
@@ -382,6 +359,36 @@
 
 <script src="assets/js/main.js"></script>
 
+<dialog class="case-dialog" id="casoMontaje" aria-labelledby="casoMontajeTitulo">
+  <button type="button" class="case-dialog-close" aria-label="Cerrar" data-close>
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M6 6l12 12M18 6L6 18"/></svg>
+  </button>
+  <div class="case-dialog-body ba-case">
+      <div class="ba-case-head">
+        <span class="eyebrow">Caso real</span>
+        <h3 id="casoMontajeTitulo">Antes y después de un montaje con puesta en marcha</h3>
+        <p>Desmontamos el equipo, renovamos su bancada y estructura, instalamos nuevas protecciones y lo pusimos de nuevo en marcha. Arrastre la barra para comparar el estado inicial con el resultado.</p>
+      </div>
+      <div class="ba-compare" style="--pos:50%">
+        <img class="ba-img ba-after" src="assets/img/negocio/montaje-despues.jpg" alt="El mismo equipo después de la intervención: bancada nueva pintada, protecciones de malla y zona limpia" loading="lazy">
+        <img class="ba-img ba-before" src="assets/img/negocio/montaje-antes.jpg" alt="Equipo de proceso antes de la intervención: bancada deteriorada, corrosión y suciedad" loading="lazy">
+        <span class="ba-tag ba-tag-before">Antes</span>
+        <span class="ba-tag ba-tag-after">Después</span>
+        <span class="ba-handle" aria-hidden="true"><span class="ba-knob"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 6l-6 6 6 6M15 6l6 6-6 6"/></svg></span></span>
+        <input class="ba-range" type="range" min="0" max="100" value="50" aria-label="Comparar antes y después">
+      </div>
+      <div class="ba-case-foot">
+        <ul class="ba-points"><li>Bancada y estructura nuevas, niveladas y ancladas</li><li>Protecciones de seguridad en malla en toda la transmisión</li><li>Zona de trabajo limpia y ordenada para la puesta en marcha</li></ul>
+        <div class="ba-actions">
+          <button type="button" class="btn btn-line" data-ba-video="baVideo"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M8 5v14l11-7z"/></svg>Ver vídeo del resultado</button>
+          <a href="contacto.html#formulario" class="btn btn-navy">Hablar con un técnico →</a>
+        </div>
+      </div>
+      <div class="ba-video" id="baVideo" hidden>
+        <video controls playsinline preload="none" poster="assets/img/negocio/montaje-despues.jpg"><source src="assets/video/montaje-despues.mp4" type="video/mp4"></video>
+      </div>
+    </div>
+</dialog>
 <dialog class="case-dialog" id="casoVacio" aria-labelledby="casoVacioTitulo">
   <button type="button" class="case-dialog-close" aria-label="Cerrar" data-close>
     <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M6 6l12 12M18 6L6 18"/></svg>

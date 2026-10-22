@@ -63,6 +63,9 @@
     d.addEventListener('click', function(e){
       if (e.target === d || e.target.closest('[data-close]')) d.close();
     });
-    d.addEventListener('close', function(){ document.body.classList.remove('dialog-open'); });
+    d.addEventListener('close', function(){
+      document.body.classList.remove('dialog-open');
+      d.querySelectorAll('video').forEach(function(v){ v.pause(); });
+    });
   });
 })();
