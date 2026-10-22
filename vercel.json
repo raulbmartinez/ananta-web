@@ -1,0 +1,169 @@
+{
+  "redirects": [
+    {
+      "source": "/who-we-are",
+      "destination": "/en/compania.html#quienes-somos",
+      "permanent": true
+    },
+    {
+      "source": "/who-we-are/",
+      "destination": "/en/compania.html#quienes-somos",
+      "permanent": true
+    },
+    {
+      "source": "/company",
+      "destination": "/en/compania.html",
+      "permanent": true
+    },
+    {
+      "source": "/company/",
+      "destination": "/en/compania.html",
+      "permanent": true
+    },
+    {
+      "source": "/company/means",
+      "destination": "/en/compania.html#especialistas",
+      "permanent": true
+    },
+    {
+      "source": "/company/means/",
+      "destination": "/en/compania.html#especialistas",
+      "permanent": true
+    },
+    {
+      "source": "/company/tools",
+      "destination": "/en/compania.html#especialistas",
+      "permanent": true
+    },
+    {
+      "source": "/company/tools/",
+      "destination": "/en/compania.html#especialistas",
+      "permanent": true
+    },
+    {
+      "source": "/contact-us",
+      "destination": "/en/contacto.html",
+      "permanent": true
+    },
+    {
+      "source": "/contact-us/",
+      "destination": "/en/contacto.html",
+      "permanent": true
+    },
+    {
+      "source": "/employment",
+      "destination": "/en/contacto.html",
+      "permanent": true
+    },
+    {
+      "source": "/employment/",
+      "destination": "/en/contacto.html",
+      "permanent": true
+    },
+    {
+      "source": "/business-lines",
+      "destination": "/en/negocio.html",
+      "permanent": true
+    },
+    {
+      "source": "/business-lines/",
+      "destination": "/en/negocio.html",
+      "permanent": true
+    },
+    {
+      "source": "/business-lines/machinery-design",
+      "destination": "/en/negocio.html#mantenimiento-industrial",
+      "permanent": true
+    },
+    {
+      "source": "/business-lines/machinery-design/",
+      "destination": "/en/negocio.html#mantenimiento-industrial",
+      "permanent": true
+    },
+    {
+      "source": "/business-lines/process-lines",
+      "destination": "/en/negocio.html#montajes-paradas",
+      "permanent": true
+    },
+    {
+      "source": "/business-lines/process-lines/",
+      "destination": "/en/negocio.html#montajes-paradas",
+      "permanent": true
+    },
+    {
+      "source": "/business-lines/products-ans-services",
+      "destination": "/en/productos.html",
+      "permanent": true
+    },
+    {
+      "source": "/business-lines/products-ans-services/",
+      "destination": "/en/productos.html",
+      "permanent": true
+    },
+    {
+      "source": "/business-lines/products-ans-services/corrective-maintenance",
+      "destination": "/en/negocio.html#mantenimiento-industrial",
+      "permanent": true
+    },
+    {
+      "source": "/business-lines/products-ans-services/corrective-maintenance/",
+      "destination": "/en/negocio.html#mantenimiento-industrial",
+      "permanent": true
+    },
+    {
+      "source": "/automation-control",
+      "destination": "/en/negocio.html#automatizacion",
+      "permanent": true
+    },
+    {
+      "source": "/automation-control/",
+      "destination": "/en/negocio.html#automatizacion",
+      "permanent": true
+    },
+    {
+      "source": "/condition-based-maintenance",
+      "destination": "/en/negocio.html#mantenimiento-industrial",
+      "permanent": true
+    },
+    {
+      "source": "/condition-based-maintenance/",
+      "destination": "/en/negocio.html#mantenimiento-industrial",
+      "permanent": true
+    },
+    {
+      "source": "/commercial-agreement-bertoli",
+      "destination": "/en/productos.html#bertoli",
+      "permanent": true
+    },
+    {
+      "source": "/commercial-agreement-bertoli/",
+      "destination": "/en/productos.html#bertoli",
+      "permanent": true
+    },
+    {
+      "source": "/inicio",
+      "destination": "/",
+      "permanent": true
+    },
+    {
+      "source": "/inicio/",
+      "destination": "/",
+      "permanent": true
+    },
+    {
+      "source": "/:path*/feed",
+      "destination": "/",
+      "permanent": true
+    },
+    {
+      "source": "/:path*/feed/",
+      "destination": "/",
+      "permanent": true
+    },
+    {
+      "source": "/feed",
+      "destination": "/",
+      "permanent": true
+    }
+  ]
+}
