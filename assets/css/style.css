@@ -1215,3 +1215,8 @@ body.dialog-open{overflow:hidden;}
   .home-svc:nth-child(3){grid-column:1 / -1;display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);}
   .home-svc:nth-child(3) .ph-photo{border-width:0 1px 0 0;height:100%;aspect-ratio:auto;min-height:260px;}
 }
+
+/* Tarjeta con antes/después estático (dos fotos y etiquetas) */
+.card-media-pair .ba-tag{top:12px;padding:6px 10px;font-size:10.5px;}
+.card-media-pair .ba-tag-before{left:12px;}
+.card-media-pair .ba-tag-after{right:12px;}
