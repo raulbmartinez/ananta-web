@@ -1226,3 +1226,7 @@ body.dialog-open{overflow:hidden;}
 .card-grid .card-media.card-media-full img{position:static;width:100%;height:auto;object-fit:contain;}
 .card-grid .card-media.card-media-full::after{display:none;}
 .card-grid > *:hover .card-media-full img{transform:none;}
+.card-grid .card-media.card-media-full{position:relative;}
+.card-media-full .cm-tag{position:absolute;right:auto;padding:6px 10px;font-size:10.5px;z-index:2;}
+.card-media-full .cm-tag.ba-tag-after{background:var(--navy);color:var(--white);}
+@media (max-width:640px){.card-media-full .cm-tag{padding:4px 7px;font-size:9px;letter-spacing:.08em;}}
