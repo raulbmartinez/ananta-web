@@ -85,7 +85,7 @@ document.addEventListener('DOMContentLoaded', function(){
     });
   });
 
-  // ---- botones flotantes (WhatsApp, chatbot): ocultar mientras haya una zona sensible a la vista ----
+  // ---- botón flotante de WhatsApp: ocultar mientras haya una zona sensible a la vista ----
   var floatButtons = document.querySelectorAll('.whatsapp-float');
   var waAvoidSections = document.querySelectorAll('.wa-avoid');
   if(floatButtons.length && waAvoidSections.length){
