@@ -1,7 +1,10 @@
 (function(){
   try{
+    // Idioma: la web entra siempre en inglés. Si el visitante pulsa "ES", se queda en español
+    // solo durante esta visita (cookie de sesión); al volver a pulsar "EN" se borra.
+    if(document.documentElement.lang === 'en'){ document.cookie = 'ananta_es=; Path=/; Max-Age=0; SameSite=Lax'; return; }
     if(location.search.indexOf('intl=es') === -1) return;
-    document.cookie = 'ananta_lang=es; Path=/; Max-Age=31536000; SameSite=Lax';
+    document.cookie = 'ananta_es=1; Path=/; SameSite=Lax';
     var url = new URL(location.href);
     url.searchParams.delete('intl');
     history.replaceState(null, '', url.pathname + url.search + url.hash);
