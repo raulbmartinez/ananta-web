@@ -1,6 +1,7 @@
-// Redirige a los visitantes de Norteamérica (EE. UU./Canadá) a la versión en inglés,
-// una sola vez por visitante (se recuerda con la cookie ananta_lang) y sin afectar a
-// buscadores. El enlace "ES" de la web en inglés añade ?intl=es para evitar el rebote.
+// La web se abre por defecto en inglés: la primera visita a una página en español redirige
+// a su versión en inglés, una sola vez por visitante (se recuerda con la cookie ananta_lang)
+// y sin afectar a buscadores. El enlace "ES" añade ?intl=es, que guarda la preferencia por
+// el español (ver assets/js/main.js) para que no vuelva a redirigir.
 const ES_TO_EN = {
   '/': '/en/index.html',
   '/index.html': '/en/index.html',
@@ -10,9 +11,9 @@ const ES_TO_EN = {
   '/blog.html': '/en/blog.html',
   '/contacto.html': '/en/contacto.html',
   '/area-privada.html': '/en/area-privada.html',
+  '/blog-post.html': '/en/blog-post.html',
 };
 
-const NORTH_AMERICA = new Set(['US', 'CA']);
 const BOT_RE = /bot|crawl|spider|slurp|facebookexternalhit|preview|lighthouse|pingdom|uptime/i;
 
 export const config = {
@@ -25,6 +26,7 @@ export const config = {
     '/blog.html',
     '/contacto.html',
     '/area-privada.html',
+    '/blog-post.html',
   ],
 };
 
@@ -38,9 +40,6 @@ export default function middleware(request) {
 
   const ua = request.headers.get('user-agent') || '';
   if (BOT_RE.test(ua)) return;
-
-  const country = request.headers.get('x-vercel-ip-country') || '';
-  if (!NORTH_AMERICA.has(country)) return;
 
   const target = ES_TO_EN[url.pathname];
   if (!target) return;
