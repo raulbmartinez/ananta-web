@@ -1135,3 +1135,55 @@ main.blog-post{padding-top:140px;background:var(--white);}
   .ba-actions{width:100%;}
   .ba-actions .btn{flex:1;justify-content:center;}
 }
+
+
+/* ===== Caso real: reparación de bomba de vacío (antes / proceso / después) ===== */
+.ba-pair { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; }
+.ba-pair figure { position: relative; margin: 0; aspect-ratio: 4 / 3; overflow: hidden; background: var(--grey-light); box-shadow: rgba(10, 30, 50, 0.14) 0 24px 48px; }
+.ba-pair img { width: 100%; height: 100%; object-fit: cover; display: block; }
+.ba-pair figcaption { position: absolute; left: 0; right: 0; bottom: 0; padding: 28px 18px 14px; font-size: 13.5px; line-height: 1.45; color: #fff; background: linear-gradient(to top, rgba(5, 8, 12, 0.78), rgba(5, 8, 12, 0)); }
+
+.ba-steps-title { font-family: var(--label); font-size: 12px; font-weight: 700; letter-spacing: 0.14em; text-transform: uppercase; color: var(--steel-dim); margin: 56px 0 22px; }
+.ba-steps { list-style: none; margin: 0; padding: 0; display: grid; grid-template-columns: repeat(2, 1fr); gap: 40px 36px; counter-reset: bastep; }
+.ba-steps--3 { grid-template-columns: repeat(3, 1fr); gap: 40px 28px; }
+.ba-step { counter-increment: bastep; }
+.ba-step-photos { display: grid; grid-template-columns: 1fr 1fr; gap: 8px; margin-bottom: 18px; }
+.ba-step-photos a { display: block; aspect-ratio: 1 / 1; overflow: hidden; background: var(--grey-light); }
+.ba-step-photos img { width: 100%; height: 100%; object-fit: cover; display: block; transition: transform .5s ease; }
+.ba-step-photos a:hover img { transform: scale(1.04); }
+.ba-step h4 { position: relative; padding-left: 42px; min-height: 30px; display: flex; align-items: center; font-family: var(--sans); font-size: 18px; font-weight: 600; color: var(--ink); margin: 0 0 10px; }
+.ba-step h4::before { content: counter(bastep); position: absolute; left: 0; top: 0; width: 30px; height: 30px; border-radius: 50%; background: var(--navy); color: #fff; font-family: var(--label); font-size: 12px; font-weight: 600; display: flex; align-items: center; justify-content: center; }
+.ba-step p { font-size: 15px; line-height: 1.7; color: var(--slate); margin: 0; }
+
+@media (max-width: 980px) and (min-width: 761px) {
+  .ba-steps--3 { grid-template-columns: repeat(2, 1fr); }
+}
+@media (max-width: 760px) {
+  .ba-pair { grid-template-columns: 1fr; }
+  .ba-steps, .ba-steps--3 { grid-template-columns: 1fr; gap: 36px; }
+  .ba-steps-title { margin-top: 40px; }
+}
+
+/* ===== Caso real compacto: tarjeta antes/después + ventana con el proceso ===== */
+.card-grid .card-media.card-media-ba{position:relative;cursor:pointer;}
+.card-media-ba .ba-tag{top:12px;padding:6px 10px;font-size:10.5px;}
+.card-media-ba .ba-tag-before{left:12px;}
+.card-media-ba .ba-tag-after{right:12px;}
+.card-media-ba .ba-open{position:absolute;inset:0;z-index:3;background:transparent;border:0;cursor:pointer;}
+.card-media-ba .ba-open:focus-visible{outline:3px solid var(--steel);outline-offset:-3px;}
+.card-grid > *:hover .card-media-ba img{transform:scale(1.04);}
+.card-case-link{display:block;width:100%;text-align:left;margin-top:18px;padding:14px 16px;background:var(--grey-light);border:1px solid var(--grey-line);border-left:3px solid var(--navy);font-family:var(--label);font-size:11.5px;letter-spacing:.06em;text-transform:uppercase;color:var(--navy);cursor:pointer;transition:background .2s ease,color .2s ease;}
+.card-case-link:hover{background:var(--navy);color:var(--white);}
+.card-case-tag{display:block;font-family:var(--sans);font-size:13px;letter-spacing:0;text-transform:none;color:var(--slate);margin-bottom:4px;}
+.card-case-link:hover .card-case-tag{color:var(--ink-soft);}
+
+dialog.case-dialog{width:min(1100px,calc(100vw - 32px));max-height:calc(100vh - 48px);max-height:calc(100dvh - 48px);padding:0;border:0;background:var(--white);box-shadow:0 40px 90px rgba(5,8,12,.45);overflow:auto;}
+dialog.case-dialog::backdrop{background:rgba(5,15,30,.72);backdrop-filter:blur(3px);}
+dialog.case-dialog[open]{animation:caseIn .28s cubic-bezier(.2,.7,.2,1);}
+@keyframes caseIn{from{opacity:0;transform:translateY(16px);}to{opacity:1;transform:none;}}
+.case-dialog-body.ba-case{margin:0;padding:48px 48px 44px;border:0;}
+.case-dialog-close{position:sticky;top:12px;float:right;margin:12px 12px 0 0;z-index:5;width:44px;height:44px;border-radius:50%;border:0;background:var(--navy);color:var(--white);display:flex;align-items:center;justify-content:center;cursor:pointer;box-shadow:0 6px 18px rgba(5,8,12,.25);}
+.case-dialog-close svg{width:20px;height:20px;}
+.case-dialog-close:hover{background:var(--navy-deep);}
+body.dialog-open{overflow:hidden;}
+@media (max-width:760px){.case-dialog-body.ba-case{padding:56px 20px 28px;}}

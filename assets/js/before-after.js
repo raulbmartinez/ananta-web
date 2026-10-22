@@ -50,3 +50,19 @@
     });
   });
 })();
+
+/* Ventana del caso real (mantenimiento integral) */
+(function(){
+  document.querySelectorAll('[data-dialog]').forEach(function(btn){
+    btn.addEventListener('click', function(){
+      var d = document.getElementById(btn.getAttribute('data-dialog'));
+      if (d && d.showModal) { d.showModal(); document.body.classList.add('dialog-open'); }
+    });
+  });
+  document.querySelectorAll('dialog.case-dialog').forEach(function(d){
+    d.addEventListener('click', function(e){
+      if (e.target === d || e.target.closest('[data-close]')) d.close();
+    });
+    d.addEventListener('close', function(){ document.body.classList.remove('dialog-open'); });
+  });
+})();
