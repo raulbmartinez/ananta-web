@@ -35,19 +35,23 @@ document.addEventListener('DOMContentLoaded', function(){
       if(btn) btn.setAttribute('aria-expanded', 'false');
     });
   }
+  function setMenu(open){
+    if(open){
+      var hdr = document.getElementById('siteHeader');
+      if(hdr) mainNav.style.setProperty('--hdr', Math.round(hdr.getBoundingClientRect().bottom) + 'px');
+    }
+    mainNav.classList.toggle('is-open', open);
+    document.body.classList.toggle('menu-open', open);
+    navToggle.setAttribute('aria-expanded', open ? 'true' : 'false');
+    if(!open) closeMobileAccordions();
+  }
   if(navToggle && mainNav){
-    navToggle.addEventListener('click', function(){
-      var open = mainNav.classList.toggle('is-open');
-      navToggle.setAttribute('aria-expanded', open ? 'true' : 'false');
-      if(!open) closeMobileAccordions();
-    });
+    navToggle.addEventListener('click', function(){ setMenu(!mainNav.classList.contains('is-open')); });
     mainNav.querySelectorAll('a').forEach(function(a){
-      a.addEventListener('click', function(){
-        mainNav.classList.remove('is-open');
-        navToggle.setAttribute('aria-expanded', 'false');
-        closeMobileAccordions();
-      });
+      a.addEventListener('click', function(){ setMenu(false); });
     });
+    document.addEventListener('keydown', function(e){ if(e.key === 'Escape' && mainNav.classList.contains('is-open')) setMenu(false); });
+    window.addEventListener('resize', function(){ if(window.innerWidth > 980 && mainNav.classList.contains('is-open')) setMenu(false); });
   }
 
   // ---- acordeón de subapartados en el menú móvil ----
