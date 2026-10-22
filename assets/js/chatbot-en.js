@@ -7,7 +7,7 @@ document.addEventListener('DOMContentLoaded', function(){
   var input = document.getElementById('chatbotInput');
   if(!wrapper || !toggle || !closeBtn || !body) return;
 
-  var WA_URL = "https://wa.me/34628116355?text=Hello%2C%20I%27d%20like%20to%20speak%20with%20a%20specialist%20at%20ANANTA.";
+  var WA_URL = "https://wa.me/15599975398?text=Hello%20ANANTA%20team%2C%20I%27d%20like%20to%20speak%20with%20a%20technician.%0A%0A%E2%80%A2%20Company%3A%0A%E2%80%A2%20Equipment%20or%20installation%20%28pump%2C%20homogenizer%2C%20decanter%E2%80%A6%29%3A%0A%E2%80%A2%20What%20I%20need%20%28repair%2C%20maintenance%2C%20installation%2Fshutdown%20or%20product%29%3A%0A%E2%80%A2%20Plant%20location%3A%0A%0AThank%20you.";
 
   var ICONS = {
     servicios: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M14.7 6.3a4 4 0 0 0-5.4 5.4L3 18l3 3 6.3-6.3a4 4 0 0 0 5.4-5.4l-2.8 2.8-2-2 2.8-2.8Z"/></svg>',
