@@ -8,13 +8,13 @@
 
   var T = {
     es: {
-      cats: { todas: 'Todas', ferias: 'Ferias y eventos', proyectos: 'Proyectos', empresa: 'Empresa', productos: 'Productos' },
+      cats: { todas: 'Todas', ferias: 'Ferias y eventos', proyectos: 'Proyectos', tecnica: 'Artículos técnicos', empresa: 'Empresa', productos: 'Productos' },
       read: 'Leer noticia', latest: 'Última noticia', photo: 'Foto pendiente', back: '← Volver al blog',
       empty: 'Muy pronto publicaremos aquí nuevas noticias de esta categoría.', notFound: 'No hemos encontrado esta noticia.',
       share: 'Compartir', copy: 'Copiar enlace', copied: 'Enlace copiado', more: 'Más noticias', locale: 'es-ES'
     },
     en: {
-      cats: { todas: 'All', ferias: 'Trade shows & events', proyectos: 'Projects', empresa: 'Company', productos: 'Products' },
+      cats: { todas: 'All', ferias: 'Trade shows & events', proyectos: 'Projects', tecnica: 'Technical articles', empresa: 'Company', productos: 'Products' },
       read: 'Read more', latest: 'Latest news', photo: 'Photo coming soon', back: '← Back to the blog',
       empty: 'We will soon publish news in this category.', notFound: 'We could not find this article.',
       share: 'Share', copy: 'Copy link', copied: 'Link copied', more: 'More news', locale: 'en-US'
@@ -98,7 +98,7 @@
         '<a href="blog.html" class="post-back">' + T.back + '</a>' + meta(post) +
         '<h1>' + esc(t.titulo) + '</h1><p class="post-lede">' + esc(t.resumen) + '</p>' +
         media(post, 'post-hero-media') +
-        '<div class="post-body">' + t.cuerpo + '</div>' +
+        '<div class="post-body">' + t.cuerpo.replace(/\{base\}/g, base) + '</div>' +
         '<div class="post-share"><span>' + T.share + '</span>' +
           '<a href="https://www.linkedin.com/sharing/share-offsite/?url=' + here + '" target="_blank" rel="noopener">LinkedIn</a>' +
           '<a href="https://wa.me/?text=' + title + '%20' + here + '" target="_blank" rel="noopener">WhatsApp</a>' +
