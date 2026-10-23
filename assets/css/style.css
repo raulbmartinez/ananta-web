@@ -1292,3 +1292,9 @@ body.dialog-open{overflow:hidden;}
 }
 @keyframes navIn{from{opacity:0;transform:translateY(8px);}to{opacity:1;transform:none;}}
 @media (prefers-reduced-motion:reduce){nav.main-nav.is-open > *{animation:none;}}
+
+/* Foto que debe verse entera (bomba completa): en pantallas estrechas el recuadro crece en alto */
+.card-grid .card-media.media-whole img{object-position:center;}
+@media (max-width:980px){
+  .card-grid > .card-wide .card-media.media-whole, .card-grid .card-media.media-whole{height:auto;min-height:0;aspect-ratio:3/2;}
+}
