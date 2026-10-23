@@ -13,7 +13,7 @@ const ES_TO_EN = {
   '/blog-post.html': '/en/blog-post.html',
 };
 
-const BOT_RE = /bot|crawl|spider|slurp|facebookexternalhit|preview|lighthouse|pingdom|uptime/i;
+const BOT_RE = /bot|crawl|spider|slurp|favicon|google|facebookexternalhit|preview|lighthouse|pingdom|uptime/i;
 
 export const config = {
   matcher: [
