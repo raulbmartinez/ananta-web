@@ -150,15 +150,41 @@ document.addEventListener('DOMContentLoaded', function(){
   }, {threshold:0.6});
   document.querySelectorAll('.num[data-count]').forEach(function(el){ countObs.observe(el); });
 
-  // ---- formulario de contacto (demo visual, sin backend) ----
+  // ---- formulario de contacto: se envía por FormSubmit a sales@anantausa.com ----
   var contactForm = document.getElementById('contactForm');
   if(contactForm){
     contactForm.addEventListener('submit', function(ev){
       ev.preventDefault();
       if(!contactForm.checkValidity()){ contactForm.reportValidity(); return; }
       var success = document.getElementById('formSuccess');
-      contactForm.reset();
-      if(success) success.classList.add('is-shown');
+      var error = document.getElementById('formError');
+      var btn = contactForm.querySelector('button[type="submit"]');
+      var isEn = document.documentElement.lang === 'en';
+      var btnText = btn ? btn.textContent : '';
+      if(success) success.classList.remove('is-shown');
+      if(error) error.classList.remove('is-shown');
+      if(btn){ btn.disabled = true; btn.textContent = isEn ? 'Sending…' : 'Enviando…'; }
+
+      var data = new FormData(contactForm);
+      data.append('_subject', (isEn ? 'Web contact (EN): ' : 'Contacto web (ES): ') + (data.get('subject') || ''));
+      data.append('_template', 'table');
+      data.append('_captcha', 'false');
+      data.append('_replyto', data.get('email') || '');
+
+      fetch('https://formsubmit.co/ajax/sales@anantausa.com', {
+        method:'POST', headers:{'Accept':'application/json'}, body:data
+      }).then(function(res){
+        return res.json().then(function(json){
+          if(!res.ok || String(json.success) !== 'true') throw new Error(json.message || 'send failed');
+        });
+      }).then(function(){
+        contactForm.reset();
+        if(success) success.classList.add('is-shown');
+      }).catch(function(){
+        if(error) error.classList.add('is-shown');
+      }).then(function(){
+        if(btn){ btn.disabled = false; btn.textContent = btnText; }
+      });
     });
   }
 
