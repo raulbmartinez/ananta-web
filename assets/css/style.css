@@ -1093,6 +1093,7 @@ main.blog-post{padding-top:140px;background:var(--white);}
 .card-grid .card-media.nak-media::after{display:none;}
 .ph-photo.ph-portrait{aspect-ratio:3/4;max-height:640px;width:100%;}
 @media (max-width:980px){.ph-photo.ph-portrait{aspect-ratio:4/5;max-height:none;}}
+.ph-photo.ph-portrait.ph-squarish{aspect-ratio:21/22;}
 
 /* Tarjeta con dos fotos lado a lado */
 .card-grid .card-media.card-media-duo{display:grid;grid-template-columns:1fr 1fr;gap:3px;background:var(--white);}
