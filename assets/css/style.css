@@ -400,6 +400,14 @@ footer.site-footer{background:var(--navy-deep);padding:80px 0 0;border-top:1px s
 .page-hero h1{font-size:clamp(32px,4.6vw,54px);line-height:1.08;margin-bottom:18px;max-width:760px;}
 .page-hero p.lede{font-family:var(--sans);color:var(--slate);font-size:16.5px;max-width:560px;margin:0;font-weight:400;}
 
+/* Cabecera de Contacto: título a la izquierda, textos a la derecha */
+.contact-hero-grid{display:grid;grid-template-columns:minmax(0,1.15fr) minmax(0,1fr);gap:72px;align-items:end;}
+.contact-hero h1{margin-bottom:0;}
+.contact-hero-side p.lede{font-size:17px;line-height:1.7;}
+.contact-hero-side p.lede strong{display:block;font-family:var(--serif);font-weight:500;font-size:21px;line-height:1.35;color:var(--ink);margin-bottom:8px;}
+.urgent-note{margin:28px 0 0;padding:16px 20px;background:var(--white);border:1px solid var(--grey-line);border-left:3px solid var(--navy);color:var(--slate);font-size:15px;line-height:1.6;}
+@media (max-width:980px){.contact-hero-grid{grid-template-columns:1fr;gap:28px;}}
+
 /* ---------- CONTENT SECTIONS (páginas interiores) — claras, alternando blanco/gris ---------- */
 section.content-block{background:var(--white);padding:100px 0;}
 section.content-block.alt{background:var(--grey-light);border-top:1px solid var(--grey-line);border-bottom:1px solid var(--grey-line);}
@@ -585,7 +593,7 @@ section.content-block.alt .cert-item{background:var(--grey-light);}
 }
 
 /* ---------- CONTACTO ---------- */
-section.contact-intro{background:var(--grey-light);padding:0 0 90px;border-top:1px solid var(--grey-line);}
+section.contact-intro{background:var(--grey-light);padding:96px 0 90px;border-top:1px solid var(--grey-line);}
 .office-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:28px;}
 .office-card{background:var(--white);display:flex;flex-direction:column;border:1px solid var(--grey-line);box-shadow:0 10px 30px rgba(10,30,50,.05);}
 .office-map{position:relative;aspect-ratio:4/3.1;border-bottom:1px solid var(--grey-line);background:var(--grey-light);}
