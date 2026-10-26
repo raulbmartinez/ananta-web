@@ -575,11 +575,6 @@ section.social-band p.support{color:var(--ink-soft);max-width:520px;margin:0 aut
 .sub-panel p{font-size:15px;line-height:1.75;color:var(--slate);max-width:680px;margin:0;}
 
 /* ---------- CERTIFICACIONES ---------- */
-.cert-list{list-style:none;margin:32px 0 0;padding:0;display:grid;gap:1px;background:var(--grey-line);border:1px solid var(--grey-line);max-width:760px;}
-.cert-item{background:var(--white);display:flex;align-items:center;justify-content:space-between;gap:20px;padding:22px 28px;}
-section.content-block.alt .cert-item{background:var(--grey-light);}
-.cert-item .cert-name{font-family:var(--serif);font-size:17px;color:var(--ink);}
-.cert-item .cert-meta{display:block;font-family:var(--label);font-size:11px;letter-spacing:.06em;text-transform:uppercase;color:var(--grey);margin-top:4px;}
 /* Enlaces a PDF: icono de documento con etiqueta PDF (certificados, política y catálogos) */
 .pdf-btn{display:inline-flex;align-items:center;gap:14px;flex-shrink:0;color:var(--navy);text-decoration:none;}
 .pdf-icon{position:relative;display:inline-flex;align-items:center;justify-content:center;width:52px;height:52px;background:var(--white);border:1px solid var(--grey-line);color:var(--navy);transition:background .25s ease,color .25s ease,border-color .25s ease,transform .25s ease,box-shadow .25s ease;}
@@ -589,10 +584,30 @@ section.content-block.alt .cert-item{background:var(--grey-light);}
 .pdf-text{display:flex;flex-direction:column;font-family:var(--label);font-size:12px;letter-spacing:.08em;text-transform:uppercase;line-height:1.3;}
 .pdf-text small{font-size:10.5px;letter-spacing:.06em;color:var(--grey);margin-top:4px;}
 .pdf-btn-labeled{margin-top:8px;}
-.cert-pending{
-  display:inline-flex; align-items:center; white-space:nowrap;
-  font-family:var(--label); font-size:11px; letter-spacing:.08em; text-transform:uppercase;
-  color:var(--grey); border:1px solid var(--grey-line); padding:10px 18px;
+
+/* Certificados y política: insignias redondas como las de sectores; cada una descarga su PDF */
+.cert-badges{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:40px 28px;margin-top:56px;text-align:center;}
+.cert-badge{display:flex;flex-direction:column;align-items:center;gap:6px;color:inherit;text-decoration:none;}
+.cert-badge-icon{display:flex;flex-direction:column;align-items:center;justify-content:center;width:132px;height:132px;border-radius:50%;margin-bottom:16px;background:var(--navy);color:var(--white);transition:transform .3s cubic-bezier(.2,.7,.2,1), background .3s ease, box-shadow .3s ease;}
+.cert-badge-icon > svg{width:56px;height:56px;}
+.cert-badge-iso > svg{width:34px;height:34px;opacity:.85;}
+.cert-badge-iso b{font-family:var(--sans);font-weight:800;font-size:28px;letter-spacing:.04em;line-height:1;margin-top:4px;}
+.cert-badge-iso small{font-family:var(--label);font-size:13px;letter-spacing:.12em;margin-top:5px;opacity:.85;}
+a.cert-badge:hover .cert-badge-icon, a.cert-badge:focus-visible .cert-badge-icon{transform:translateY(-5px);background:var(--navy-deep);box-shadow:0 14px 26px rgba(10,47,87,.28);}
+.cert-badge-name{font-family:var(--sans);font-size:15px;color:var(--slate);}
+.cert-badge-name strong{color:var(--ink);font-weight:600;}
+.cert-badge-meta{font-family:var(--label);font-size:11px;letter-spacing:.06em;text-transform:uppercase;color:var(--grey);}
+.cert-badge-pdf, .cert-badge-soon{display:inline-flex;align-items:center;gap:6px;margin-top:10px;font-family:var(--label);font-size:10.5px;font-weight:700;letter-spacing:.1em;color:var(--navy);padding:5px 10px;border:1px solid var(--grey-line);transition:background .25s ease,color .25s ease,border-color .25s ease;}
+.cert-badge-pdf svg{width:12px;height:12px;}
+a.cert-badge:hover .cert-badge-pdf{background:var(--navy);border-color:var(--navy);color:var(--white);}
+.cert-badge.is-pending .cert-badge-icon{background:var(--grey-line);color:var(--grey);}
+.cert-badge-soon{color:var(--grey);font-weight:600;text-transform:uppercase;}
+@media (max-width:860px){
+  .cert-badges{grid-template-columns:repeat(2,minmax(0,1fr));gap:36px 20px;}
+  .cert-badge-icon{width:108px;height:108px;}
+  .cert-badge-icon > svg{width:46px;height:46px;}
+  .cert-badge-iso > svg{width:28px;height:28px;}
+  .cert-badge-iso b{font-size:23px;}
 }
 
 /* ---------- CONTACTO ---------- */
@@ -1213,13 +1228,6 @@ body.dialog-open{overflow:hidden;}
   nav.main-nav a.dropdown-link{white-space:normal;}
 }
 
-/* Certificados: en móviles estrechos el botón baja a otra línea */
-.cert-list{min-width:0;}
-.cert-item > span:first-child{min-width:0;}
-@media (max-width:480px){
-  .cert-item{flex-wrap:wrap;padding:18px 20px;gap:12px;}
-  .cert-item .pdf-btn, .cert-item .cert-pending{margin-left:0;}
-}
 @media (max-width:760px){
   .ba-actions{flex-direction:column;}
   .ba-actions .btn{width:100%;flex:none;}
