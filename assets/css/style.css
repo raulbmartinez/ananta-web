@@ -598,7 +598,7 @@ section.social-band p.support{color:var(--ink-soft);max-width:520px;margin:0 aut
 a.cert-badge:hover .cert-badge-icon, a.cert-badge:focus-visible .cert-badge-icon{transform:translateY(-5px);background:var(--navy-deep);box-shadow:0 14px 26px rgba(10,47,87,.28);}
 .cert-badge-name{font-family:var(--sans);font-size:15px;color:var(--slate);}
 .cert-badge-name strong{color:var(--ink);font-weight:600;}
-.cert-badge-meta{font-family:var(--label);font-size:11px;letter-spacing:.06em;text-transform:uppercase;color:var(--grey);;margin-bottom:10px;}
+.cert-badge-meta{font-family:var(--label);font-size:11px;letter-spacing:.06em;text-transform:uppercase;color:var(--grey);margin-bottom:10px;}
 .cert-badge-pdf, .cert-badge-soon{display:inline-flex;align-items:center;gap:6px;margin-top:auto;font-family:var(--label);font-size:10.5px;font-weight:700;letter-spacing:.1em;color:var(--navy);padding:5px 10px;border:1px solid var(--grey-line);transition:background .25s ease,color .25s ease,border-color .25s ease;}
 .cert-badge-pdf svg{width:12px;height:12px;}
 a.cert-badge:hover .cert-badge-pdf{background:var(--navy);border-color:var(--navy);color:var(--white);}
