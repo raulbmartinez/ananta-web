@@ -525,6 +525,8 @@ section.content-block.alt .card-grid > *{background:var(--grey-light);}
   color:var(--navy); border-bottom:none; padding:22px 0 6px;
 }
 .product-list li.product-subcat:first-child{padding-top:0;}
+/* Fuerza el salto de columna antes de un subgrupo para que su título no quede separado de sus elementos */
+.product-list li.col-break{break-before:column;padding-top:0;}
 .product-list li.product-child{padding-left:18px; font-style:italic; color:var(--grey);}
 
 /* ---------- BLOG: próximamente ---------- */

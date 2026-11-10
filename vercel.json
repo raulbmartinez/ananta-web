@@ -132,12 +132,12 @@
     },
     {
       "source": "/commercial-agreement-bertoli",
-      "destination": "/en/productos.html#bertoli",
+      "destination": "/en/productos.html#interpump",
       "permanent": true
     },
     {
       "source": "/commercial-agreement-bertoli/",
-      "destination": "/en/productos.html#bertoli",
+      "destination": "/en/productos.html#interpump",
       "permanent": true
     },
     {
