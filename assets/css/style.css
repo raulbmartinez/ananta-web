@@ -1201,6 +1201,22 @@ main.blog-post{padding-top:140px;background:var(--white);}
   .ba-steps-title { margin-top: 40px; }
 }
 
+/* Caso con 5 fases, una foto por fase, y dato de resultado */
+.ba-steps--5 { grid-template-columns: repeat(5, 1fr); gap: 32px 20px; }
+.ba-steps--5 .ba-step-photos { grid-template-columns: 1fr; }
+.ba-steps--5 .ba-step-photos a { aspect-ratio: 213 / 229; }
+.ba-steps--5 .ba-step h4 { font-size: 16px; }
+.ba-steps--5 .ba-step p { font-size: 14px; line-height: 1.6; }
+.ba-stat { display: flex; align-items: center; gap: 28px; margin-top: 44px; padding-top: 32px; border-top: 1px solid var(--grey-line); }
+.ba-stat-num { font-family: var(--serif); font-size: clamp(52px, 7vw, 84px); font-weight: 600; line-height: 1; color: var(--navy); white-space: nowrap; }
+.ba-stat-label { display: block; font-family: var(--label); font-size: 12px; font-weight: 700; letter-spacing: .12em; text-transform: uppercase; color: var(--steel-dim); margin-bottom: 8px; }
+.ba-stat p { font-size: 17px; line-height: 1.6; color: var(--slate); margin: 0; }
+@media (max-width: 980px) { .ba-steps--5 { grid-template-columns: repeat(3, 1fr); } }
+@media (max-width: 760px) {
+  .ba-steps--5 { grid-template-columns: repeat(2, 1fr); gap: 28px 16px; }
+  .ba-stat { flex-direction: column; align-items: flex-start; gap: 12px; }
+}
+
 /* ===== Caso real compacto: tarjeta antes/después + ventana con el proceso ===== */
 .card-grid .card-media.card-media-ba{position:relative;cursor:pointer;}
 .card-media-ba .ba-tag{top:12px;padding:6px 10px;font-size:10.5px;}
