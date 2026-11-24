@@ -60,15 +60,29 @@
     <loc>https://www.anantausa.com/blog.html</loc>
     <xhtml:link rel="alternate" hreflang="es" href="https://www.anantausa.com/blog.html"/>
     <xhtml:link rel="alternate" hreflang="en" href="https://www.anantausa.com/en/blog.html"/>
-    <lastmod>2026-10-22</lastmod>
+    <lastmod>2026-11-24</lastmod>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://www.anantausa.com/en/blog.html</loc>
     <xhtml:link rel="alternate" hreflang="es" href="https://www.anantausa.com/blog.html"/>
     <xhtml:link rel="alternate" hreflang="en" href="https://www.anantausa.com/en/blog.html"/>
-    <lastmod>2026-10-22</lastmod>
+    <lastmod>2026-11-24</lastmod>
     <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://www.anantausa.com/blog-post.html?p=ananta-espaseme-formacion-cierres-mecanicos</loc>
+    <xhtml:link rel="alternate" hreflang="es" href="https://www.anantausa.com/blog-post.html?p=ananta-espaseme-formacion-cierres-mecanicos"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.anantausa.com/en/blog-post.html?p=ananta-espaseme-formacion-cierres-mecanicos"/>
+    <lastmod>2026-11-24</lastmod>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://www.anantausa.com/en/blog-post.html?p=ananta-espaseme-formacion-cierres-mecanicos</loc>
+    <xhtml:link rel="alternate" hreflang="es" href="https://www.anantausa.com/blog-post.html?p=ananta-espaseme-formacion-cierres-mecanicos"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.anantausa.com/en/blog-post.html?p=ananta-espaseme-formacion-cierres-mecanicos"/>
+    <lastmod>2026-11-24</lastmod>
+    <priority>0.6</priority>
   </url>
   <url>
     <loc>https://www.anantausa.com/contacto.html</loc>

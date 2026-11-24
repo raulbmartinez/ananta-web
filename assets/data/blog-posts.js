@@ -15,6 +15,22 @@
  */
 window.ANANTA_POSTS = [
   {
+    "slug": "ananta-espaseme-formacion-cierres-mecanicos",
+    "fecha": "2026-11-24",
+    "categoria": "empresa",
+    "imagen": "assets/img/blog/jornada-cierres-mecanicos-espaseme.jpg",
+    "es": {
+      "titulo": "Ananta y Espaseme refuerzan su colaboración con una jornada de formación en cierres mecánicos",
+      "resumen": "El equipo técnico de Ananta completa el Curso Eficiente de Cierres Mecánicos impartido por Espaseme, una jornada para reforzar conocimientos y coordinación entre ambas empresas.",
+      "cuerpo": "<p>El pasado jueves 19 de noviembre, el equipo de Ananta Soluciones Industriales participó en el <strong>Curso Eficiente de Cierres Mecánicos</strong>, una jornada de formación técnica organizada junto a Espaseme, especialista en sellado mecánico. Al terminar la sesión, todos los asistentes recibieron su diploma.</p><p>La formación reunió a mecánicos, técnicos y al departamento de ingeniería de Ananta. Alberto Rivera, director técnico de Espaseme, hizo un repaso general de las situaciones e incidencias técnicas más habituales en la operación de cierres mecánicos y compartió su experiencia práctica sobre cómo diagnosticarlas y resolverlas.</p><p>Además de la parte técnica, la jornada sirvió para hablar de cómo mejorar la coordinación entre ambas empresas. Se insistió en que la información fluya bien desde los mecánicos de campo hasta el departamento de ingeniería, y en que el cliente explique de forma completa lo que necesita antes de empezar un trabajo. Así se puede responder con más rapidez y calidad, y con garantías.</p><p>Desde Espaseme destacaron la experiencia y la preparación del equipo mecánico de Ananta. Por su parte, Ananta agradeció a Espaseme una jornada que el equipo valoró como muy interesante y enriquecedora.</p><p>Con esta formación, Ananta sigue apostando por la capacitación continua de su plantilla y por las alianzas con fabricantes y especialistas. El objetivo es ofrecer a sus clientes un servicio de mantenimiento industrial cada vez más fiable y seguro.</p>"
+    },
+    "en": {
+      "titulo": "Ananta and Espaseme strengthen their partnership with a training day on mechanical seals",
+      "resumen": "Ananta’s technical team completed the Efficient Mechanical Seals Course delivered by Espaseme, a day designed to build knowledge and improve coordination between the two companies.",
+      "cuerpo": "<p>On Thursday 19 November, the Ananta Soluciones Industriales team took part in the <strong>Efficient Mechanical Seals Course</strong>, a technical training day organised together with Espaseme, a mechanical sealing specialist. At the end of the session, every attendee received a certificate.</p><p>The training brought together Ananta’s mechanics, technicians and engineering department. Alberto Rivera, Technical Director at Espaseme, gave an overview of the most common situations and technical issues in mechanical seal operation and shared his hands-on experience of how to diagnose and solve them.</p><p>Beyond the technical content, the day was also a chance to discuss how to improve coordination between the two companies. The focus was on making sure information flows smoothly from field mechanics to the engineering department, and on customers fully explaining what they need before a job begins. That makes it possible to respond faster, with higher quality and with guarantees.</p><p>Espaseme highlighted the experience and skills of Ananta’s mechanical team. Ananta, in turn, thanked Espaseme for a day the team found very interesting and rewarding.</p><p>With this training, Ananta continues to invest in the ongoing development of its staff and in partnerships with manufacturers and specialists. The goal is to offer customers an increasingly reliable and safe industrial maintenance service.</p>"
+    }
+  },
+  {
     "slug": "nakakin-pack-expo-international-2026-chicago",
     "fecha": "2026-11-16",
     "categoria": "ferias",
