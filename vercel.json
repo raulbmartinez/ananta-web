@@ -164,6 +164,16 @@
       "source": "/feed",
       "destination": "/",
       "permanent": true
+    },
+    {
+      "source": "/repuestos",
+      "destination": "https://claude.ai/artifact/CzimemdXsu7D15C31edZv8",
+      "permanent": false
+    },
+    {
+      "source": "/repuestos/",
+      "destination": "https://claude.ai/artifact/CzimemdXsu7D15C31edZv8",
+      "permanent": false
     }
   ]
 }
