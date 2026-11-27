@@ -1,4 +1,12 @@
 {
+  "headers": [
+    {
+      "source": "/catalogo-repuestos-ananta.pdf",
+      "headers": [
+        { "key": "X-Robots-Tag", "value": "noindex" }
+      ]
+    }
+  ],
   "redirects": [
     {
       "source": "/who-we-are",
@@ -167,12 +175,12 @@
     },
     {
       "source": "/repuestos",
-      "destination": "https://claude.ai/artifact/CzimemdXsu7D15C31edZv8",
+      "destination": "/catalogo-repuestos-ananta.pdf",
       "permanent": false
     },
     {
       "source": "/repuestos/",
-      "destination": "https://claude.ai/artifact/CzimemdXsu7D15C31edZv8",
+      "destination": "/catalogo-repuestos-ananta.pdf",
       "permanent": false
     }
   ]
